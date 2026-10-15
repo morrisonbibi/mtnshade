@@ -1,0 +1,15 @@
+Add this ONE rule to the mtnshade.com Netlify site (top of its _redirects file, or netlify.toml).
+It makes mtnshade.com/customize/ show the Mug Studio, which lives in its own Netlify site.
+Replace mtnshade-studio with your studio site's actual Netlify name.
+
+--- _redirects ---
+/customize/*  https://mtnshade-studio.netlify.app/:splat  200!
+
+--- or netlify.toml ---
+[[redirects]]
+  from = "/customize/*"
+  to = "https://mtnshade-studio.netlify.app/:splat"
+  status = 200
+  force = true
+
+Also add a Netlify env var on the STUDIO site: PUBLIC_URL = https://mtnshade.com/customize

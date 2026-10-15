@@ -1,0 +1,13 @@
+[build]
+  publish = "."
+  functions = "netlify/functions"
+
+# Checkout called relatively (api/checkout) so it works both directly and behind mtnshade.com/customize/
+[[redirects]]
+  from = "/api/checkout"
+  to = "/.netlify/functions/checkout"
+  status = 200
+[[redirects]]
+  from = "/customize/api/checkout"
+  to = "/.netlify/functions/checkout"
+  status = 200
