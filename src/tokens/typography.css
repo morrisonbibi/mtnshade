@@ -1,0 +1,18 @@
+:root{
+--font-display:"Barlow Condensed","DIN Condensed","Arial Narrow",sans-serif;
+--font-headline:"Archivo","Helvetica Neue",Arial,sans-serif;
+--font-body:"Source Sans 3","Myriad Pro","Segoe UI",sans-serif;
+--font-mono:"JetBrains Mono",ui-monospace,monospace;
+--fs-12:12px;--fs-14:14px;--fs-16:16px;--fs-18:18px;--fs-20:20px;--fs-24:24px;--fs-32:32px;--fs-40:40px;--fs-56:56px;--fs-72:72px;--fs-96:96px;
+--fw-regular:400;/* @kind font */--fw-semibold:600;/* @kind font */--fw-bold:700;/* @kind font */--fw-heavy:800;/* @kind font */--fw-black:900;/* @kind font */
+--lh-tight:0.95;/* @kind font */--lh-snug:1.1;/* @kind font */--lh-body:1.45;/* @kind font */
+--tracking-display:0.01em;/* @kind font */--tracking-caps:0.04em;/* @kind font */--tracking-headline:-0.02em;/* @kind font */
+/* Semantic type roles */
+--type-display:var(--fw-bold) var(--fs-72)/var(--lh-tight) var(--font-display);
+--type-display-sub:var(--fw-semibold) var(--fs-40)/1 var(--font-display);
+--type-headline:var(--fw-heavy) var(--fs-56)/1 var(--font-headline);
+--type-title:var(--fw-bold) var(--fs-24)/1.1 var(--font-display);
+--type-body:var(--fw-regular) var(--fs-18)/var(--lh-body) var(--font-body);
+--type-small:var(--fw-regular) var(--fs-14)/1.4 var(--font-body);
+--type-label:var(--fw-bold) var(--fs-14)/1 var(--font-body);
+}

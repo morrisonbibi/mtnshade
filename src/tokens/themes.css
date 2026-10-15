@@ -1,0 +1,4 @@
+/* Partner co-brand themes. Wrap a subtree in data-theme to re-skin brand aliases. */
+[data-theme="mtnshade-red"]{--brand-primary:var(--red-600);--brand-primary-hover:var(--red-700);--brand-primary-press:var(--red-800);--brand-secondary:var(--blue-600);--brand-secondary-hover:var(--blue-700);--surface-brand:var(--red-600);--rule-accent:var(--red-500);--border-focus:var(--red-500);--text-link:var(--red-700)}
+/* Las Rocas (Miami) — Miami Vice colourway proposal */
+[data-theme="las-rocas"]{--partner-pink:#EE5FA7;--partner-teal:#16B5BF;--partner-night:#1B1638;--brand-primary:#16B5BF;--brand-primary-hover:#0E99A2;--brand-primary-press:#0B7C84;--brand-on-primary:#0B1F2A;--brand-secondary:#EE5FA7;--brand-secondary-hover:#D94690;--brand-on-secondary:#FFFFFF;--surface-brand:#1B1638;--rule-accent:#EE5FA7;--border-focus:#EE5FA7;--text-link:#0E99A2;--hold-blue:#16B5BF;--hold-red:#EE5FA7}

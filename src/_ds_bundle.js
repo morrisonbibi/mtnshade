@@ -1,85 +1,4 @@
-<!doctype html><html><head><meta charset="utf-8"><meta name="viewport" content="width=device-width,initial-scale=1"><title>MTNShade — Custom Mug Studio</title><link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Barlow+Condensed:wght@500;600;700;800&family=Archivo:wght@600;700;800;900&family=Source+Sans+3:ital,wght@0,400;0,600;0,700;1,400&family=JetBrains+Mono:wght@400;600&display=swap"><style>/* Google Fonts substitutes — original brand fonts not provided. See readme.md. */
-
-
-:root{
-/* Summit Blue — primary. Logo panels, banners, comparison column */
---blue-900:#0B1F45;--blue-800:#102C5F;--blue-700:#173C7E;--blue-600:#1F4E9E;--blue-500:#1660B0;--blue-400:#2D7FD3;--blue-300:#7FB0E6;--blue-100:#DCE8F7;--blue-50:#EEF4FB;
-/* Crimp Red — second colorway */
---red-800:#8E1F18;--red-700:#B02820;--red-600:#D9362B;--red-500:#E8483C;--red-300:#F49A92;--red-100:#FBE1DE;
-/* Hold colours (the physical urethane holds) */
---hold-blue:#2141A8;--hold-red:#C8102E;
-/* Steel neutrals — brushed 18/8 stainless */
---steel-0:#FFFFFF;--steel-50:#F4F5F6;--steel-100:#E8EAED;--steel-200:#D3D7DC;--steel-300:#B4BAC1;--steel-400:#8F959D;--steel-500:#6B7179;--steel-600:#4C5158;--steel-700:#33373C;--steel-800:#22252A;--steel-900:#15171A;
-/* Feature accents (icon strip) */
---hot:#E8483C;--ice:#4FC3E8;--ember:#F2A63B;
-/* Semantic */
---success:#1660B0;--danger:#B02820;--warning:#F2A63B;--muted-mark:#6E6E6E;
-
-/* Aliases */
---brand-primary:var(--blue-600);--brand-primary-hover:var(--blue-700);--brand-primary-press:var(--blue-800);--brand-on-primary:#FFFFFF;
---brand-secondary:var(--red-600);--brand-secondary-hover:var(--red-700);--brand-on-secondary:#FFFFFF;
---brand-accent:var(--blue-400);
---text-strong:var(--steel-900);--text-body:var(--steel-800);--text-muted:var(--steel-500);--text-inverse:#FFFFFF;--text-link:var(--blue-500);
---surface-page:#FFFFFF;--surface-sunken:var(--steel-50);--surface-card:#FFFFFF;--surface-ink:var(--steel-900);--surface-nav:#1E2125;--surface-brand:var(--blue-600);
---border-subtle:var(--steel-200);--border-strong:var(--steel-400);--border-focus:var(--blue-400);
---rule-accent:var(--blue-400);
-}
-
-:root{
---font-display:"Barlow Condensed","DIN Condensed","Arial Narrow",sans-serif;
---font-headline:"Archivo","Helvetica Neue",Arial,sans-serif;
---font-body:"Source Sans 3","Myriad Pro","Segoe UI",sans-serif;
---font-mono:"JetBrains Mono",ui-monospace,monospace;
---fs-12:12px;--fs-14:14px;--fs-16:16px;--fs-18:18px;--fs-20:20px;--fs-24:24px;--fs-32:32px;--fs-40:40px;--fs-56:56px;--fs-72:72px;--fs-96:96px;
---fw-regular:400;/* @kind font */--fw-semibold:600;/* @kind font */--fw-bold:700;/* @kind font */--fw-heavy:800;/* @kind font */--fw-black:900;/* @kind font */
---lh-tight:0.95;/* @kind font */--lh-snug:1.1;/* @kind font */--lh-body:1.45;/* @kind font */
---tracking-display:0.01em;/* @kind font */--tracking-caps:0.04em;/* @kind font */--tracking-headline:-0.02em;/* @kind font */
-/* Semantic type roles */
---type-display:var(--fw-bold) var(--fs-72)/var(--lh-tight) var(--font-display);
---type-display-sub:var(--fw-semibold) var(--fs-40)/1 var(--font-display);
---type-headline:var(--fw-heavy) var(--fs-56)/1 var(--font-headline);
---type-title:var(--fw-bold) var(--fs-24)/1.1 var(--font-display);
---type-body:var(--fw-regular) var(--fs-18)/var(--lh-body) var(--font-body);
---type-small:var(--fw-regular) var(--fs-14)/1.4 var(--font-body);
---type-label:var(--fw-bold) var(--fs-14)/1 var(--font-body);
-}
-
-:root{
---space-0:0;--space-1:4px;--space-2:8px;--space-3:12px;--space-4:16px;--space-5:20px;--space-6:24px;--space-8:32px;--space-10:40px;--space-12:48px;--space-16:64px;--space-20:80px;
---radius-0:0;--radius-xs:2px;--radius-sm:4px;--radius-md:8px;--radius-lg:12px;--radius-xl:16px;--radius-pill:999px;
---container-max:1464px;--gutter:24px;
---rule-w:3px;--rule-len:72px;
-}
-
-:root{
---shadow-none:none;
---shadow-sm:0 1px 2px rgba(21,23,26,.10);
---shadow-md:0 4px 14px rgba(21,23,26,.12);
---shadow-lg:0 14px 40px rgba(21,23,26,.22);
---scrim-left:linear-gradient(90deg,rgba(11,18,30,.62) 0%,rgba(11,18,30,.28) 42%,rgba(11,18,30,0) 65%);/* @kind color */
---scrim-brand-right:linear-gradient(90deg,rgba(31,78,158,0) 45%,rgba(31,78,158,.85) 70%,#1F4E9E 100%);/* @kind color */
---nav-scrim:rgba(18,20,23,.82);
---ease-out:cubic-bezier(.2,.7,.2,1);/* @kind other */--dur-fast:120ms;/* @kind other */--dur-base:200ms;/* @kind other */--dur-slow:360ms;/* @kind other */
-}
-
-/* Partner co-brand themes. Wrap a subtree in data-theme to re-skin brand aliases. */
-[data-theme="mtnshade-red"]{--brand-primary:var(--red-600);--brand-primary-hover:var(--red-700);--brand-primary-press:var(--red-800);--brand-secondary:var(--blue-600);--brand-secondary-hover:var(--blue-700);--surface-brand:var(--red-600);--rule-accent:var(--red-500);--border-focus:var(--red-500);--text-link:var(--red-700)}
-/* Las Rocas (Miami) — Miami Vice colourway proposal */
-[data-theme="las-rocas"]{--partner-pink:#EE5FA7;--partner-teal:#16B5BF;--partner-night:#1B1638;--brand-primary:#16B5BF;--brand-primary-hover:#0E99A2;--brand-primary-press:#0B7C84;--brand-on-primary:#0B1F2A;--brand-secondary:#EE5FA7;--brand-secondary-hover:#D94690;--brand-on-secondary:#FFFFFF;--surface-brand:#1B1638;--rule-accent:#EE5FA7;--border-focus:#EE5FA7;--text-link:#0E99A2;--hold-blue:#16B5BF;--hold-red:#EE5FA7}
-
-*,*::before,*::after{box-sizing:border-box}
-html,body{margin:0}
-body{font:var(--type-body);color:var(--text-body);background:var(--surface-page);-webkit-font-smoothing:antialiased}
-a{color:var(--text-link);text-decoration:none}a:hover{color:var(--brand-primary-hover);text-decoration:underline}
-:focus-visible{outline:2px solid var(--border-focus);outline-offset:2px}
-
-</style>
-<script src="https://unpkg.com/react@18.3.1/umd/react.development.js" integrity="sha384-hD6/rw4ppMLGNu3tX5cjIb+uRZ7UkRJ6BPkLpg4hAu/6onKUg4lLsHAs9EBPT82L" crossorigin="anonymous"></script>
-<script src="https://unpkg.com/react-dom@18.3.1/umd/react-dom.development.js" integrity="sha384-u6aeetuaXnQ38mYT8rp6sbXaQe3NL9t+IBXmnYxwkUI2Hw4bsp2Wvmx4yRQF1uAm" crossorigin="anonymous"></script>
-<script src="https://unpkg.com/@babel/standalone@7.29.0/babel.min.js" integrity="sha384-m08KidiNqLdpJqLq95G/LEi8Qvjl/xUYll3QILypMoQ65QorJ9Lvtp2RXYGBFj1y" crossorigin="anonymous"></script>
-<script src="https://unpkg.com/three@0.149.0/build/three.min.js"></script>
-<link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Playfair+Display:wght@700&family=Roboto+Slab:wght@700&family=Big+Shoulders+Stencil+Text:wght@800&family=Pacifico&family=Comfortaa:wght@500;700&display=swap">
-<script>/* @ds-bundle: {"format":4,"namespace":"MTNShadeDesignSystem_e114fa","components":[{"name":"HeadlineLockup","sourcePath":"components/brand/HeadlineLockup.jsx"},{"name":"HeroBanner","sourcePath":"components/brand/HeroBanner.jsx"},{"name":"Logo","sourcePath":"components/brand/Logo.jsx"},{"name":"FeatureCallout","sourcePath":"components/commerce/FeatureCallout.jsx"},{"name":"ProductCard","sourcePath":"components/commerce/ProductCard.jsx"},{"name":"ComparisonTable","sourcePath":"components/comparison/ComparisonTable.jsx"},{"name":"StatusMark","sourcePath":"components/comparison/StatusMark.jsx"},{"name":"Badge","sourcePath":"components/core/Badge.jsx"},{"name":"Button","sourcePath":"components/core/Button.jsx"},{"name":"Card","sourcePath":"components/core/Card.jsx"},{"name":"Dialog","sourcePath":"components/feedback/Dialog.jsx"},{"name":"Toast","sourcePath":"components/feedback/Toast.jsx"},{"name":"Checkbox","sourcePath":"components/forms/Checkbox.jsx"},{"name":"ColorwaySwatch","sourcePath":"components/forms/ColorwaySwatch.jsx"},{"name":"Input","sourcePath":"components/forms/Input.jsx"},{"name":"QuantityStepper","sourcePath":"components/forms/QuantityStepper.jsx"},{"name":"Select","sourcePath":"components/forms/Select.jsx"},{"name":"Switch","sourcePath":"components/forms/Switch.jsx"},{"name":"StepIndicator","sourcePath":"components/navigation/StepIndicator.jsx"},{"name":"TabBar","sourcePath":"components/navigation/TabBar.jsx"}],"sourceHashes":{"components/brand/HeadlineLockup.jsx":"d2372f0a072a","components/brand/HeroBanner.jsx":"6574f783a837","components/brand/Logo.jsx":"d3a8cfe575d1","components/commerce/FeatureCallout.jsx":"d92c21914864","components/commerce/ProductCard.jsx":"f92b65b5e0af","components/comparison/ComparisonTable.jsx":"1472a497369f","components/comparison/StatusMark.jsx":"f9a8dd025e97","components/core/Badge.jsx":"e868b029deb0","components/core/Button.jsx":"ed4ebef6d13e","components/core/Card.jsx":"425c4d5017bc","components/feedback/Dialog.jsx":"3872c85391a6","components/feedback/Toast.jsx":"a475866859b1","components/forms/Checkbox.jsx":"ab2c86109dd9","components/forms/ColorwaySwatch.jsx":"964102d8daa9","components/forms/Input.jsx":"fd5b82ba1009","components/forms/QuantityStepper.jsx":"9627bd287d51","components/forms/Select.jsx":"06f8ecc1b0b2","components/forms/Switch.jsx":"4fdb84534f0f","components/navigation/StepIndicator.jsx":"55a14d2a302f","components/navigation/TabBar.jsx":"ffd5ee389477","netlify/functions/checkout.js":"ba36ba2c7a83","site/netlify/functions/checkout.js":"11428ca009e0","ui_kits/amazon-storefront/Modules.jsx":"47361c6d1ac1","ui_kits/amazon-storefront/TabCarousel.jsx":"8bc4f9b224cb","ui_kits/gym-partner/BuilderSteps.jsx":"034db0096734","ui_kits/gym-partner/GymBuilderApp.jsx":"5dc510de8c5a","ui_kits/gym-partner/MugPreview.jsx":"cac2e3989bf8","ui_kits/mug-customizer/DesignSteps.jsx":"9ec8d1115af8","ui_kits/mug-customizer/MugStage.jsx":"5c66e574a475","ui_kits/mug-customizer/MugStudioApp.jsx":"441ce7f0d273","ui_kits/mug-customizer/OrderStep.jsx":"4fe120ad0843","ui_kits/mug-customizer/OrdersApp.jsx":"743601ce4bd2","ui_kits/mug-customizer/PackagingStage.jsx":"d1caa60b3a71","ui_kits/mug-customizer/PackagingStep.jsx":"b0f7f2a284ab","ui_kits/mug-customizer/mc-config.js":"a18087746f51","ui_kits/mug-customizer/mc-orders.js":"a456506a07b5","ui_kits/mug-customizer/mc-proof.js":"24dfa962f45b"},"inlinedExternals":[],"unexposedExports":[]} */
+/* @ds-bundle: {"format":4,"namespace":"MTNShadeDesignSystem_e114fa","components":[{"name":"HeadlineLockup","sourcePath":"components/brand/HeadlineLockup.jsx"},{"name":"HeroBanner","sourcePath":"components/brand/HeroBanner.jsx"},{"name":"Logo","sourcePath":"components/brand/Logo.jsx"},{"name":"FeatureCallout","sourcePath":"components/commerce/FeatureCallout.jsx"},{"name":"ProductCard","sourcePath":"components/commerce/ProductCard.jsx"},{"name":"ComparisonTable","sourcePath":"components/comparison/ComparisonTable.jsx"},{"name":"StatusMark","sourcePath":"components/comparison/StatusMark.jsx"},{"name":"Badge","sourcePath":"components/core/Badge.jsx"},{"name":"Button","sourcePath":"components/core/Button.jsx"},{"name":"Card","sourcePath":"components/core/Card.jsx"},{"name":"Dialog","sourcePath":"components/feedback/Dialog.jsx"},{"name":"Toast","sourcePath":"components/feedback/Toast.jsx"},{"name":"Checkbox","sourcePath":"components/forms/Checkbox.jsx"},{"name":"ColorwaySwatch","sourcePath":"components/forms/ColorwaySwatch.jsx"},{"name":"Input","sourcePath":"components/forms/Input.jsx"},{"name":"QuantityStepper","sourcePath":"components/forms/QuantityStepper.jsx"},{"name":"Select","sourcePath":"components/forms/Select.jsx"},{"name":"Switch","sourcePath":"components/forms/Switch.jsx"},{"name":"StepIndicator","sourcePath":"components/navigation/StepIndicator.jsx"},{"name":"TabBar","sourcePath":"components/navigation/TabBar.jsx"}],"sourceHashes":{"components/brand/HeadlineLockup.jsx":"d2372f0a072a","components/brand/HeroBanner.jsx":"6574f783a837","components/brand/Logo.jsx":"d3a8cfe575d1","components/commerce/FeatureCallout.jsx":"d92c21914864","components/commerce/ProductCard.jsx":"f92b65b5e0af","components/comparison/ComparisonTable.jsx":"1472a497369f","components/comparison/StatusMark.jsx":"f9a8dd025e97","components/core/Badge.jsx":"e868b029deb0","components/core/Button.jsx":"ed4ebef6d13e","components/core/Card.jsx":"425c4d5017bc","components/feedback/Dialog.jsx":"3872c85391a6","components/feedback/Toast.jsx":"a475866859b1","components/forms/Checkbox.jsx":"ab2c86109dd9","components/forms/ColorwaySwatch.jsx":"964102d8daa9","components/forms/Input.jsx":"fd5b82ba1009","components/forms/QuantityStepper.jsx":"9627bd287d51","components/forms/Select.jsx":"06f8ecc1b0b2","components/forms/Switch.jsx":"4fdb84534f0f","components/navigation/StepIndicator.jsx":"55a14d2a302f","components/navigation/TabBar.jsx":"ffd5ee389477","site/netlify/functions/checkout.js":"b0af36690b01","site/netlify/functions/crm.js":"5106e0a379f8","site/netlify/functions/order-file.js":"1a9e715c30f2","site/netlify/functions/order.js":"109984e0e3d6","site/netlify/functions/payment.js":"1ba1e2866ee9","site/netlify/lib/crm.js":"182d26d10be0","ui_kits/amazon-storefront/Modules.jsx":"47361c6d1ac1","ui_kits/amazon-storefront/TabCarousel.jsx":"8bc4f9b224cb","ui_kits/gym-partner/BuilderSteps.jsx":"034db0096734","ui_kits/gym-partner/GymBuilderApp.jsx":"bf9e2338649b","ui_kits/gym-partner/MugPreview.jsx":"cac2e3989bf8","ui_kits/mug-customizer/CrmCustomers.jsx":"53d934c703ab","ui_kits/mug-customizer/CrmOrders.jsx":"b587ee50d7b3","ui_kits/mug-customizer/CrmShell.jsx":"98f558736d9a","ui_kits/mug-customizer/DesignSteps.jsx":"cdf1c51c4062","ui_kits/mug-customizer/MugStage.jsx":"5c66e574a475","ui_kits/mug-customizer/MugStudioApp.jsx":"54aff4ed014d","ui_kits/mug-customizer/OrderStep.jsx":"4fe120ad0843","ui_kits/mug-customizer/OrdersApp.jsx":"743601ce4bd2","ui_kits/mug-customizer/PackagingStage.jsx":"2e44c5ce02dd","ui_kits/mug-customizer/PackagingStep.jsx":"b0f7f2a284ab","ui_kits/mug-customizer/crm-data.js":"1c2da2ce482b","ui_kits/mug-customizer/mc-config.js":"5ff9f435f087","ui_kits/mug-customizer/mc-orders.js":"74a319200f28","ui_kits/mug-customizer/mc-proof.js":"24dfa962f45b"},"inlinedExternals":[],"unexposedExports":[]} */
 
 (() => {
 
@@ -1288,147 +1207,6 @@ function TabBar({
 Object.assign(__ds_scope, { TabBar });
 })(); } catch (e) { __ds_ns.__errors.push({ path: "components/navigation/TabBar.jsx", error: String((e && e.message) || e) }); }
 
-// netlify/functions/checkout.js
-try { (() => {
-// Creates a Stripe Checkout Session with exact totals. Needs env var STRIPE_SECRET_KEY (Netlify → Site settings → Environment variables).
-// ⚠ Keep these numbers in sync with ui_kits/mug-customizer/mc-config.js — the server is the source of truth for what gets charged.
-const C = {
-  carton: 36,
-  standard: 12,
-  custom: 13.5,
-  moq: 300,
-  standardColors: ['#2141a8', '#c8102e'],
-  sample: {
-    standard: 100,
-    custom: 100
-  },
-  pack: {
-    perUnit: 1,
-    cap: 250
-  },
-  countries: ['US', 'CA']
-};
-const isCustom = h => !C.standardColors.includes(String(h || '').toLowerCase());
-const clamp = (n, a, b) => Math.max(a, Math.min(b, Math.floor(+n || 0)));
-const clean = s => String(s || '').replace(/[^\w\s#·×.,'&()-]/g, '').slice(0, 120);
-exports.handler = async e => {
-  if (e.httpMethod !== 'POST') return {
-    statusCode: 405,
-    body: 'POST only'
-  };
-  if (!process.env.STRIPE_SECRET_KEY) return {
-    statusCode: 500,
-    body: JSON.stringify({
-      error: 'STRIPE_SECRET_KEY not set'
-    })
-  };
-  let b;
-  try {
-    b = JSON.parse(e.body || '{}');
-  } catch (_) {
-    return {
-      statusCode: 400,
-      body: 'bad json'
-    };
-  }
-  const orderId = /^MS-\d{6}-[A-Z0-9]{4}$/.test(b.orderId) ? b.orderId : 'MS-UNKNOWN';
-  const items = [];
-  if (b.kind === 'sample') {
-    const custom = isCustom(b.hold);
-    items.push({
-      name: 'Sample Crimp Mug — ' + clean(b.holdName) + ' hold' + (custom ? ' (custom color)' : ''),
-      cents: (custom ? C.sample.custom : C.sample.standard) * 100,
-      qty: clamp(b.qty, 1, 5)
-    });
-  } else {
-    let units = 0;
-    for (const l of (b.lines || []).slice(0, 12)) {
-      const custom = isCustom(l.hold);
-      const k = C.carton,
-        raw = clamp(l.units != null ? l.units : (+l.cartons || 1) * k, 0, 3564);
-      let u;
-      if (!custom) u = Math.max(k, Math.ceil(raw / k) * k);else {
-        const f = Math.ceil(C.moq / k) * k;
-        u = raw <= C.moq ? C.moq : raw <= f ? f : f + Math.ceil((raw - f) / k) * k;
-      }
-      units += u;
-      items.push({
-        name: 'Custom Crimp Mug — ' + clean(l.name) + ' hold',
-        cents: Math.round((custom ? C.custom : C.standard) * 100),
-        qty: u
-      });
-    }
-    if (!items.length) return {
-      statusCode: 400,
-      body: JSON.stringify({
-        error: 'empty order'
-      })
-    };
-    if (b.packCustom) items.push({
-      name: 'Custom packaging design (one-time)',
-      cents: Math.min(units * C.pack.perUnit, C.pack.cap) * 100,
-      qty: 1
-    });
-  }
-  let ru;
-  try {
-    ru = new URL(b.returnUrl || '');
-  } catch (_) {
-    ru = null;
-  }
-  const okHost = ru && ru.protocol === 'https:' && (/(^|\.)mtnshade\.com$/.test(ru.hostname) || /\.netlify\.app$/.test(ru.hostname));
-  const site = okHost ? ru.origin : process.env.PUBLIC_URL || process.env.URL || 'https://' + e.headers.host;
-  if (okHost) b.returnPath = ru.pathname;
-  const path = /^\/[\w\-./%]*$/.test(b.returnPath || '') ? b.returnPath : '/ui_kits/mug-customizer/index.html';
-  const p = new URLSearchParams({
-    mode: 'payment',
-    client_reference_id: orderId,
-    success_url: site + path + '?paid=' + orderId + '&session_id={CHECKOUT_SESSION_ID}',
-    cancel_url: site + path + '?canceled=' + orderId,
-    'phone_number_collection[enabled]': 'true',
-    'billing_address_collection': 'required',
-    'metadata[order_id]': orderId,
-    'metadata[gym]': clean(b.gym),
-    'metadata[kind]': b.kind === 'sample' ? 'sample' : 'bulk',
-    'payment_intent_data[metadata][order_id]': orderId,
-    'payment_intent_data[description]': 'MTNShade ' + orderId + ' · ' + clean(b.gym)
-  });
-  if (/^[^@\s]+@[^@\s]+\.[^@\s]+$/.test(b.email || '')) p.set('customer_email', b.email);
-  C.countries.forEach((c, i) => p.set('shipping_address_collection[allowed_countries][' + i + ']', c));
-  items.forEach((it, i) => {
-    const k = 'line_items[' + i + ']';
-    p.set(k + '[quantity]', it.qty);
-    p.set(k + '[price_data][currency]', 'usd');
-    p.set(k + '[price_data][unit_amount]', it.cents);
-    p.set(k + '[price_data][product_data][name]', it.name);
-  });
-  const r = await fetch('https://api.stripe.com/v1/checkout/sessions', {
-    method: 'POST',
-    headers: {
-      Authorization: 'Bearer ' + process.env.STRIPE_SECRET_KEY,
-      'Content-Type': 'application/x-www-form-urlencoded'
-    },
-    body: p
-  });
-  const j = await r.json();
-  if (!r.ok) return {
-    statusCode: 502,
-    body: JSON.stringify({
-      error: j.error && j.error.message || 'stripe error'
-    })
-  };
-  return {
-    statusCode: 200,
-    headers: {
-      'Content-Type': 'application/json'
-    },
-    body: JSON.stringify({
-      url: j.url
-    })
-  };
-};
-})(); } catch (e) { __ds_ns.__errors.push({ path: "netlify/functions/checkout.js", error: String((e && e.message) || e) }); }
-
 // site/netlify/functions/checkout.js
 try { (() => {
 // Creates a Stripe Checkout Session with exact totals. Needs env var STRIPE_SECRET_KEY (Netlify → Site settings → Environment variables).
@@ -1564,11 +1342,469 @@ exports.handler = async e => {
       'Content-Type': 'application/json'
     },
     body: JSON.stringify({
-      url: j.url
+      url: j.url,
+      id: j.id
     })
   };
 };
 })(); } catch (e) { __ds_ns.__errors.push({ path: "site/netlify/functions/checkout.js", error: String((e && e.message) || e) }); }
+
+// site/netlify/functions/crm.js
+try { (() => {
+// PRIVATE CRM API. Every request needs header x-crm-key = env CRM_PASSWORD (Netlify → Site configuration → Environment variables).
+const {
+  connectLambda,
+  orderStore,
+  fileStore,
+  customerStore,
+  res: json,
+  ID,
+  now,
+  customerKey,
+  syncStripe,
+  body,
+  toBuf
+} = require('../lib/crm.js');
+const EDITABLE = ['stage', 'ship_date', 'carrier', 'tracking', 'manufacturer', 'mfg_po', 'mfg_cost', 'internal_notes', 'proof_status', 'archived', 'ship', 'mfg_notes', 'contact', 'needed_by', 'quoted_total'];
+const STAGES = ['Quote', 'Received', 'Proof sent', 'Proof approved', 'Sent to manufacturer', 'In production', 'Shipped', 'Delivered', 'Canceled'];
+exports.handler = async e => {
+  const qp = e.queryStringParameters || {},
+    op = qp.op || 'list';
+  connectLambda(e);
+  const pw = process.env.CRM_PASSWORD;
+  if (!pw) return json({
+    error: 'CRM_PASSWORD is not set in Netlify environment variables'
+  }, 503);
+  if ((e.headers['x-crm-key'] || '') !== pw) return json({
+    error: 'Wrong password'
+  }, 401);
+  const os = orderStore(),
+    fs = fileStore(),
+    cs = customerStore();
+  if (op === 'ping') return json({
+    ok: true
+  });
+  if (op === 'list') {
+    const {
+      blobs
+    } = await os.list();
+    let all = (await Promise.all(blobs.map(b => os.get(b.key, {
+      type: 'json'
+    })))).filter(Boolean);
+    const pend = all.filter(o => o.payment && o.payment.status === 'Awaiting payment' && o.payment.session).slice(0, 15);
+    await Promise.all(pend.map(async o => {
+      const u = await syncStripe(o).catch(() => null);
+      if (u) {
+        Object.assign(o, u);
+        await os.setJSON(o.id, o);
+      }
+    }));
+    const fl = await fs.list();
+    const files = {};
+    fl.blobs.forEach(b => {
+      const [id, f] = b.key.split('/');
+      (files[id] = files[id] || []).push(f);
+    });
+    all.forEach(o => {
+      o.files = files[o.id] || [];
+    });
+    const cl = await cs.list();
+    const customers = {};
+    await Promise.all(cl.blobs.map(async b => {
+      customers[b.key] = await cs.get(b.key, {
+        type: 'json'
+      });
+    }));
+    return json({
+      orders: all,
+      customers
+    });
+  }
+  if (op === 'file') {
+    const id = qp.id || '',
+      f = (qp.field || '').replace(/[^\w-]/g, '');
+    const r = await fs.getWithMetadata(id + '/' + f, {
+      type: 'arrayBuffer'
+    });
+    if (!r) return json({
+      error: 'not found'
+    }, 404);
+    return {
+      statusCode: 200,
+      headers: {
+        'content-type': r.metadata && r.metadata.type || 'application/octet-stream',
+        'cache-control': 'private, max-age=600'
+      },
+      body: Buffer.from(r.data).toString('base64'),
+      isBase64Encoded: true
+    };
+  }
+  if (e.httpMethod !== 'POST') return json({
+    error: 'POST only'
+  }, 405);
+  const b = body(e) || {};
+  if (op === 'update') {
+    const o = await os.get(b.id, {
+      type: 'json'
+    });
+    if (!o) return json({
+      error: 'not found'
+    }, 404);
+    const p = b.patch || {},
+      hist = [];
+    Object.keys(p).forEach(k => {
+      if (k === 'payment_status') {
+        if ((o.payment || {}).status !== p[k]) hist.push('Payment → ' + p[k]);
+        o.payment = {
+          ...(o.payment || {}),
+          status: p[k]
+        };
+        return;
+      }
+      if (!EDITABLE.includes(k)) return;
+      if (k === 'stage') {
+        if (!STAGES.includes(p[k])) return;
+        if (o.stage !== p[k]) hist.push('Stage → ' + p[k]);
+      }
+      if (k === 'tracking' && p[k] && p[k] !== o.tracking) hist.push('Tracking added: ' + p[k]);
+      o[k] = p[k];
+    });
+    if (b.note) hist.push({
+      note: String(b.note).slice(0, 2000)
+    });
+    o.history = [...(o.history || []), ...hist.map(h => typeof h === 'string' ? {
+      at: now(),
+      text: h
+    } : {
+      at: now(),
+      text: h.note,
+      note: true
+    })];
+    o.updated = now();
+    if (p.contact) o.customer_key = customerKey(o);
+    await os.setJSON(o.id, o);
+    return json({
+      order: o
+    });
+  }
+  if (op === 'customer') {
+    if (!/^[\w.-]{1,120}$/.test(b.key || '')) return json({
+      error: 'bad key'
+    }, 400);
+    const c = (await cs.get(b.key, {
+      type: 'json'
+    })) || {};
+    const n = {
+      ...c,
+      ...(b.patch || {}),
+      updated: now()
+    };
+    await cs.setJSON(b.key, n);
+    return json({
+      customer: n
+    });
+  }
+  if (op === 'sync') {
+    const o = await os.get(b.id, {
+      type: 'json'
+    });
+    if (!o) return json({
+      error: 'not found'
+    }, 404);
+    const u = await syncStripe(o);
+    if (u) {
+      Object.assign(o, u);
+      await os.setJSON(o.id, o);
+    }
+    return json({
+      order: o,
+      changed: !!u
+    });
+  }
+  if (op === 'upload') {
+    if (!ID.test(b.id || '')) return json({
+      error: 'bad id'
+    }, 400);
+    const f = String(b.field || '').replace(/[^\w-]/g, '').slice(0, 40);
+    const m = /^data:([\w.+-]+\/[\w.+-]+);base64,(.+)$/.exec(b.dataUrl || '');
+    if (!f || !m) return json({
+      error: 'bad file'
+    }, 400);
+    const buf = Buffer.from(m[2], 'base64');
+    await fs.set(b.id + '/' + f, toBuf(buf), {
+      metadata: {
+        type: m[1],
+        name: String(b.name || f).slice(0, 120),
+        size: buf.length
+      }
+    });
+    return json({
+      ok: true,
+      field: f
+    });
+  }
+  if (op === 'create') {
+    const d = new Date(),
+      p = n => String(n).padStart(2, '0');
+    const id = 'MS-' + String(d.getFullYear()).slice(2) + p(d.getMonth() + 1) + p(d.getDate()) + '-' + Math.random().toString(36).slice(2, 6).toUpperCase();
+    const o = {
+      ...(b.order || {}),
+      id,
+      created: now(),
+      source: 'manual',
+      payment: {
+        status: b.order && b.order.payment_status || 'Invoiced'
+      },
+      stage: b.order && b.order.stage || 'Received',
+      history: [{
+        at: now(),
+        text: 'Created manually in CRM'
+      }]
+    };
+    delete o.payment_status;
+    o.customer_key = customerKey(o);
+    await os.setJSON(id, o);
+    return json({
+      order: o
+    });
+  }
+  return json({
+    error: 'unknown op'
+  }, 400);
+};
+})(); } catch (e) { __ds_ns.__errors.push({ path: "site/netlify/functions/crm.js", error: String((e && e.message) || e) }); }
+
+// site/netlify/functions/order-file.js
+try { (() => {
+// PUBLIC: uploads one image for a just-created order (logo, renders, dieline). Only within 3h of the order being created.
+const L = require('../lib/crm.js');
+const FIELDS = ['logo', 'lid_logo', 'mug', 'box', 'dieline'];
+exports.handler = async e => {
+  if (e.httpMethod !== 'POST') return L.res({
+    error: 'POST only'
+  }, 405);
+  L.connectLambda(e);
+  const b = L.body(e);
+  if (!b || !L.ID.test(b.id || '') || !FIELDS.includes(b.field)) return L.res({
+    error: 'bad field'
+  }, 400);
+  const o = await L.orderStore().get(b.id, {
+    type: 'json'
+  });
+  if (!o) return L.res({
+    error: 'no order'
+  }, 404);
+  if (Date.now() - new Date(o.created).getTime() > 3 * 3600e3) return L.res({
+    error: 'too late'
+  }, 403);
+  const m = /^data:(image\/[\w.+-]+);base64,(.+)$/.exec(b.dataUrl || '');
+  if (!m) return L.res({
+    error: 'not an image'
+  }, 400);
+  const buf = Buffer.from(m[2], 'base64');
+  if (buf.length > 5.5e6) return L.res({
+    error: 'file too large'
+  }, 413);
+  await L.fileStore().set(b.id + '/' + b.field, L.toBuf(buf), {
+    metadata: {
+      type: m[1],
+      name: String(b.name || b.field).slice(0, 120),
+      size: buf.length
+    }
+  });
+  return L.res({
+    ok: true
+  });
+};
+})(); } catch (e) { __ds_ns.__errors.push({ path: "site/netlify/functions/order-file.js", error: String((e && e.message) || e) }); }
+
+// site/netlify/functions/order.js
+try { (() => {
+// PUBLIC: the studio posts every order / sample / quote here. Creates the order once; never lets the public overwrite it.
+const L = require('../lib/crm.js');
+exports.handler = async e => {
+  if (e.httpMethod !== 'POST') return L.res({
+    error: 'POST only'
+  }, 405);
+  L.connectLambda(e);
+  const b = L.body(e);
+  if (!b || !L.ID.test(b.id || '')) return L.res({
+    error: 'bad input'
+  }, 400);
+  if (JSON.stringify(b).length > 60000) return L.res({
+    error: 'too big'
+  }, 413);
+  ['payment', 'stage', 'history', 'ship', 'internal_notes', 'archived', 'created', 'geo_ip'].forEach(k => delete b[k]);
+  const st = L.orderStore();
+  if (await st.get(b.id)) return L.res({
+    ok: true,
+    existing: true
+  });
+  const g = L.geo(e);
+  const quote = b.type === 'quote_request';
+  const o = Object.assign({}, b, {
+    created: L.now(),
+    customer_key: L.customerKey(b),
+    geo_ip: {
+      city: g.city || '',
+      region: g.subdivision && (g.subdivision.code || g.subdivision.name) || '',
+      country: g.country && g.country.code || '',
+      lat: g.latitude || null,
+      lng: g.longitude || null
+    },
+    payment: {
+      status: quote ? 'Quote' : 'Awaiting payment'
+    },
+    stage: quote ? 'Quote' : 'Received',
+    history: [{
+      at: L.now(),
+      text: (quote ? 'Quote request' : b.type === 'sample_order' ? 'Sample order' : 'Bulk order') + ' submitted from studio'
+    }]
+  });
+  await st.setJSON(o.id, o);
+  return L.res({
+    ok: true
+  });
+};
+})(); } catch (e) { __ds_ns.__errors.push({ path: "site/netlify/functions/order.js", error: String((e && e.message) || e) }); }
+
+// site/netlify/functions/payment.js
+try { (() => {
+// PUBLIC: links a Stripe Checkout Session to an order and records payment. Verified with Stripe, never trusted from the browser.
+const L = require('../lib/crm.js');
+exports.handler = async e => {
+  if (e.httpMethod !== 'POST') return L.res({
+    error: 'POST only'
+  }, 405);
+  L.connectLambda(e);
+  const b = L.body(e);
+  if (!b || !L.ID.test(b.id || '') || !/^cs_\w+$/.test(b.session_id || '')) return L.res({
+    error: 'bad input'
+  }, 400);
+  const st = L.orderStore();
+  const o = await st.get(b.id, {
+    type: 'json'
+  });
+  if (!o) return L.res({
+    error: 'no order'
+  }, 404);
+  const u = await L.syncStripe(o, b.session_id);
+  if (u) {
+    Object.assign(o, u);
+    await st.setJSON(o.id, o);
+  }
+  return L.res({
+    ok: true,
+    status: (o.payment || {}).status
+  });
+};
+})(); } catch (e) { __ds_ns.__errors.push({ path: "site/netlify/functions/payment.js", error: String((e && e.message) || e) }); }
+
+// site/netlify/lib/crm.js
+try { (() => {
+// Shared helpers for the Mug CRM backend (Netlify Functions + Netlify Blobs — no extra accounts needed).
+const {
+  getStore,
+  connectLambda
+} = require('@netlify/blobs');
+const store = name => getStore({
+  name,
+  consistency: 'strong'
+});
+const orderStore = () => store('mug-orders'),
+  fileStore = () => store('mug-order-files'),
+  customerStore = () => store('mug-customers');
+const ID = /^MS-\d{6}-[A-Z0-9]{4}$/;
+const res = (o, s) => ({
+  statusCode: s || 200,
+  headers: {
+    'content-type': 'application/json',
+    'cache-control': 'no-store'
+  },
+  body: JSON.stringify(o)
+});
+const now = () => new Date().toISOString();
+const body = e => {
+  try {
+    return JSON.parse(e.isBase64Encoded ? Buffer.from(e.body || '', 'base64').toString('utf8') : e.body || '{}');
+  } catch (_) {
+    return null;
+  }
+};
+const geo = e => {
+  try {
+    return JSON.parse(Buffer.from(e.headers['x-nf-geo'] || '', 'base64').toString('utf8'));
+  } catch (_) {
+    return {};
+  }
+};
+const slug = s => String(s || '').toLowerCase().replace(/[^a-z0-9]+/g, '-').replace(/^-+|-+$/g, '').slice(0, 80);
+// One customer per gym (several staff can order for the same gym); falls back to email.
+const customerKey = o => {
+  const c = o.contact || {};
+  const g = slug(c.gym);
+  if (g) return 'gym-' + g;
+  const m = slug(c.email);
+  return m ? 'em-' + m : 'unknown';
+};
+const toBuf = b => b.buffer.slice(b.byteOffset, b.byteOffset + b.byteLength);
+// Pulls a Checkout Session from Stripe; returns fields to merge into the order, or null if nothing changed.
+async function syncStripe(o, sid) {
+  sid = sid || o.payment && o.payment.session;
+  const key = process.env.STRIPE_SECRET_KEY;
+  if (!sid || !key) return null;
+  const r = await fetch('https://api.stripe.com/v1/checkout/sessions/' + encodeURIComponent(sid), {
+    headers: {
+      Authorization: 'Bearer ' + key
+    }
+  });
+  if (!r.ok) return null;
+  const s = await r.json();
+  if (s.client_reference_id !== o.id) return null;
+  const prev = o.payment || {};
+  const pay = Object.assign({}, prev, {
+    session: sid
+  });
+  const out = {
+    payment: pay
+  };
+  if (s.payment_status === 'paid' && prev.status !== 'Paid') {
+    pay.status = 'Paid';
+    pay.amount = (s.amount_total || 0) / 100;
+    pay.paid_at = now();
+    pay.intent = s.payment_intent || '';
+    const sd = s.shipping_details || s.collected_information && s.collected_information.shipping_details || {};
+    const cd = s.customer_details || {};
+    out.ship = {
+      name: sd.name || cd.name || '',
+      address: sd.address || cd.address || {}
+    };
+    out.contact = Object.assign({}, o.contact || {}, {
+      phone: cd.phone || (o.contact || {}).phone || '',
+      billing_name: cd.name || ''
+    });
+    out.history = (o.history || []).concat([{
+      at: now(),
+      text: 'Paid via Stripe · $' + pay.amount
+    }]);
+  }
+  return pay.status !== prev.status || pay.session !== prev.session ? out : null;
+}
+module.exports = {
+  connectLambda,
+  orderStore,
+  fileStore,
+  customerStore,
+  ID,
+  res,
+  now,
+  body,
+  geo,
+  customerKey,
+  toBuf,
+  syncStripe
+};
+})(); } catch (e) { __ds_ns.__errors.push({ path: "site/netlify/lib/crm.js", error: String((e && e.message) || e) }); }
 
 // ui_kits/amazon-storefront/Modules.jsx
 try { (() => {
@@ -1579,7 +1815,7 @@ const {
   Card: Cd,
   ComparisonTable: CT
 } = window.MTNShadeDesignSystem_e114fa;
-const A = 'assets/';
+const A = '../../assets/';
 function RuggedBanner() {
   return /*#__PURE__*/React.createElement("section", {
     style: {
@@ -1885,7 +2121,7 @@ function TabCarousel() {
     style: {
       position: 'absolute',
       inset: 0,
-      background: `var(--scrim-left),url(assets/imagery/${x.img}) center/cover`,
+      background: `var(--scrim-left),url(../../assets/imagery/${x.img}) center/cover`,
       opacity: k === i ? 1 : 0,
       transition: 'opacity var(--dur-slow) var(--ease-out)'
     }
@@ -2280,7 +2516,7 @@ function GymBuilderApp() {
   }, /*#__PURE__*/React.createElement(LogoC, {
     variant: "horizontal",
     height: 34,
-    assetBase: "assets/logo/"
+    assetBase: "../../assets/logo/"
   }), /*#__PURE__*/React.createElement("span", {
     style: {
       font: '600 15px/1 var(--font-display)',
@@ -2293,7 +2529,7 @@ function GymBuilderApp() {
       font: '400 14px/1 var(--font-body)',
       opacity: .85
     }
-  }, "Questions? partners@mtnshade.com")), /*#__PURE__*/React.createElement("main", {
+  }, "Questions? morrisonbibi17@gmail.com")), /*#__PURE__*/React.createElement("main", {
     style: {
       flex: 1,
       display: 'grid',
@@ -2425,7 +2661,7 @@ function MugPreview({
       background: 'linear-gradient(180deg,#F1F2F3,#E3E5E7)'
     }
   }, /*#__PURE__*/React.createElement("img", {
-    src: "assets/imagery/studio-mug-blue.png",
+    src: "../../assets/imagery/studio-mug-blue.png",
     alt: "",
     style: {
       position: 'absolute',
@@ -2507,6 +2743,2196 @@ Object.assign(window, {
 });
 })(); } catch (e) { __ds_ns.__errors.push({ path: "ui_kits/gym-partner/MugPreview.jsx", error: String((e && e.message) || e) }); }
 
+// ui_kits/mug-customizer/CrmCustomers.jsx
+try { (() => {
+function CrmCustomers({
+  ctx
+}) {
+  const {
+    derived
+  } = ctx;
+  const [filter, setFilter] = React.useState('All');
+  const [q, setQ] = React.useState('');
+  const today = crmDay(new Date().toISOString());
+  const F = {
+    'All': () => true,
+    'Leads': c => c.status === 'Lead',
+    'Sampled': c => c.status === 'Sampled',
+    'Customers': c => ['Customer', 'Repeat'].includes(c.status),
+    'Repeat': c => c.status === 'Repeat',
+    'Follow-up due': c => c.follow_up && c.follow_up <= today || c.reorderDue
+  };
+  const rows = derived.customers.filter(F[filter]).filter(c => !q || [c.gym, c.name, c.emails.join(' '), crmLocStr(c.loc), c.tags, c.source].join(' ').toLowerCase().includes(q.toLowerCase()));
+  const exp = () => crmCSV(derived.customers.map(c => ({
+    gym: c.gym,
+    status: c.status,
+    contact: c.name,
+    emails: c.emails.join('; '),
+    phone: c.phone,
+    website: c.website,
+    instagram: c.instagram,
+    city: c.loc.city,
+    state: c.loc.region,
+    country: c.loc.country,
+    orders: c.orders.length,
+    paid_orders: c.paid.length,
+    mugs_ordered: c.units,
+    lifetime_value: c.ltv,
+    first_seen: c.first,
+    last_order: c.last,
+    source: c.source,
+    follow_up: c.follow_up,
+    tags: c.tags,
+    size: c.size,
+    notes: c.notes
+  })), 'mtnshade-customers.csv');
+  return /*#__PURE__*/React.createElement("div", {
+    style: {
+      display: 'flex',
+      flexDirection: 'column',
+      gap: 16
+    }
+  }, /*#__PURE__*/React.createElement("div", {
+    style: {
+      display: 'flex',
+      justifyContent: 'space-between',
+      alignItems: 'center',
+      gap: 12,
+      flexWrap: 'wrap'
+    }
+  }, /*#__PURE__*/React.createElement("h1", {
+    style: crmH
+  }, "Customers"), /*#__PURE__*/React.createElement(CButton, {
+    size: "sm",
+    variant: "outline",
+    onClick: exp
+  }, "Export CSV")), /*#__PURE__*/React.createElement("div", {
+    style: {
+      display: 'flex',
+      gap: 12,
+      flexWrap: 'wrap',
+      alignItems: 'center',
+      justifyContent: 'space-between'
+    }
+  }, /*#__PURE__*/React.createElement(CrmSeg, {
+    value: filter,
+    onChange: setFilter,
+    options: Object.keys(F).map(k => [k, k, derived.customers.filter(F[k]).length])
+  }), /*#__PURE__*/React.createElement("input", {
+    value: q,
+    onChange: e => setQ(e.target.value),
+    placeholder: "Search gym, contact, city, tag",
+    style: {
+      ...crmField,
+      maxWidth: 300
+    }
+  })), /*#__PURE__*/React.createElement(CCard, {
+    padding: 0,
+    style: {
+      overflowX: 'auto'
+    }
+  }, /*#__PURE__*/React.createElement("table", {
+    style: {
+      width: '100%',
+      borderCollapse: 'collapse',
+      minWidth: 940
+    }
+  }, /*#__PURE__*/React.createElement("thead", null, /*#__PURE__*/React.createElement("tr", null, ['Gym', 'Location', 'Status', 'Orders', 'Lifetime value', 'Last order', 'Source', 'Follow-up'].map(h => /*#__PURE__*/React.createElement("th", {
+    key: h,
+    style: crmTh
+  }, h)))), /*#__PURE__*/React.createElement("tbody", null, rows.map(c => /*#__PURE__*/React.createElement("tr", {
+    key: c.key,
+    onClick: () => ctx.openCustomer(c.key),
+    style: {
+      cursor: 'pointer'
+    },
+    onMouseEnter: e => e.currentTarget.style.background = 'var(--steel-50)',
+    onMouseLeave: e => e.currentTarget.style.background = ''
+  }, /*#__PURE__*/React.createElement("td", {
+    style: crmTd
+  }, /*#__PURE__*/React.createElement("div", {
+    style: {
+      font: '600 14px/1.2 var(--font-body)',
+      color: 'var(--text-strong)'
+    }
+  }, c.gym), /*#__PURE__*/React.createElement("div", {
+    style: {
+      ...crmMuted,
+      fontSize: 12
+    }
+  }, c.name, c.emails[0] ? ' · ' + c.emails[0] : '')), /*#__PURE__*/React.createElement("td", {
+    style: crmTd
+  }, crmLocStr(c.loc)), /*#__PURE__*/React.createElement("td", {
+    style: crmTd
+  }, /*#__PURE__*/React.createElement(CBadge, {
+    tone: c.status === 'Repeat' ? 'blue' : c.status === 'Customer' ? 'ink' : c.status === 'Lead' ? 'outline' : 'steel'
+  }, c.status)), /*#__PURE__*/React.createElement("td", {
+    style: crmTd
+  }, c.paid.length, " paid", c.orders.length > c.paid.length ? /*#__PURE__*/React.createElement("span", {
+    style: crmMuted
+  }, " / ", c.orders.length) : null), /*#__PURE__*/React.createElement("td", {
+    style: {
+      ...crmTd,
+      fontWeight: 600,
+      color: 'var(--text-strong)'
+    }
+  }, crmMoney(c.ltv)), /*#__PURE__*/React.createElement("td", {
+    style: crmTd
+  }, crmDate(c.last)), /*#__PURE__*/React.createElement("td", {
+    style: crmTd
+  }, c.source), /*#__PURE__*/React.createElement("td", {
+    style: crmTd
+  }, c.follow_up ? /*#__PURE__*/React.createElement("span", {
+    style: {
+      color: c.follow_up <= today ? 'var(--danger)' : 'var(--text-body)',
+      fontWeight: c.follow_up <= today ? 600 : 400
+    }
+  }, crmDate(c.follow_up)) : c.reorderDue ? /*#__PURE__*/React.createElement("span", {
+    style: {
+      color: 'var(--danger)',
+      fontWeight: 600
+    }
+  }, "Reorder?") : '—'))), !rows.length && /*#__PURE__*/React.createElement("tr", null, /*#__PURE__*/React.createElement("td", {
+    colSpan: 8,
+    style: {
+      ...crmTd,
+      textAlign: 'center',
+      padding: 40
+    }
+  }, "No customers match."))))));
+}
+function CrmCustomerDetail({
+  ctx,
+  id
+}) {
+  const c = ctx.derived.byKey[id];
+  const ov = (ctx.data.customers || {})[id] || {};
+  const [f, setF] = React.useState({
+    status: ov.status || '',
+    follow_up: ov.follow_up || '',
+    tags: ov.tags || '',
+    owner: ov.owner || '',
+    size: ov.size || '',
+    phone: ov.phone || '',
+    website: ov.website || '',
+    instagram: ov.instagram || '',
+    notes: ov.notes || ''
+  });
+  if (!c) return /*#__PURE__*/React.createElement("div", {
+    style: crmMuted
+  }, "Customer not found.");
+  const dirty = Object.keys(f).some(k => (f[k] || '') !== (ov[k] || ''));
+  const up = k => e => setF(x => ({
+    ...x,
+    [k]: e.target.value
+  }));
+  const card = {
+    padding: 20,
+    display: 'flex',
+    flexDirection: 'column',
+    gap: 14
+  };
+  const kv = (k, v) => v ? /*#__PURE__*/React.createElement("div", {
+    style: {
+      display: 'grid',
+      gridTemplateColumns: 'minmax(70px,120px) minmax(0,1fr)',
+      gap: 10,
+      font: '400 14px/1.4 var(--font-body)'
+    }
+  }, /*#__PURE__*/React.createElement("span", {
+    style: {
+      color: 'var(--text-muted)'
+    }
+  }, k), /*#__PURE__*/React.createElement("span", {
+    style: {
+      color: 'var(--text-strong)',
+      overflowWrap: 'anywhere',
+      whiteSpace: 'pre-line'
+    }
+  }, v)) : null;
+  const avg = c.paid.length ? c.ltv / c.paid.length : 0;
+  return /*#__PURE__*/React.createElement("div", {
+    style: {
+      display: 'flex',
+      flexDirection: 'column',
+      gap: 18
+    }
+  }, /*#__PURE__*/React.createElement("div", {
+    style: {
+      display: 'flex',
+      flexDirection: 'column',
+      gap: 8
+    }
+  }, /*#__PURE__*/React.createElement("button", {
+    onClick: ctx.back,
+    style: {
+      border: 'none',
+      background: 'none',
+      padding: 0,
+      cursor: 'pointer',
+      font: '600 13px/1 var(--font-body)',
+      color: 'var(--brand-primary)',
+      alignSelf: 'flex-start'
+    }
+  }, "\u2190 Back"), /*#__PURE__*/React.createElement("div", {
+    style: {
+      display: 'flex',
+      alignItems: 'center',
+      gap: 12,
+      flexWrap: 'wrap'
+    }
+  }, /*#__PURE__*/React.createElement("h1", {
+    style: crmH
+  }, c.gym), /*#__PURE__*/React.createElement(CBadge, {
+    tone: c.status === 'Repeat' ? 'blue' : 'ink'
+  }, c.status), c.tags && c.tags.split(',').map(t => t.trim()).filter(Boolean).map(t => /*#__PURE__*/React.createElement(CBadge, {
+    key: t,
+    tone: "outline"
+  }, t))), /*#__PURE__*/React.createElement("div", {
+    style: crmMuted
+  }, crmLocStr(c.loc), c.loc.src === 'ip' ? ' (approx.)' : '', " \xB7 customer since ", crmDate(c.first), " \xB7 via ", c.source)), /*#__PURE__*/React.createElement("div", {
+    style: {
+      display: 'grid',
+      gridTemplateColumns: 'repeat(auto-fit,minmax(160px,1fr))',
+      gap: 12
+    }
+  }, /*#__PURE__*/React.createElement(CrmStat, {
+    k: "Lifetime value",
+    v: crmMoney(c.ltv)
+  }), /*#__PURE__*/React.createElement(CrmStat, {
+    k: "Paid orders",
+    v: c.paid.length,
+    sub: c.orders.length + ' total incl. quotes'
+  }), /*#__PURE__*/React.createElement(CrmStat, {
+    k: "Mugs ordered",
+    v: c.units
+  }), /*#__PURE__*/React.createElement(CrmStat, {
+    k: "Avg order",
+    v: crmMoney(avg)
+  }), /*#__PURE__*/React.createElement(CrmStat, {
+    k: "Last paid",
+    v: c.lastPaid ? crmDate(c.lastPaid) : '—',
+    sub: c.reorderDue ? 'Over 5 months — time to reorder?' : null
+  })), /*#__PURE__*/React.createElement("div", {
+    style: {
+      display: 'grid',
+      gridTemplateColumns: 'minmax(0,1.5fr) minmax(300px,1fr)',
+      gap: 16,
+      alignItems: 'start'
+    }
+  }, /*#__PURE__*/React.createElement("div", {
+    style: {
+      display: 'flex',
+      flexDirection: 'column',
+      gap: 16,
+      minWidth: 0
+    }
+  }, /*#__PURE__*/React.createElement(CCard, {
+    padding: 0,
+    style: card
+  }, /*#__PURE__*/React.createElement("h2", {
+    style: crmH2
+  }, "Orders"), /*#__PURE__*/React.createElement("div", {
+    style: {
+      overflowX: 'auto'
+    }
+  }, /*#__PURE__*/React.createElement("table", {
+    style: {
+      width: '100%',
+      borderCollapse: 'collapse',
+      minWidth: 620
+    }
+  }, /*#__PURE__*/React.createElement("thead", null, /*#__PURE__*/React.createElement("tr", null, ['Order', 'Date', 'Type', 'Colors', 'Total', 'Payment', 'Stage'].map(h => /*#__PURE__*/React.createElement("th", {
+    key: h,
+    style: crmTh
+  }, h)))), /*#__PURE__*/React.createElement("tbody", null, [...c.orders].reverse().map(o => /*#__PURE__*/React.createElement("tr", {
+    key: o.id,
+    onClick: () => ctx.openOrder(o.id),
+    style: {
+      cursor: 'pointer'
+    }
+  }, /*#__PURE__*/React.createElement("td", {
+    style: {
+      ...crmTd,
+      fontFamily: 'var(--font-mono)',
+      whiteSpace: 'nowrap'
+    }
+  }, o.id), /*#__PURE__*/React.createElement("td", {
+    style: {
+      ...crmTd,
+      whiteSpace: 'nowrap'
+    }
+  }, crmDate(o.created)), /*#__PURE__*/React.createElement("td", {
+    style: crmTd
+  }, crmType(o)), /*#__PURE__*/React.createElement("td", {
+    style: crmTd
+  }, /*#__PURE__*/React.createElement("div", {
+    style: {
+      display: 'flex',
+      gap: 4
+    }
+  }, (o.lines || []).map((l, i) => /*#__PURE__*/React.createElement(CrmSwatch, {
+    key: i,
+    c: l.hold,
+    size: 12
+  })))), /*#__PURE__*/React.createElement("td", {
+    style: crmTd
+  }, crmMoney(crmTotal(o))), /*#__PURE__*/React.createElement("td", {
+    style: crmTd
+  }, /*#__PURE__*/React.createElement(CrmPay, {
+    o: o
+  })), /*#__PURE__*/React.createElement("td", {
+    style: crmTd
+  }, /*#__PURE__*/React.createElement(CrmStage, {
+    stage: o.stage
+  })))))))), /*#__PURE__*/React.createElement(CCard, {
+    padding: 0,
+    style: card
+  }, /*#__PURE__*/React.createElement("h2", {
+    style: crmH2
+  }, "Notes"), /*#__PURE__*/React.createElement("textarea", {
+    value: f.notes,
+    onChange: up('notes'),
+    rows: 6,
+    placeholder: "Front desk volume, decision maker, events, preferences\u2026",
+    style: {
+      ...crmField,
+      resize: 'vertical',
+      font: '400 15px/1.45 var(--font-body)'
+    }
+  }))), /*#__PURE__*/React.createElement("div", {
+    style: {
+      display: 'flex',
+      flexDirection: 'column',
+      gap: 16,
+      minWidth: 0
+    }
+  }, /*#__PURE__*/React.createElement(CCard, {
+    padding: 0,
+    style: card
+  }, /*#__PURE__*/React.createElement("h2", {
+    style: crmH2
+  }, "Account"), /*#__PURE__*/React.createElement(CrmLabeled, {
+    label: 'Status (auto: ' + c.autoStatus + ')'
+  }, /*#__PURE__*/React.createElement(CrmSelect, {
+    value: f.status,
+    options: [['', 'Auto — ' + c.autoStatus], ...CRM_CUST_STATUS],
+    onChange: v => setF(x => ({
+      ...x,
+      status: v
+    }))
+  })), /*#__PURE__*/React.createElement("div", {
+    style: {
+      display: 'grid',
+      gridTemplateColumns: '1fr 1fr',
+      gap: 10
+    }
+  }, /*#__PURE__*/React.createElement(CrmLabeled, {
+    label: "Next follow-up"
+  }, /*#__PURE__*/React.createElement("input", {
+    type: "date",
+    value: f.follow_up,
+    onChange: up('follow_up'),
+    style: crmField
+  })), /*#__PURE__*/React.createElement(CrmLabeled, {
+    label: "Owner"
+  }, /*#__PURE__*/React.createElement("input", {
+    value: f.owner,
+    onChange: up('owner'),
+    style: crmField
+  }))), /*#__PURE__*/React.createElement(CrmLabeled, {
+    label: "Gym size"
+  }, /*#__PURE__*/React.createElement(CrmSelect, {
+    value: f.size,
+    options: [['', '—'], 'Small (<500 members)', 'Medium (500–1,500)', 'Large (1,500+ members)', 'Multi-location'],
+    onChange: v => setF(x => ({
+      ...x,
+      size: v
+    }))
+  })), /*#__PURE__*/React.createElement(CrmLabeled, {
+    label: "Tags (comma separated)"
+  }, /*#__PURE__*/React.createElement("input", {
+    value: f.tags,
+    onChange: up('tags'),
+    placeholder: "hot lead, bouldering, florida",
+    style: crmField
+  })), /*#__PURE__*/React.createElement(CButton, {
+    variant: "ink",
+    disabled: !dirty,
+    onClick: () => ctx.updateCustomer(id, f)
+  }, "Save changes")), /*#__PURE__*/React.createElement(CCard, {
+    padding: 0,
+    style: card
+  }, /*#__PURE__*/React.createElement("h2", {
+    style: crmH2
+  }, "Contact"), kv('Contacts', c.contacts.join(', ')), kv('Emails', c.emails.join('\n')), /*#__PURE__*/React.createElement(CrmLabeled, {
+    label: "Phone"
+  }, /*#__PURE__*/React.createElement("input", {
+    value: f.phone || c.phone,
+    onChange: up('phone'),
+    style: crmField
+  })), /*#__PURE__*/React.createElement("div", {
+    style: {
+      display: 'grid',
+      gridTemplateColumns: '1fr 1fr',
+      gap: 10
+    }
+  }, /*#__PURE__*/React.createElement(CrmLabeled, {
+    label: "Website"
+  }, /*#__PURE__*/React.createElement("input", {
+    value: f.website || c.website,
+    onChange: up('website'),
+    style: crmField
+  })), /*#__PURE__*/React.createElement(CrmLabeled, {
+    label: "Instagram"
+  }, /*#__PURE__*/React.createElement("input", {
+    value: f.instagram || c.instagram,
+    onChange: up('instagram'),
+    style: crmField
+  }))), kv('Address', c.address ? crmAddr(c.address) : ''), kv('Colors ordered', c.colors.join(', ')), c.email && /*#__PURE__*/React.createElement(CButton, {
+    size: "sm",
+    variant: "outline",
+    onClick: () => location.href = 'mailto:' + c.emails.join(',')
+  }, "Email ", c.name ? c.name.split(' ')[0] : 'gym')))));
+}
+Object.assign(window, {
+  CrmCustomers,
+  CrmCustomerDetail
+});
+})(); } catch (e) { __ds_ns.__errors.push({ path: "ui_kits/mug-customizer/CrmCustomers.jsx", error: String((e && e.message) || e) }); }
+
+// ui_kits/mug-customizer/CrmOrders.jsx
+try { (() => {
+function useCrmFile(api, o, f) {
+  const [u, setU] = React.useState(null);
+  React.useEffect(() => {
+    let ok = true;
+    setU(null);
+    if (api.hasFile(o, f)) api.fileUrl(o, f).then(x => {
+      if (ok) setU(x);
+    });else if (f === 'logo' && o.mug && o.mug.logo_url) setU(o.mug.logo_url);
+    return () => {
+      ok = false;
+    };
+  }, [o.id, f, (o.files || []).join()]);
+  return u;
+}
+const crmExt = u => u && /^data:image\/jpe?g|\.jpe?g$/i.test(u) ? 'jpg' : u && /svg/.test(u) ? 'svg' : 'png';
+function CrmFileTile({
+  api,
+  o,
+  f,
+  label
+}) {
+  const u = useCrmFile(api, o, f);
+  const dark = f === 'logo' || f === 'lid_logo';
+  return /*#__PURE__*/React.createElement("div", {
+    style: {
+      display: 'flex',
+      flexDirection: 'column',
+      gap: 8,
+      minWidth: 0
+    }
+  }, /*#__PURE__*/React.createElement("div", {
+    style: {
+      aspectRatio: f === 'dieline' ? '4/3' : '1/1',
+      background: dark ? 'var(--steel-700)' : 'var(--steel-50)',
+      border: '1px solid var(--border-subtle)',
+      borderRadius: 'var(--radius-sm)',
+      display: 'grid',
+      placeItems: 'center',
+      overflow: 'hidden'
+    }
+  }, u ? /*#__PURE__*/React.createElement("img", {
+    src: u,
+    alt: label,
+    style: {
+      maxWidth: '100%',
+      maxHeight: '100%',
+      objectFit: 'contain'
+    }
+  }) : /*#__PURE__*/React.createElement("span", {
+    style: {
+      ...crmMuted,
+      fontSize: 13,
+      color: dark ? '#fff' : undefined,
+      padding: 12,
+      textAlign: 'center'
+    }
+  }, "Not captured")), /*#__PURE__*/React.createElement("div", {
+    style: {
+      display: 'flex',
+      justifyContent: 'space-between',
+      gap: 8,
+      alignItems: 'center'
+    }
+  }, /*#__PURE__*/React.createElement("span", {
+    style: {
+      font: '600 13px/1.2 var(--font-body)',
+      color: 'var(--text-strong)'
+    }
+  }, label), u && /*#__PURE__*/React.createElement("a", {
+    href: u,
+    download: o.id + '-' + f + '.' + crmExt(u),
+    style: {
+      font: '600 13px/1 var(--font-body)',
+      color: 'var(--brand-primary)'
+    }
+  }, "Download")));
+}
+function CrmEdit({
+  o,
+  k,
+  label,
+  type,
+  ctx,
+  placeholder
+}) {
+  const [v, setV] = React.useState(o[k] || '');
+  React.useEffect(() => setV(o[k] || ''), [o.id, o[k]]);
+  const save = x => {
+    if ((x || '') !== (o[k] || '')) ctx.updateOrder(o.id, {
+      [k]: x
+    });
+  };
+  return /*#__PURE__*/React.createElement(CrmLabeled, {
+    label: label
+  }, /*#__PURE__*/React.createElement("input", {
+    type: type || 'text',
+    value: v,
+    placeholder: placeholder,
+    onChange: e => {
+      setV(e.target.value);
+      if (type === 'date') save(e.target.value);
+    },
+    onBlur: e => type !== 'date' && save(e.target.value),
+    style: crmField
+  }));
+}
+function crmSpec(o) {
+  const p = o.packaging || {},
+    m = o.mug || {},
+    a = o.ship && o.ship.address || null;
+  return ['MTNSHADE PRODUCTION ORDER ' + o.id, 'Order date: ' + crmDate(o.created), 'Needed by: ' + (o.needed_by ? crmDate(o.needed_by) : '—'), 'Gym: ' + (o.contact && o.contact.gym || '—'), 'PO: ' + (o.mfg_po || '—'), '', 'MUGS', ...(o.lines || []).map(l => '- ' + l.name + ' hold ' + (l.hold || '').toUpperCase() + (l.custom ? ' (custom color)' : '') + ': ' + l.units + ' mugs' + (l.cartons ? ' / ' + l.cartons + ' cartons of 36' : '') + (l.sample ? ' (SAMPLE)' : '')), 'Body: brushed 18/8 stainless steel', 'Logo: ' + (m.logo_name || '—') + ' · etch from ' + (m.etch || 'auto') + ' · scale ' + Math.round((m.logo_scale || .5) * 100) + '% · centered, 47% height' + (m.logo_cleanup ? ' · LOGO CLEAN-UP REQUESTED' : ''), '', 'PACKAGING: ' + (p.route === 'custom' ? 'Custom box (artwork supplied separately)' : 'Gym logo × MTNShade co-brand box'), ...(p.route === 'custom' ? [] : ['Lid: ' + (p.brand_mode === 'logo' ? 'lid logo file' : 'text "' + (p.brand_text || '') + '"') + ' · font ' + (p.font || '—') + (p.caption ? ' · brand name under logo' : ''), 'Inside flap website: ' + (p.website || '—'), 'Inside flap socials: ' + (p.instagram || '—')]), ...(p.tweaks ? ['Design tweaks: ' + p.tweaks] : []), ...(o.mfg_notes ? ['', 'NOTES: ' + o.mfg_notes] : []), '', 'SHIP TO', ...(a ? [o.ship.name || '', crmAddr(a)] : ['(MTNShade to confirm)'])].join('\n');
+}
+function crmClean(o) {
+  const x = {};
+  Object.keys(o).forEach(k => {
+    if (k[0] !== '_') x[k] = o[k];
+  });
+  return x;
+}
+function crmPacket(o, urls) {
+  const esc = s => String(s == null ? '' : s).replace(/[&<>"]/g, c => ({
+    '&': '&amp;',
+    '<': '&lt;',
+    '>': '&gt;',
+    '"': '&quot;'
+  })[c]);
+  const abs = u => u ? new URL(u, location.href).href : '';
+  const p = o.packaging || {},
+    m = o.mug || {},
+    a = o.ship && o.ship.address || null;
+  const img = (f, l, dark) => urls[f] ? '<figure' + (dark ? ' class="d"' : '') + '><img src="' + abs(urls[f]) + '"><figcaption>' + l + '</figcaption></figure>' : '';
+  const rows = (o.lines || []).map(l => '<tr><td><i style="background:' + esc(l.hold) + '"></i>' + esc(l.name) + (l.sample ? ' (sample)' : '') + '</td><td class="m">' + esc((l.hold || '').toUpperCase()) + '</td><td>' + (l.custom ? 'Custom color — match hex' : 'MTNShade standard') + '</td><td class="r">' + l.units + '</td><td class="r">' + (l.cartons || '—') + '</td></tr>').join('');
+  const kv = (k, v) => v ? '<tr><th>' + k + '</th><td>' + esc(v) + '</td></tr>' : '';
+  const css = 'body{font:14px/1.45 Arial,sans-serif;color:#15171A;max-width:900px;margin:28px auto;padding:0 24px}h1{font:800 28px/1 "Arial Narrow",Arial,sans-serif;text-transform:uppercase;margin:0}h2{font:800 15px/1 "Arial Narrow",Arial,sans-serif;text-transform:uppercase;letter-spacing:.06em;margin:22px 0 8px;border-bottom:2px solid #15171A;padding-bottom:6px}.top{display:flex;justify-content:space-between;gap:20px;align-items:flex-end}table{width:100%;border-collapse:collapse}td,th{padding:7px 8px;border-bottom:1px solid #ddd;text-align:left;vertical-align:top}th{width:200px;color:#555;font-weight:600}.r{text-align:right}.m{font-family:monospace}i{display:inline-block;width:12px;height:12px;border-radius:50%;margin-right:8px;vertical-align:-1px}.g{display:grid;grid-template-columns:1fr 1fr;gap:14px}figure{margin:0;border:1px solid #ddd;border-radius:4px;padding:8px;break-inside:avoid}figure.d{background:#414143}figure.d figcaption{color:#fff}figure.w{grid-column:1/-1}img{width:100%;max-height:360px;object-fit:contain;display:block}figcaption{font-size:12px;color:#555;margin-top:6px}pre{font:inherit;white-space:pre-wrap;margin:0}@media print{button{display:none}}';
+  const html = '<!doctype html><html><head><meta charset="utf-8"><title>' + o.id + ' production order</title><style>' + css + '</style></head><body><button onclick="print()" style="float:right;padding:8px 14px">Print / Save PDF</button>' + '<div class="top"><div><div style="font:700 12px Arial;letter-spacing:.1em;color:#2141A8">MTNSHADE · PRODUCTION ORDER</div><h1>' + esc(o.id) + '</h1></div><div style="text-align:right">' + esc(o.contact && o.contact.gym || '') + '<br>Ordered ' + crmDate(o.created) + (o.needed_by ? '<br><b>Needed by ' + crmDate(o.needed_by) + '</b>' : '') + (o.mfg_po ? '<br>PO ' + esc(o.mfg_po) : '') + '</div></div>' + '<h2>Mugs</h2><table><tr><th style="width:auto">Hold color</th><th style="width:auto">Hex</th><th style="width:auto">Match</th><th class="r" style="width:auto">Mugs</th><th class="r" style="width:auto">Cartons (36)</th></tr>' + rows + '</table>' + '<h2>Mug spec</h2><table>' + kv('Body', 'Brushed 18/8 stainless steel') + kv('Logo file', m.logo_name) + kv('Laser etch from', m.etch || 'auto') + kv('Logo size', Math.round((m.logo_scale || .5) * 100) + '% · centered at 47% height') + kv('Logo clean-up', m.logo_cleanup ? 'Requested — clean up before etching' : '') + '</table>' + '<h2>Packaging</h2><table>' + kv('Box', p.route === 'custom' ? 'Custom box — artwork supplied separately' : 'Gym logo × MTNShade co-brand box') + (p.route === 'custom' ? '' : kv('Lid', p.brand_mode === 'logo' ? 'Lid logo file (see below)' : 'Text: "' + (p.brand_text || '') + '"') + kv('Font', p.font) + kv('Brand name under logo', p.caption ? 'Yes' : 'No') + kv('Inside flap — website', p.website) + kv('Inside flap — socials', p.instagram)) + kv('Design tweaks', p.tweaks) + '</table>' + (o.mfg_notes ? '<h2>Notes</h2><pre>' + esc(o.mfg_notes) + '</pre>' : '') + '<h2>Ship to</h2><pre>' + (a ? esc((o.ship.name || '') + '\n' + crmAddr(a)) : 'MTNShade to confirm') + '</pre>' + '<h2>Artwork</h2><div class="g">' + img('mug', 'Mug render') + img('box', 'Box render') + img('logo', 'Logo file', 1) + img('lid_logo', 'Lid logo', 1) + (urls.dieline ? '<figure class="w"><img src="' + abs(urls.dieline) + '" style="max-height:none"><figcaption>Box dieline — print layout</figcaption></figure>' : '') + '</div></body></html>';
+  const w = window.open('', '_blank');
+  if (!w) return false;
+  w.document.write(html);
+  w.document.close();
+  return true;
+}
+function crmFileUrls(api, o) {
+  const fs = [...new Set([...CRM_FILES.map(x => x[0]), ...(o.files || [])])];
+  return Promise.all(fs.map(f => (api.hasFile(o, f) ? api.fileUrl(o, f) : Promise.resolve(f === 'logo' && o.mug && o.mug.logo_url || null)).then(u => [f, u]))).then(r => Object.fromEntries(r.filter(x => x[1])));
+}
+function CrmOrderDetail({
+  ctx,
+  id
+}) {
+  const {
+    api,
+    data,
+    derived
+  } = ctx;
+  const o = data.orders.find(x => x.id === id);
+  const [note, setNote] = React.useState('');
+  const [busy, setBusy] = React.useState('');
+  const fileRef = React.useRef();
+  if (!o) return /*#__PURE__*/React.createElement("div", {
+    style: crmMuted
+  }, "Order ", id, " not found. ", /*#__PURE__*/React.createElement("a", {
+    href: "#orders",
+    onClick: ctx.back
+  }, "Back to orders"));
+  const c = derived.byKey[o._ckey] || {};
+  const p = o.packaging || {},
+    m = o.mug || {},
+    a = o.ship && o.ship.address || null,
+    loc = crmLoc(o);
+  const extra = (o.files || []).filter(f => !CRM_FILES.some(x => x[0] === f));
+  const rev = crmTotal(o);
+  const cost = +o.mfg_cost || 0;
+  const packet = () => {
+    setBusy('packet');
+    crmFileUrls(api, o).then(u => {
+      if (!crmPacket(o, u)) ctx.flash('Allow pop-ups to open the packet');
+    }).finally(() => setBusy(''));
+  };
+  const zip = () => {
+    if (!window.JSZip) return ctx.flash('Zip library not loaded');
+    setBusy('zip');
+    crmFileUrls(api, o).then(async u => {
+      const z = new JSZip();
+      for (const [f, url] of Object.entries(u)) {
+        try {
+          const b = await (await fetch(url)).blob();
+          z.file(o.id + '-' + f + '.' + (b.type.includes('jpeg') ? 'jpg' : b.type.includes('svg') ? 'svg' : b.type.includes('pdf') ? 'pdf' : 'png'), b);
+        } catch (e) {}
+      }
+      z.file(o.id + '-spec.txt', crmSpec(o));
+      z.file(o.id + '-order.json', JSON.stringify(crmClean(o), null, 2));
+      const b = await z.generateAsync({
+        type: 'blob'
+      });
+      const l = document.createElement('a');
+      l.href = URL.createObjectURL(b);
+      l.download = o.id + '-manufacturer.zip';
+      l.click();
+    }).finally(() => setBusy(''));
+  };
+  const sync = () => {
+    setBusy('sync');
+    api.sync(o.id).then(r => {
+      ctx.putOrder(r.order);
+      ctx.flash(r.changed ? 'Updated from Stripe' : 'No change in Stripe');
+    }, e => ctx.flash(e.message)).finally(() => setBusy(''));
+  };
+  const upload = file => {
+    if (!file) return;
+    const r = new FileReader();
+    r.onload = () => {
+      const f = file.name.replace(/\.[^.]+$/, '').toLowerCase().replace(/[^\w-]+/g, '-').slice(0, 40) || 'file';
+      api.upload(o.id, f, file.name, r.result).then(() => {
+        ctx.putOrder({
+          ...o,
+          files: [...new Set([...(o.files || []), f])]
+        });
+        ctx.flash('File added');
+      }, e => ctx.flash('Upload failed: ' + e.message));
+    };
+    r.readAsDataURL(file);
+  };
+  const card = {
+    padding: 20,
+    display: 'flex',
+    flexDirection: 'column',
+    gap: 14
+  };
+  const kv = (k, v) => v ? /*#__PURE__*/React.createElement("div", {
+    style: {
+      display: 'grid',
+      gridTemplateColumns: 'minmax(70px,130px) minmax(0,1fr)',
+      gap: 10,
+      font: '400 14px/1.4 var(--font-body)'
+    }
+  }, /*#__PURE__*/React.createElement("span", {
+    style: {
+      color: 'var(--text-muted)'
+    }
+  }, k), /*#__PURE__*/React.createElement("span", {
+    style: {
+      color: 'var(--text-strong)',
+      overflowWrap: 'anywhere',
+      whiteSpace: 'pre-line'
+    }
+  }, v)) : null;
+  return /*#__PURE__*/React.createElement("div", {
+    style: {
+      display: 'flex',
+      flexDirection: 'column',
+      gap: 18
+    }
+  }, /*#__PURE__*/React.createElement("div", {
+    style: {
+      display: 'flex',
+      justifyContent: 'space-between',
+      alignItems: 'flex-end',
+      gap: 16,
+      flexWrap: 'wrap'
+    }
+  }, /*#__PURE__*/React.createElement("div", {
+    style: {
+      display: 'flex',
+      flexDirection: 'column',
+      gap: 8
+    }
+  }, /*#__PURE__*/React.createElement("button", {
+    onClick: ctx.back,
+    style: {
+      border: 'none',
+      background: 'none',
+      padding: 0,
+      cursor: 'pointer',
+      font: '600 13px/1 var(--font-body)',
+      color: 'var(--brand-primary)',
+      alignSelf: 'flex-start'
+    }
+  }, "\u2190 All orders"), /*#__PURE__*/React.createElement("div", {
+    style: {
+      display: 'flex',
+      alignItems: 'center',
+      gap: 12,
+      flexWrap: 'wrap'
+    }
+  }, /*#__PURE__*/React.createElement("h1", {
+    style: crmH
+  }, o.contact && o.contact.gym || o.id), /*#__PURE__*/React.createElement(CrmPay, {
+    o: o
+  }), /*#__PURE__*/React.createElement(CrmClient, {
+    o: o
+  })), /*#__PURE__*/React.createElement("div", {
+    style: crmMuted
+  }, o.id, " \xB7 ", crmType(o), " \xB7 ", crmDate(o.created), " \xB7 ", crmMoney(rev))), /*#__PURE__*/React.createElement("div", {
+    style: {
+      display: 'flex',
+      gap: 8,
+      flexWrap: 'wrap'
+    }
+  }, /*#__PURE__*/React.createElement(CButton, {
+    variant: "ink",
+    onClick: packet,
+    disabled: !!busy
+  }, busy === 'packet' ? 'Preparing…' : 'Manufacturer packet'), /*#__PURE__*/React.createElement(CButton, {
+    variant: "outline",
+    onClick: zip,
+    disabled: !!busy
+  }, busy === 'zip' ? 'Zipping…' : 'Download all files'), o.contact && o.contact.email && /*#__PURE__*/React.createElement(CButton, {
+    variant: "outline",
+    onClick: () => location.href = 'mailto:' + o.contact.email + '?subject=' + encodeURIComponent('Your MTNShade mug order ' + o.id)
+  }, "Email customer"), api.live && o.payment && o.payment.session && /*#__PURE__*/React.createElement(CButton, {
+    variant: "ghost",
+    onClick: sync,
+    disabled: !!busy
+  }, "Check Stripe"))), /*#__PURE__*/React.createElement("div", {
+    style: {
+      display: 'grid',
+      gridTemplateColumns: 'minmax(0,1.6fr) minmax(300px,1fr)',
+      gap: 16,
+      alignItems: 'start'
+    }
+  }, /*#__PURE__*/React.createElement("div", {
+    style: {
+      display: 'flex',
+      flexDirection: 'column',
+      gap: 16,
+      minWidth: 0
+    }
+  }, /*#__PURE__*/React.createElement(CCard, {
+    padding: 0,
+    style: card
+  }, /*#__PURE__*/React.createElement("div", {
+    style: {
+      display: 'flex',
+      justifyContent: 'space-between',
+      alignItems: 'center',
+      gap: 10
+    }
+  }, /*#__PURE__*/React.createElement("h2", {
+    style: crmH2
+  }, "Artwork & files"), /*#__PURE__*/React.createElement(CButton, {
+    size: "sm",
+    variant: "ghost",
+    onClick: () => fileRef.current.click()
+  }, "+ Add file"), /*#__PURE__*/React.createElement("input", {
+    ref: fileRef,
+    type: "file",
+    style: {
+      display: 'none'
+    },
+    onChange: e => upload(e.target.files[0])
+  })), /*#__PURE__*/React.createElement("div", {
+    style: {
+      display: 'grid',
+      gridTemplateColumns: 'repeat(auto-fill,minmax(170px,1fr))',
+      gap: 14
+    }
+  }, CRM_FILES.filter(([f]) => f !== 'lid_logo' || api.hasFile(o, f)).map(([f, l]) => /*#__PURE__*/React.createElement(CrmFileTile, {
+    key: f,
+    api: api,
+    o: o,
+    f: f,
+    label: l
+  })), extra.map(f => /*#__PURE__*/React.createElement(CrmFileTile, {
+    key: f,
+    api: api,
+    o: o,
+    f: f,
+    label: f
+  })))), /*#__PURE__*/React.createElement(CCard, {
+    padding: 0,
+    style: card
+  }, /*#__PURE__*/React.createElement("h2", {
+    style: crmH2
+  }, "Mugs"), /*#__PURE__*/React.createElement("table", {
+    style: {
+      width: '100%',
+      borderCollapse: 'collapse'
+    }
+  }, /*#__PURE__*/React.createElement("thead", null, /*#__PURE__*/React.createElement("tr", null, ['Hold color', 'Hex', 'Mugs', 'Cartons', 'Unit', 'Line'].map(h => /*#__PURE__*/React.createElement("th", {
+    key: h,
+    style: crmTh
+  }, h)))), /*#__PURE__*/React.createElement("tbody", null, (o.lines || []).map((l, i) => /*#__PURE__*/React.createElement("tr", {
+    key: i
+  }, /*#__PURE__*/React.createElement("td", {
+    style: crmTd
+  }, /*#__PURE__*/React.createElement("span", {
+    style: {
+      display: 'inline-flex',
+      gap: 8,
+      alignItems: 'center'
+    }
+  }, /*#__PURE__*/React.createElement(CrmSwatch, {
+    c: l.hold
+  }), l.name, l.custom && /*#__PURE__*/React.createElement(CBadge, {
+    tone: "steel"
+  }, "Custom"), l.sample && /*#__PURE__*/React.createElement(CBadge, {
+    tone: "outline"
+  }, "Sample"))), /*#__PURE__*/React.createElement("td", {
+    style: {
+      ...crmTd,
+      fontFamily: 'var(--font-mono)'
+    }
+  }, (l.hold || '').toUpperCase()), /*#__PURE__*/React.createElement("td", {
+    style: crmTd
+  }, l.units), /*#__PURE__*/React.createElement("td", {
+    style: crmTd
+  }, l.cartons || '—'), /*#__PURE__*/React.createElement("td", {
+    style: crmTd
+  }, crmMoney(l.unit_price)), /*#__PURE__*/React.createElement("td", {
+    style: crmTd
+  }, crmMoney((+l.units || 0) * (+l.unit_price || 0))))))), o.pack_fee ? kv('Custom packaging fee', crmMoney(o.pack_fee)) : null, kv('Logo', m.logo_name), kv('Etch from', m.etch), kv('Logo size', m.logo_scale ? Math.round(m.logo_scale * 100) + '%' : ''), kv('Logo clean-up', m.logo_cleanup ? 'Requested' : '')), /*#__PURE__*/React.createElement(CCard, {
+    padding: 0,
+    style: card
+  }, /*#__PURE__*/React.createElement("h2", {
+    style: crmH2
+  }, "Packaging"), kv('Box', p.route === 'custom' ? 'Custom box — contact customer for artwork' : 'Gym logo × MTNShade'), p.route !== 'custom' && /*#__PURE__*/React.createElement(React.Fragment, null, kv('Lid', p.brand_mode === 'logo' ? 'Lid logo file' : '"' + (p.brand_text || '') + '"'), kv('Font', p.font), kv('Name under logo', p.caption ? 'Yes' : 'No'), kv('Website flap', p.website), kv('Socials flap', p.instagram)), kv('Design tweaks', p.tweaks)), (o.notes || o.summary) && /*#__PURE__*/React.createElement(CCard, {
+    padding: 0,
+    style: card
+  }, /*#__PURE__*/React.createElement("h2", {
+    style: crmH2
+  }, "Customer notes"), kv('Notes', o.notes), kv('Summary', o.summary))), /*#__PURE__*/React.createElement("div", {
+    style: {
+      display: 'flex',
+      flexDirection: 'column',
+      gap: 16,
+      minWidth: 0
+    }
+  }, /*#__PURE__*/React.createElement(CCard, {
+    padding: 0,
+    style: card
+  }, /*#__PURE__*/React.createElement("h2", {
+    style: crmH2
+  }, "Status"), /*#__PURE__*/React.createElement(CrmLabeled, {
+    label: "Stage"
+  }, /*#__PURE__*/React.createElement(CrmSelect, {
+    value: o.stage,
+    options: CRM_STAGES,
+    onChange: v => ctx.updateOrder(o.id, {
+      stage: v
+    })
+  })), /*#__PURE__*/React.createElement(CrmLabeled, {
+    label: "Payment"
+  }, /*#__PURE__*/React.createElement(CrmSelect, {
+    value: o.payment && o.payment.status,
+    options: CRM_PAY,
+    onChange: v => ctx.updateOrder(o.id, {
+      payment_status: v
+    })
+  })), /*#__PURE__*/React.createElement("div", {
+    style: {
+      display: 'grid',
+      gridTemplateColumns: '1fr 1fr',
+      gap: 10
+    }
+  }, /*#__PURE__*/React.createElement(CrmEdit, {
+    o: o,
+    k: "needed_by",
+    label: "Needed by",
+    type: "date",
+    ctx: ctx
+  }), /*#__PURE__*/React.createElement(CrmEdit, {
+    o: o,
+    k: "ship_date",
+    label: "Ship date",
+    type: "date",
+    ctx: ctx
+  })), /*#__PURE__*/React.createElement("div", {
+    style: {
+      display: 'grid',
+      gridTemplateColumns: '1fr 1fr',
+      gap: 10
+    }
+  }, /*#__PURE__*/React.createElement(CrmEdit, {
+    o: o,
+    k: "carrier",
+    label: "Carrier",
+    ctx: ctx,
+    placeholder: "UPS"
+  }), /*#__PURE__*/React.createElement(CrmEdit, {
+    o: o,
+    k: "tracking",
+    label: "Tracking #",
+    ctx: ctx
+  }))), /*#__PURE__*/React.createElement(CCard, {
+    padding: 0,
+    style: card
+  }, /*#__PURE__*/React.createElement("h2", {
+    style: crmH2
+  }, "Manufacturer"), /*#__PURE__*/React.createElement("div", {
+    style: {
+      display: 'grid',
+      gridTemplateColumns: '1fr 1fr',
+      gap: 10
+    }
+  }, /*#__PURE__*/React.createElement(CrmEdit, {
+    o: o,
+    k: "manufacturer",
+    label: "Factory",
+    ctx: ctx
+  }), /*#__PURE__*/React.createElement(CrmEdit, {
+    o: o,
+    k: "mfg_po",
+    label: "PO #",
+    ctx: ctx
+  })), /*#__PURE__*/React.createElement(CrmEdit, {
+    o: o,
+    k: "mfg_cost",
+    label: "Your cost ($)",
+    type: "number",
+    ctx: ctx
+  }), cost > 0 && /*#__PURE__*/React.createElement("div", {
+    style: {
+      display: 'flex',
+      justifyContent: 'space-between',
+      font: '600 14px/1 var(--font-body)',
+      color: 'var(--text-strong)'
+    }
+  }, /*#__PURE__*/React.createElement("span", null, "Gross profit"), /*#__PURE__*/React.createElement("span", null, crmMoney(rev - cost), " \xB7 ", rev ? Math.round((rev - cost) / rev * 100) : 0, "%")), /*#__PURE__*/React.createElement(CrmEdit, {
+    o: o,
+    k: "mfg_notes",
+    label: "Notes on packet",
+    ctx: ctx,
+    placeholder: "e.g. Pack 6 extra boxes"
+  }), o.stage !== 'Sent to manufacturer' && ['Received', 'Proof sent', 'Proof approved'].includes(o.stage) && /*#__PURE__*/React.createElement(CButton, {
+    size: "sm",
+    variant: "outline",
+    onClick: () => ctx.updateOrder(o.id, {
+      stage: 'Sent to manufacturer'
+    })
+  }, "Mark sent to manufacturer")), /*#__PURE__*/React.createElement(CCard, {
+    padding: 0,
+    style: card
+  }, /*#__PURE__*/React.createElement("div", {
+    style: {
+      display: 'flex',
+      justifyContent: 'space-between',
+      alignItems: 'center'
+    }
+  }, /*#__PURE__*/React.createElement("h2", {
+    style: crmH2
+  }, "Customer"), /*#__PURE__*/React.createElement("button", {
+    onClick: () => ctx.openCustomer(o._ckey),
+    style: {
+      border: 'none',
+      background: 'none',
+      cursor: 'pointer',
+      font: '600 13px/1 var(--font-body)',
+      color: 'var(--brand-primary)'
+    }
+  }, "Profile \u2192")), kv('Contact', o.contact && o.contact.name), kv('Email', o.contact && o.contact.email), kv('Phone', o.contact && o.contact.phone), kv('Location', crmLocStr(loc) + (loc.src === 'ip' ? ' (approx. from IP)' : '')), kv('Ship to', a ? (o.ship.name || '') + '\n' + crmAddr(a) : ''), kv('History', c.paid ? c.paid.length + ' paid order' + (c.paid.length === 1 ? '' : 's') + ' · ' + crmMoney(c.ltv) + ' lifetime' : ''), kv('Source', [o.attribution && o.attribution.utm_campaign || '(direct)', o.attribution && o.attribution.utm_source].filter(Boolean).join(' · '))), /*#__PURE__*/React.createElement(CCard, {
+    padding: 0,
+    style: card
+  }, /*#__PURE__*/React.createElement("h2", {
+    style: crmH2
+  }, "Activity"), /*#__PURE__*/React.createElement("div", {
+    style: {
+      display: 'flex',
+      gap: 8
+    }
+  }, /*#__PURE__*/React.createElement("input", {
+    value: note,
+    onChange: e => setNote(e.target.value),
+    placeholder: "Add a note\u2026",
+    style: crmField,
+    onKeyDown: e => {
+      if (e.key === 'Enter' && note.trim()) {
+        ctx.updateOrder(o.id, {}, note.trim());
+        setNote('');
+      }
+    }
+  }), /*#__PURE__*/React.createElement(CButton, {
+    size: "sm",
+    variant: "ink",
+    disabled: !note.trim(),
+    onClick: () => {
+      ctx.updateOrder(o.id, {}, note.trim());
+      setNote('');
+    }
+  }, "Add")), /*#__PURE__*/React.createElement("div", {
+    style: {
+      display: 'flex',
+      flexDirection: 'column',
+      gap: 10
+    }
+  }, [...(o.history || [])].reverse().map((h, i) => /*#__PURE__*/React.createElement("div", {
+    key: i,
+    style: {
+      display: 'grid',
+      gridTemplateColumns: '86px minmax(0,1fr)',
+      gap: 10,
+      font: '400 13px/1.4 var(--font-body)'
+    }
+  }, /*#__PURE__*/React.createElement("span", {
+    style: {
+      color: 'var(--text-muted)'
+    }
+  }, crmDate(h.at)), /*#__PURE__*/React.createElement("span", {
+    style: {
+      color: 'var(--text-strong)',
+      fontWeight: h.note ? 400 : 600,
+      fontStyle: h.note ? 'italic' : 'normal'
+    }
+  }, h.text))))))));
+}
+function CrmNewOrder({
+  ctx,
+  onDone
+}) {
+  const [f, setF] = React.useState({
+    gym: '',
+    name: '',
+    email: '',
+    phone: '',
+    color: 'Summit Blue',
+    hold: '#2141A8',
+    units: 36,
+    total: 432,
+    payment_status: 'Invoiced',
+    notes: ''
+  });
+  const [busy, setBusy] = React.useState(false);
+  const up = k => e => setF(x => ({
+    ...x,
+    [k]: e.target.value
+  }));
+  const save = () => {
+    setBusy(true);
+    ctx.api.create({
+      type: 'bulk_order',
+      contact: {
+        gym: f.gym,
+        name: f.name,
+        email: f.email,
+        phone: f.phone
+      },
+      lines: [{
+        hold: f.hold,
+        name: f.color,
+        units: +f.units,
+        cartons: Math.ceil(f.units / 36),
+        custom: !['#2141a8', '#c8102e'].includes(f.hold.toLowerCase()),
+        unit_price: f.units ? +f.total / f.units : 0
+      }],
+      units: +f.units,
+      total: +f.total,
+      notes: f.notes,
+      payment_status: f.payment_status,
+      attribution: {
+        utm_campaign: '(manual)'
+      }
+    }).then(r => {
+      ctx.addOrder(r.order);
+      ctx.flash('Order ' + r.order.id + ' created');
+      onDone(r.order.id);
+    }, e => ctx.flash('Failed: ' + e.message)).finally(() => setBusy(false));
+  };
+  const I = (k, l, t) => /*#__PURE__*/React.createElement(CrmLabeled, {
+    label: l
+  }, /*#__PURE__*/React.createElement("input", {
+    type: t || 'text',
+    value: f[k],
+    onChange: up(k),
+    style: crmField
+  }));
+  return /*#__PURE__*/React.createElement(CCard, {
+    padding: 20,
+    style: {
+      display: 'flex',
+      flexDirection: 'column',
+      gap: 12,
+      border: '1.5px solid var(--steel-900)'
+    }
+  }, /*#__PURE__*/React.createElement("div", {
+    style: {
+      display: 'flex',
+      justifyContent: 'space-between'
+    }
+  }, /*#__PURE__*/React.createElement("h2", {
+    style: crmH2
+  }, "Add order (phone / invoice)"), /*#__PURE__*/React.createElement("button", {
+    onClick: () => onDone(),
+    style: {
+      border: 'none',
+      background: 'none',
+      cursor: 'pointer',
+      font: '400 22px/1 var(--font-body)',
+      color: 'var(--text-muted)'
+    }
+  }, "\xD7")), /*#__PURE__*/React.createElement("div", {
+    style: {
+      display: 'grid',
+      gridTemplateColumns: 'repeat(auto-fit,minmax(180px,1fr))',
+      gap: 12
+    }
+  }, I('gym', 'Gym'), I('name', 'Contact'), I('email', 'Email', 'email'), I('phone', 'Phone'), I('color', 'Hold color name'), I('hold', 'Hex'), I('units', 'Mugs', 'number'), I('total', 'Total ($)', 'number'), /*#__PURE__*/React.createElement(CrmLabeled, {
+    label: "Payment"
+  }, /*#__PURE__*/React.createElement(CrmSelect, {
+    value: f.payment_status,
+    options: CRM_PAY,
+    onChange: v => setF(x => ({
+      ...x,
+      payment_status: v
+    }))
+  }))), I('notes', 'Notes'), /*#__PURE__*/React.createElement("div", null, /*#__PURE__*/React.createElement(CButton, {
+    variant: "ink",
+    disabled: busy || !f.gym,
+    onClick: save
+  }, busy ? 'Saving…' : 'Create order')));
+}
+function CrmOrders({
+  ctx
+}) {
+  const {
+    data
+  } = ctx;
+  const [filter, setFilter] = React.useState('Open');
+  const [q, setQ] = React.useState('');
+  const [adding, setAdding] = React.useState(false);
+  const prod = ['Proof approved', 'Sent to manufacturer', 'In production'];
+  const F = {
+    'Open': o => !['Delivered', 'Canceled', 'Quote'].includes(o.stage),
+    'Needs proof': o => crmPaid(o) && o.stage === 'Received',
+    'In production': o => prod.includes(o.stage),
+    'Shipped': o => ['Shipped', 'Delivered'].includes(o.stage),
+    'Unpaid': o => o.payment && o.payment.status === 'Awaiting payment',
+    'Quotes': o => o.stage === 'Quote',
+    'All': () => true
+  };
+  const live = data.orders.filter(o => !o.archived);
+  const rows = live.filter(F[filter]).filter(o => !q || [o.id, o.contact && o.contact.gym, o.contact && o.contact.name, o.contact && o.contact.email, crmLocStr(crmLoc(o))].join(' ').toLowerCase().includes(q.toLowerCase())).sort((a, b) => a.created < b.created ? 1 : -1);
+  const exp = () => crmCSV(live.map(o => {
+    const l = crmLoc(o);
+    return {
+      order_id: o.id,
+      created: o.created,
+      type: crmType(o),
+      gym: o.contact && o.contact.gym,
+      contact: o.contact && o.contact.name,
+      email: o.contact && o.contact.email,
+      phone: o.contact && o.contact.phone,
+      city: l.city,
+      state: l.region,
+      country: l.country,
+      client: o._prior ? 'Repeat' : 'New',
+      colors: (o.lines || []).map(x => x.name + ' ' + x.hold + ' ×' + x.units).join('; '),
+      mugs: (o.lines || []).reduce((s, x) => s + (+x.units || 0), 0),
+      total: crmTotal(o),
+      payment: o.payment && o.payment.status,
+      stage: o.stage,
+      needed_by: o.needed_by || '',
+      ship_date: o.ship_date || '',
+      tracking: o.tracking || '',
+      manufacturer: o.manufacturer || '',
+      po: o.mfg_po || '',
+      cost: o.mfg_cost || '',
+      campaign: o.attribution && o.attribution.utm_campaign
+    };
+  }), 'mtnshade-orders.csv');
+  return /*#__PURE__*/React.createElement("div", {
+    style: {
+      display: 'flex',
+      flexDirection: 'column',
+      gap: 16
+    }
+  }, /*#__PURE__*/React.createElement("div", {
+    style: {
+      display: 'flex',
+      justifyContent: 'space-between',
+      alignItems: 'center',
+      gap: 12,
+      flexWrap: 'wrap'
+    }
+  }, /*#__PURE__*/React.createElement("h1", {
+    style: crmH
+  }, "Orders"), /*#__PURE__*/React.createElement("div", {
+    style: {
+      display: 'flex',
+      gap: 8
+    }
+  }, /*#__PURE__*/React.createElement(CButton, {
+    size: "sm",
+    variant: "outline",
+    onClick: exp
+  }, "Export CSV"), /*#__PURE__*/React.createElement(CButton, {
+    size: "sm",
+    variant: "ink",
+    onClick: () => setAdding(true)
+  }, "+ Add order"))), adding && /*#__PURE__*/React.createElement(CrmNewOrder, {
+    ctx: ctx,
+    onDone: id => {
+      setAdding(false);
+      if (id) ctx.openOrder(id);
+    }
+  }), /*#__PURE__*/React.createElement("div", {
+    style: {
+      display: 'flex',
+      gap: 12,
+      flexWrap: 'wrap',
+      alignItems: 'center',
+      justifyContent: 'space-between'
+    }
+  }, /*#__PURE__*/React.createElement(CrmSeg, {
+    value: filter,
+    onChange: setFilter,
+    options: Object.keys(F).map(k => [k, k, live.filter(F[k]).length])
+  }), /*#__PURE__*/React.createElement("input", {
+    value: q,
+    onChange: e => setQ(e.target.value),
+    placeholder: "Search gym, email, city, order #",
+    style: {
+      ...crmField,
+      maxWidth: 300
+    }
+  })), /*#__PURE__*/React.createElement(CCard, {
+    padding: 0,
+    style: {
+      overflowX: 'auto'
+    }
+  }, /*#__PURE__*/React.createElement("table", {
+    style: {
+      width: '100%',
+      borderCollapse: 'collapse',
+      minWidth: 960
+    }
+  }, /*#__PURE__*/React.createElement("thead", null, /*#__PURE__*/React.createElement("tr", null, ['Order', 'Gym', 'Location', 'Type', 'Mugs', 'Total', 'Payment', 'Stage', 'Needed by'].map(h => /*#__PURE__*/React.createElement("th", {
+    key: h,
+    style: crmTh
+  }, h)))), /*#__PURE__*/React.createElement("tbody", null, rows.map(o => {
+    const l = crmLoc(o);
+    return /*#__PURE__*/React.createElement("tr", {
+      key: o.id,
+      onClick: () => ctx.openOrder(o.id),
+      style: {
+        cursor: 'pointer'
+      },
+      onMouseEnter: e => e.currentTarget.style.background = 'var(--steel-50)',
+      onMouseLeave: e => e.currentTarget.style.background = ''
+    }, /*#__PURE__*/React.createElement("td", {
+      style: crmTd
+    }, /*#__PURE__*/React.createElement("div", {
+      style: {
+        font: '600 14px/1.2 var(--font-mono)',
+        color: 'var(--text-strong)'
+      }
+    }, o.id), /*#__PURE__*/React.createElement("div", {
+      style: {
+        ...crmMuted,
+        fontSize: 12
+      }
+    }, crmDate(o.created))), /*#__PURE__*/React.createElement("td", {
+      style: crmTd
+    }, /*#__PURE__*/React.createElement("div", {
+      style: {
+        font: '600 14px/1.2 var(--font-body)',
+        color: 'var(--text-strong)'
+      }
+    }, o.contact && o.contact.gym || '—'), /*#__PURE__*/React.createElement("div", {
+      style: {
+        marginTop: 4
+      }
+    }, /*#__PURE__*/React.createElement(CrmClient, {
+      o: o
+    }))), /*#__PURE__*/React.createElement("td", {
+      style: crmTd
+    }, crmLocStr(l), l.src === 'ip' && /*#__PURE__*/React.createElement("div", {
+      style: {
+        ...crmMuted,
+        fontSize: 12
+      }
+    }, "approx.")), /*#__PURE__*/React.createElement("td", {
+      style: crmTd
+    }, crmType(o)), /*#__PURE__*/React.createElement("td", {
+      style: crmTd
+    }, /*#__PURE__*/React.createElement("div", {
+      style: {
+        display: 'flex',
+        gap: 4,
+        alignItems: 'center'
+      }
+    }, (o.lines || []).map((x, i) => /*#__PURE__*/React.createElement(CrmSwatch, {
+      key: i,
+      c: x.hold,
+      size: 12
+    })), /*#__PURE__*/React.createElement("span", {
+      style: {
+        marginLeft: 4
+      }
+    }, (o.lines || []).reduce((s, x) => s + (+x.units || 0), 0)))), /*#__PURE__*/React.createElement("td", {
+      style: {
+        ...crmTd,
+        fontWeight: 600,
+        color: 'var(--text-strong)'
+      }
+    }, crmMoney(crmTotal(o))), /*#__PURE__*/React.createElement("td", {
+      style: crmTd
+    }, /*#__PURE__*/React.createElement(CrmPay, {
+      o: o
+    })), /*#__PURE__*/React.createElement("td", {
+      style: crmTd
+    }, /*#__PURE__*/React.createElement(CrmStage, {
+      stage: o.stage
+    })), /*#__PURE__*/React.createElement("td", {
+      style: crmTd
+    }, o.needed_by ? crmDate(o.needed_by) : '—'));
+  }), !rows.length && /*#__PURE__*/React.createElement("tr", null, /*#__PURE__*/React.createElement("td", {
+    colSpan: 9,
+    style: {
+      ...crmTd,
+      textAlign: 'center',
+      padding: 40
+    }
+  }, live.length ? 'No orders match.' : 'No orders yet — they appear here as soon as a gym checks out, orders a sample, or requests a quote.'))))));
+}
+Object.assign(window, {
+  CrmOrders,
+  CrmOrderDetail
+});
+})(); } catch (e) { __ds_ns.__errors.push({ path: "ui_kits/mug-customizer/CrmOrders.jsx", error: String((e && e.message) || e) }); }
+
+// ui_kits/mug-customizer/CrmShell.jsx
+try { (() => {
+const {
+  Button: CButton,
+  Input: CInput,
+  Card: CCard,
+  Badge: CBadge,
+  Logo: CLogo,
+  TabBar: CTabs
+} = window.MTNShadeDesignSystem_e114fa || {};
+const crmLbl = {
+  font: '700 12px/1 var(--font-body)',
+  textTransform: 'uppercase',
+  letterSpacing: '.05em',
+  color: 'var(--text-muted)'
+};
+const crmH = {
+  font: '700 24px/1 var(--font-display)',
+  textTransform: 'uppercase',
+  color: 'var(--text-strong)',
+  margin: 0
+};
+const crmH2 = {
+  font: '700 17px/1.1 var(--font-display)',
+  textTransform: 'uppercase',
+  letterSpacing: '.02em',
+  color: 'var(--text-strong)',
+  margin: 0
+};
+const crmMuted = {
+  font: '400 14px/1.45 var(--font-body)',
+  color: 'var(--text-muted)'
+};
+const crmField = {
+  font: '400 14px/1.2 var(--font-body)',
+  padding: '8px 10px',
+  border: '1.5px solid var(--border-strong)',
+  borderRadius: 'var(--radius-sm)',
+  background: '#fff',
+  color: 'var(--text-strong)',
+  width: '100%',
+  boxSizing: 'border-box',
+  minWidth: 0
+};
+const crmTh = {
+  ...crmLbl,
+  textAlign: 'left',
+  padding: '10px 12px',
+  borderBottom: '1px solid var(--border-subtle)',
+  whiteSpace: 'nowrap',
+  background: 'var(--steel-50)'
+};
+const crmTd = {
+  font: '400 14px/1.3 var(--font-body)',
+  color: 'var(--text-body)',
+  padding: '12px',
+  borderBottom: '1px solid var(--border-subtle)',
+  verticalAlign: 'top'
+};
+function CrmSeg({
+  value,
+  options,
+  onChange
+}) {
+  return /*#__PURE__*/React.createElement("div", {
+    style: {
+      display: 'flex',
+      flexWrap: 'wrap',
+      background: 'var(--steel-100)',
+      borderRadius: 'var(--radius-sm)',
+      padding: 3,
+      gap: 3
+    }
+  }, options.map(([v, l, n]) => /*#__PURE__*/React.createElement("button", {
+    key: v,
+    onClick: () => onChange(v),
+    style: {
+      border: 'none',
+      cursor: 'pointer',
+      padding: '8px 12px',
+      borderRadius: 3,
+      font: '700 13px/1 var(--font-display)',
+      textTransform: 'uppercase',
+      letterSpacing: '.05em',
+      background: value === v ? '#fff' : 'transparent',
+      color: value === v ? 'var(--text-strong)' : 'var(--text-muted)',
+      boxShadow: value === v ? 'var(--shadow-sm)' : 'none',
+      display: 'flex',
+      gap: 6,
+      alignItems: 'center'
+    }
+  }, l, n != null && /*#__PURE__*/React.createElement("span", {
+    style: {
+      font: '600 12px/1 var(--font-body)',
+      color: 'var(--text-muted)'
+    }
+  }, n))));
+}
+function CrmStage({
+  stage
+}) {
+  return /*#__PURE__*/React.createElement("span", {
+    style: {
+      display: 'inline-flex',
+      alignItems: 'center',
+      gap: 6,
+      font: '600 13px/1.2 var(--font-body)',
+      color: 'var(--text-strong)',
+      whiteSpace: 'nowrap'
+    }
+  }, /*#__PURE__*/React.createElement("span", {
+    style: {
+      width: 8,
+      height: 8,
+      borderRadius: '50%',
+      background: CRM_STAGE_COLOR[stage] || 'var(--steel-400)',
+      flex: 'none'
+    }
+  }), stage || '—');
+}
+function CrmPay({
+  o
+}) {
+  const s = o.payment && o.payment.status || '—';
+  return /*#__PURE__*/React.createElement(CBadge, {
+    tone: s === 'Paid' ? 'blue' : s === 'Refunded' ? 'red' : s === 'Quote' ? 'outline' : 'steel'
+  }, s);
+}
+function CrmClient({
+  o
+}) {
+  return o._prior ? /*#__PURE__*/React.createElement(CBadge, {
+    tone: "ink"
+  }, "Repeat client") : /*#__PURE__*/React.createElement(CBadge, {
+    tone: "outline"
+  }, "New client");
+}
+function CrmSwatch({
+  c,
+  size = 14
+}) {
+  return /*#__PURE__*/React.createElement("span", {
+    style: {
+      width: size,
+      height: size,
+      borderRadius: '50%',
+      background: c,
+      flex: 'none',
+      display: 'inline-block',
+      boxShadow: 'inset 0 -2px 3px rgba(0,0,0,.25)'
+    }
+  });
+}
+function CrmSelect({
+  value,
+  options,
+  onChange,
+  style
+}) {
+  return /*#__PURE__*/React.createElement("select", {
+    value: value || '',
+    onChange: e => onChange(e.target.value),
+    style: {
+      ...crmField,
+      cursor: 'pointer',
+      ...style
+    }
+  }, options.map(o => typeof o === 'string' ? /*#__PURE__*/React.createElement("option", {
+    key: o,
+    value: o
+  }, o) : /*#__PURE__*/React.createElement("option", {
+    key: o[0],
+    value: o[0]
+  }, o[1])));
+}
+function CrmLabeled({
+  label,
+  children
+}) {
+  return /*#__PURE__*/React.createElement("label", {
+    style: {
+      display: 'flex',
+      flexDirection: 'column',
+      gap: 6,
+      minWidth: 0
+    }
+  }, /*#__PURE__*/React.createElement("span", {
+    style: crmLbl
+  }, label), children);
+}
+function CrmLogin({
+  onKey,
+  err,
+  busy
+}) {
+  const [k, setK] = React.useState('');
+  return /*#__PURE__*/React.createElement("div", {
+    style: {
+      minHeight: '100vh',
+      display: 'grid',
+      placeItems: 'center',
+      background: 'var(--steel-900)',
+      padding: 24
+    }
+  }, /*#__PURE__*/React.createElement("form", {
+    onSubmit: e => {
+      e.preventDefault();
+      onKey(k);
+    },
+    style: {
+      width: '100%',
+      maxWidth: 380,
+      background: '#fff',
+      borderRadius: 'var(--radius-md)',
+      padding: 28,
+      display: 'flex',
+      flexDirection: 'column',
+      gap: 16
+    }
+  }, /*#__PURE__*/React.createElement(CLogo, {
+    variant: "horizontal",
+    color: "blue",
+    height: 30,
+    assetBase: "../../assets/logo/"
+  }), /*#__PURE__*/React.createElement("h1", {
+    style: crmH
+  }, "Mug CRM"), /*#__PURE__*/React.createElement(CInput, {
+    label: "CRM password",
+    type: "password",
+    value: k,
+    onChange: e => setK(e.target.value),
+    error: err,
+    autoFocus: true
+  }), /*#__PURE__*/React.createElement(CButton, {
+    variant: "ink",
+    size: "lg",
+    fullWidth: true,
+    disabled: busy || !k
+  }, busy ? 'Checking…' : 'Open CRM'), /*#__PURE__*/React.createElement("div", {
+    style: {
+      ...crmMuted,
+      fontSize: 13
+    }
+  }, "The password is the CRM_PASSWORD value in your Netlify environment variables.")));
+}
+function CrmApp() {
+  const [mode, setMode] = React.useState(null);
+  const [key, setKey] = React.useState(() => sessionStorage.getItem('mtnshade-crm-key') || '');
+  const [api, setApi] = React.useState(null);
+  const [data, setData] = React.useState(null);
+  const [err, setErr] = React.useState('');
+  const [busy, setBusy] = React.useState(false);
+  const [view, setView] = React.useState(() => (location.hash.match(/^#(dashboard|orders|customers)/) || [])[1] || 'dashboard');
+  const [sel, setSel] = React.useState(() => {
+    const m = location.hash.match(/^#(order|customer)\/(.+)$/);
+    return m ? {
+      kind: m[1],
+      id: decodeURIComponent(m[2])
+    } : null;
+  });
+  const [toast, setToast] = React.useState('');
+  React.useEffect(() => {
+    crmProbe().then(m => {
+      setMode(m);
+      if (m === 'demo') setApi(crmDemo());
+    });
+  }, []);
+  React.useEffect(() => {
+    if (mode === 'live' && key && !api) login(key);
+  }, [mode]);
+  React.useEffect(() => {
+    if (api) load();
+  }, [api]);
+  React.useEffect(() => {
+    const h = sel ? '#' + sel.kind + '/' + encodeURIComponent(sel.id) : '#' + view;
+    if (location.hash !== h) history.replaceState(null, '', h);
+  }, [view, sel]);
+  function login(k) {
+    setBusy(true);
+    setErr('');
+    const c = crmLive(k);
+    c.list().then(d => {
+      sessionStorage.setItem('mtnshade-crm-key', k);
+      setKey(k);
+      setApi(c);
+      setData(d);
+    }, e => {
+      setErr(e.status === 401 ? 'Wrong password' : e.message);
+      sessionStorage.removeItem('mtnshade-crm-key');
+    }).finally(() => setBusy(false));
+  }
+  function load() {
+    return api.list().then(setData, e => setToast('Could not load: ' + e.message));
+  }
+  const flash = t => {
+    setToast(t);
+    clearTimeout(window.__crmT);
+    window.__crmT = setTimeout(() => setToast(''), 3500);
+  };
+  const derived = React.useMemo(() => data ? crmDerive(data.orders, data.customers) : null, [data]);
+  const putOrder = o => setData(d => ({
+    ...d,
+    orders: d.orders.map(x => x.id === o.id ? {
+      ...o,
+      files: o.files || x.files,
+      _demoFiles: x._demoFiles
+    } : x)
+  }));
+  const ctx = {
+    api,
+    data,
+    derived,
+    flash,
+    reload: load,
+    putOrder,
+    updateOrder: (id, patch, note) => api.update(id, patch, note).then(r => {
+      putOrder(r.order);
+      return r.order;
+    }, e => {
+      flash('Save failed: ' + e.message);
+      throw e;
+    }),
+    updateCustomer: (k, patch) => api.customer(k, patch).then(r => {
+      setData(d => ({
+        ...d,
+        customers: {
+          ...d.customers,
+          [k]: r.customer
+        }
+      }));
+      flash('Customer saved');
+    }, e => flash('Save failed: ' + e.message)),
+    openOrder: id => setSel({
+      kind: 'order',
+      id
+    }),
+    openCustomer: id => setSel({
+      kind: 'customer',
+      id
+    }),
+    back: () => setSel(null),
+    addOrder: o => setData(d => ({
+      ...d,
+      orders: [...d.orders, o]
+    }))
+  };
+  if (mode === null) return /*#__PURE__*/React.createElement("div", {
+    style: {
+      padding: 40,
+      ...crmMuted
+    }
+  }, "Loading\u2026");
+  if (mode === 'live' && !api) return /*#__PURE__*/React.createElement(CrmLogin, {
+    onKey: login,
+    err: err,
+    busy: busy
+  });
+  const tabs = [{
+    id: 'dashboard',
+    label: 'Dashboard'
+  }, {
+    id: 'orders',
+    label: 'Orders'
+  }, {
+    id: 'customers',
+    label: 'Customers'
+  }];
+  return /*#__PURE__*/React.createElement("div", {
+    style: {
+      minHeight: '100vh',
+      background: 'var(--surface-sunken)'
+    }
+  }, /*#__PURE__*/React.createElement("header", {
+    style: {
+      display: 'flex',
+      alignItems: 'center',
+      justifyContent: 'space-between',
+      gap: 16,
+      padding: '0 24px',
+      minHeight: 60,
+      background: 'var(--steel-900)',
+      color: '#fff',
+      flexWrap: 'wrap'
+    }
+  }, /*#__PURE__*/React.createElement("div", {
+    style: {
+      display: 'flex',
+      alignItems: 'center',
+      gap: 14
+    }
+  }, /*#__PURE__*/React.createElement(CLogo, {
+    variant: "horizontal",
+    height: 26,
+    assetBase: "../../assets/logo/"
+  }), /*#__PURE__*/React.createElement("span", {
+    style: {
+      font: '600 15px/1 var(--font-display)',
+      textTransform: 'uppercase',
+      letterSpacing: '.12em',
+      opacity: .8
+    }
+  }, "Mug CRM")), /*#__PURE__*/React.createElement("div", {
+    style: {
+      display: 'flex',
+      alignItems: 'center',
+      gap: 4
+    }
+  }, tabs.map(t => /*#__PURE__*/React.createElement("button", {
+    key: t.id,
+    onClick: () => {
+      setView(t.id);
+      setSel(null);
+    },
+    style: {
+      border: 'none',
+      background: 'none',
+      cursor: 'pointer',
+      padding: '20px 12px',
+      font: '700 14px/1 var(--font-display)',
+      textTransform: 'uppercase',
+      letterSpacing: '.08em',
+      color: '#fff',
+      opacity: view === t.id && !sel ? 1 : .6,
+      boxShadow: view === t.id && !sel ? 'inset 0 -3px 0 var(--brand-primary)' : 'none'
+    }
+  }, t.label))), /*#__PURE__*/React.createElement("div", {
+    style: {
+      display: 'flex',
+      gap: 8
+    }
+  }, /*#__PURE__*/React.createElement(CButton, {
+    size: "sm",
+    variant: "inverse",
+    onClick: () => load().then(() => flash('Refreshed'))
+  }, "Refresh"), api && api.live && /*#__PURE__*/React.createElement(CButton, {
+    size: "sm",
+    variant: "ghost",
+    style: {
+      color: '#fff'
+    },
+    onClick: () => {
+      sessionStorage.removeItem('mtnshade-crm-key');
+      location.reload();
+    }
+  }, "Sign out"))), !api || !api.live ? /*#__PURE__*/React.createElement("div", {
+    style: {
+      background: 'var(--warning)',
+      color: 'var(--steel-900)',
+      font: '600 13px/1.4 var(--font-body)',
+      padding: '8px 24px'
+    }
+  }, "Demo data \u2014 the live backend isn't reachable from this preview. On your Netlify site this page shows real orders.") : null, /*#__PURE__*/React.createElement("main", {
+    style: {
+      padding: 24,
+      maxWidth: 1320,
+      margin: '0 auto'
+    }
+  }, !derived ? /*#__PURE__*/React.createElement("div", {
+    style: crmMuted
+  }, "Loading orders\u2026") : sel && sel.kind === 'order' ? /*#__PURE__*/React.createElement(CrmOrderDetail, {
+    ctx: ctx,
+    id: sel.id
+  }) : sel && sel.kind === 'customer' ? /*#__PURE__*/React.createElement(CrmCustomerDetail, {
+    ctx: ctx,
+    id: sel.id
+  }) : view === 'orders' ? /*#__PURE__*/React.createElement(CrmOrders, {
+    ctx: ctx
+  }) : view === 'customers' ? /*#__PURE__*/React.createElement(CrmCustomers, {
+    ctx: ctx
+  }) : /*#__PURE__*/React.createElement(CrmDashboard, {
+    ctx: ctx,
+    go: setView
+  })), toast && /*#__PURE__*/React.createElement("div", {
+    style: {
+      position: 'fixed',
+      bottom: 20,
+      left: '50%',
+      transform: 'translateX(-50%)',
+      background: 'var(--steel-900)',
+      color: '#fff',
+      padding: '12px 18px',
+      borderRadius: 'var(--radius-md)',
+      font: '500 14px/1.3 var(--font-body)',
+      boxShadow: 'var(--shadow-md)',
+      zIndex: 20
+    }
+  }, toast));
+}
+function CrmStat({
+  k,
+  v,
+  sub
+}) {
+  return /*#__PURE__*/React.createElement("div", {
+    style: {
+      display: 'flex',
+      flexDirection: 'column',
+      gap: 8,
+      padding: 18,
+      background: '#fff',
+      borderRadius: 'var(--radius-md)',
+      border: '1px solid var(--border-subtle)',
+      minWidth: 0
+    }
+  }, /*#__PURE__*/React.createElement("span", {
+    style: crmLbl
+  }, k), /*#__PURE__*/React.createElement("span", {
+    style: {
+      font: '700 32px/1 var(--font-display)',
+      color: 'var(--text-strong)'
+    }
+  }, v), sub && /*#__PURE__*/React.createElement("span", {
+    style: {
+      ...crmMuted,
+      fontSize: 13
+    }
+  }, sub));
+}
+function CrmBars({
+  rows,
+  fmt
+}) {
+  const max = Math.max(1, ...rows.map(r => r[1]));
+  return /*#__PURE__*/React.createElement("div", {
+    style: {
+      display: 'flex',
+      flexDirection: 'column',
+      gap: 10
+    }
+  }, rows.length ? rows.map(([k, v, extra]) => /*#__PURE__*/React.createElement("div", {
+    key: k,
+    style: {
+      display: 'grid',
+      gridTemplateColumns: 'minmax(80px,140px) minmax(0,1fr) auto',
+      gap: 10,
+      alignItems: 'center'
+    }
+  }, /*#__PURE__*/React.createElement("span", {
+    style: {
+      font: '600 14px/1.2 var(--font-body)',
+      color: 'var(--text-strong)',
+      overflow: 'hidden',
+      textOverflow: 'ellipsis',
+      whiteSpace: 'nowrap'
+    }
+  }, k), /*#__PURE__*/React.createElement("span", {
+    style: {
+      height: 10,
+      background: 'var(--steel-100)',
+      borderRadius: 5,
+      overflow: 'hidden'
+    }
+  }, /*#__PURE__*/React.createElement("span", {
+    style: {
+      display: 'block',
+      height: '100%',
+      width: v / max * 100 + '%',
+      background: 'var(--brand-primary)',
+      borderRadius: 5
+    }
+  })), /*#__PURE__*/React.createElement("span", {
+    style: {
+      font: '400 13px/1 var(--font-body)',
+      color: 'var(--text-muted)',
+      whiteSpace: 'nowrap'
+    }
+  }, fmt ? fmt(v) : v, extra ? ' · ' + extra : ''))) : /*#__PURE__*/React.createElement("span", {
+    style: crmMuted
+  }, "No data yet."));
+}
+function CrmDashboard({
+  ctx,
+  go
+}) {
+  const {
+    data,
+    derived
+  } = ctx;
+  const O = data.orders.filter(o => !o.archived);
+  const paid = O.filter(crmPaid);
+  const sum = a => a.reduce((s, o) => s + crmTotal(o), 0);
+  const paying = derived.customers.filter(c => c.paid.length);
+  const repeat = derived.customers.filter(c => c.bulk.length >= 2);
+  const today = crmDay(new Date().toISOString());
+  const soon = crmDay(new Date(Date.now() + 21 * 864e5).toISOString());
+  const prod = ['Proof approved', 'Sent to manufacturer', 'In production'];
+  const act = [...O.filter(o => crmPaid(o) && o.stage === 'Received').map(o => [o, 'Send proof']), ...O.filter(o => o.stage === 'Proof approved').map(o => [o, 'Send to manufacturer']), ...O.filter(o => o.payment && o.payment.status === 'Awaiting payment' && Date.now() - new Date(o.created) > 864e5).map(o => [o, 'Unpaid — follow up']), ...O.filter(o => o.stage === 'Quote').map(o => [o, 'Send quote']), ...O.filter(o => o.needed_by && o.needed_by <= soon && !['Shipped', 'Delivered', 'Canceled'].includes(o.stage)).map(o => [o, 'Needed by ' + crmDate(o.needed_by)])];
+  const fol = derived.customers.filter(c => c.follow_up && c.follow_up <= today || c.reorderDue);
+  const group = f => {
+    const m = {};
+    paid.forEach(o => {
+      const k = f(o);
+      if (!k) return;
+      m[k] = (m[k] || 0) + crmTotal(o);
+    });
+    return Object.entries(m).sort((a, b) => b[1] - a[1]).slice(0, 8);
+  };
+  const camp = {};
+  O.forEach(o => {
+    const k = o.attribution && o.attribution.utm_campaign || '(direct)';
+    camp[k] = camp[k] || {
+      n: 0,
+      p: 0,
+      rev: 0
+    };
+    camp[k].n++;
+    if (crmPaid(o)) {
+      camp[k].p++;
+      camp[k].rev += crmTotal(o);
+    }
+  });
+  const colors = {};
+  paid.forEach(o => (o.lines || []).forEach(l => {
+    if (!l.sample) colors[l.name] = (colors[l.name] || 0) + (+l.units || 0);
+  }));
+  const card = {
+    padding: 20,
+    display: 'flex',
+    flexDirection: 'column',
+    gap: 14
+  };
+  return /*#__PURE__*/React.createElement("div", {
+    style: {
+      display: 'flex',
+      flexDirection: 'column',
+      gap: 20
+    }
+  }, /*#__PURE__*/React.createElement("h1", {
+    style: crmH
+  }, "Dashboard"), /*#__PURE__*/React.createElement("div", {
+    style: {
+      display: 'grid',
+      gridTemplateColumns: 'repeat(auto-fit,minmax(150px,1fr))',
+      gap: 12
+    }
+  }, /*#__PURE__*/React.createElement(CrmStat, {
+    k: "Paid revenue",
+    v: crmMoney(sum(paid)),
+    sub: paid.length + ' paid orders'
+  }), /*#__PURE__*/React.createElement(CrmStat, {
+    k: "In production",
+    v: O.filter(o => prod.includes(o.stage)).length,
+    sub: "Approved \u2192 manufacturer"
+  }), /*#__PURE__*/React.createElement(CrmStat, {
+    k: "Awaiting payment",
+    v: O.filter(o => o.payment && o.payment.status === 'Awaiting payment').length,
+    sub: crmMoney(sum(O.filter(o => o.payment && o.payment.status === 'Awaiting payment'))) + ' open'
+  }), /*#__PURE__*/React.createElement(CrmStat, {
+    k: "Avg order",
+    v: crmMoney(paid.length ? sum(paid) / paid.length : 0)
+  }), /*#__PURE__*/React.createElement(CrmStat, {
+    k: "Repeat clients",
+    v: paying.length ? Math.round(repeat.length / paying.length * 100) + '%' : '—',
+    sub: repeat.length + ' of ' + paying.length + ' paying gyms'
+  })), /*#__PURE__*/React.createElement("div", {
+    style: {
+      display: 'grid',
+      gridTemplateColumns: 'repeat(auto-fit,minmax(340px,1fr))',
+      gap: 16
+    }
+  }, /*#__PURE__*/React.createElement(CCard, {
+    padding: 0,
+    style: card
+  }, /*#__PURE__*/React.createElement("h2", {
+    style: crmH2
+  }, "Needs action"), act.length ? act.slice(0, 10).map(([o, t], i) => /*#__PURE__*/React.createElement("button", {
+    key: o.id + i,
+    onClick: () => ctx.openOrder(o.id),
+    style: {
+      display: 'flex',
+      justifyContent: 'space-between',
+      gap: 12,
+      alignItems: 'center',
+      border: 'none',
+      borderTop: i ? '1px solid var(--border-subtle)' : 'none',
+      background: 'none',
+      padding: '10px 0 0',
+      cursor: 'pointer',
+      textAlign: 'left'
+    }
+  }, /*#__PURE__*/React.createElement("span", {
+    style: {
+      display: 'flex',
+      flexDirection: 'column',
+      gap: 3,
+      minWidth: 0
+    }
+  }, /*#__PURE__*/React.createElement("span", {
+    style: {
+      font: '600 14px/1.2 var(--font-body)',
+      color: 'var(--text-strong)'
+    }
+  }, o.contact && o.contact.gym || o.id), /*#__PURE__*/React.createElement("span", {
+    style: {
+      ...crmMuted,
+      fontSize: 13
+    }
+  }, o.id, " \xB7 ", crmType(o), " \xB7 ", crmMoney(crmTotal(o)))), /*#__PURE__*/React.createElement("span", {
+    style: {
+      font: '700 12px/1.2 var(--font-display)',
+      textTransform: 'uppercase',
+      letterSpacing: '.05em',
+      color: 'var(--brand-primary)',
+      whiteSpace: 'nowrap'
+    }
+  }, t, " \u2192"))) : /*#__PURE__*/React.createElement("span", {
+    style: crmMuted
+  }, "All caught up.")), /*#__PURE__*/React.createElement(CCard, {
+    padding: 0,
+    style: card
+  }, /*#__PURE__*/React.createElement("h2", {
+    style: crmH2
+  }, "Follow-ups due"), fol.length ? fol.slice(0, 8).map((c, i) => /*#__PURE__*/React.createElement("button", {
+    key: c.key,
+    onClick: () => ctx.openCustomer(c.key),
+    style: {
+      display: 'flex',
+      justifyContent: 'space-between',
+      gap: 12,
+      alignItems: 'center',
+      border: 'none',
+      borderTop: i ? '1px solid var(--border-subtle)' : 'none',
+      background: 'none',
+      padding: '10px 0 0',
+      cursor: 'pointer',
+      textAlign: 'left'
+    }
+  }, /*#__PURE__*/React.createElement("span", {
+    style: {
+      display: 'flex',
+      flexDirection: 'column',
+      gap: 3
+    }
+  }, /*#__PURE__*/React.createElement("span", {
+    style: {
+      font: '600 14px/1.2 var(--font-body)',
+      color: 'var(--text-strong)'
+    }
+  }, c.gym), /*#__PURE__*/React.createElement("span", {
+    style: {
+      ...crmMuted,
+      fontSize: 13
+    }
+  }, crmLocStr(c.loc), " \xB7 ", c.status)), /*#__PURE__*/React.createElement("span", {
+    style: {
+      ...crmMuted,
+      fontSize: 13,
+      whiteSpace: 'nowrap'
+    }
+  }, c.follow_up && c.follow_up <= today ? 'Due ' + crmDate(c.follow_up) : 'Reorder? Last paid ' + crmDate(c.lastPaid)))) : /*#__PURE__*/React.createElement("span", {
+    style: crmMuted
+  }, "No follow-ups due.")), /*#__PURE__*/React.createElement(CCard, {
+    padding: 0,
+    style: card
+  }, /*#__PURE__*/React.createElement("h2", {
+    style: crmH2
+  }, "Revenue by state"), /*#__PURE__*/React.createElement(CrmBars, {
+    rows: group(o => {
+      const l = crmLoc(o);
+      return l.region || l.country;
+    }),
+    fmt: crmMoney
+  })), /*#__PURE__*/React.createElement(CCard, {
+    padding: 0,
+    style: card
+  }, /*#__PURE__*/React.createElement("h2", {
+    style: crmH2
+  }, "Outreach campaigns"), /*#__PURE__*/React.createElement(CrmBars, {
+    rows: Object.entries(camp).sort((a, b) => b[1].rev - a[1].rev).map(([k, v]) => [k, v.rev, v.p + '/' + v.n + ' paid']),
+    fmt: crmMoney
+  })), /*#__PURE__*/React.createElement(CCard, {
+    padding: 0,
+    style: card
+  }, /*#__PURE__*/React.createElement("h2", {
+    style: crmH2
+  }, "Hold colors ordered"), /*#__PURE__*/React.createElement(CrmBars, {
+    rows: Object.entries(colors).sort((a, b) => b[1] - a[1]),
+    fmt: v => v + ' mugs'
+  })), /*#__PURE__*/React.createElement(CCard, {
+    padding: 0,
+    style: card
+  }, /*#__PURE__*/React.createElement("h2", {
+    style: crmH2
+  }, "Pipeline"), /*#__PURE__*/React.createElement(CrmBars, {
+    rows: CRM_STAGES.map(s => [s, O.filter(o => o.stage === s).length]).filter(r => r[1])
+  }), /*#__PURE__*/React.createElement("div", null, /*#__PURE__*/React.createElement(CButton, {
+    size: "sm",
+    variant: "outline",
+    onClick: () => go('orders')
+  }, "Open orders")))));
+}
+Object.assign(window, {
+  CrmApp,
+  CrmSeg,
+  CrmStage,
+  CrmPay,
+  CrmClient,
+  CrmSwatch,
+  CrmSelect,
+  CrmLabeled,
+  CrmStat,
+  crmLbl,
+  crmH,
+  crmH2,
+  crmMuted,
+  crmField,
+  crmTh,
+  crmTd
+});
+})(); } catch (e) { __ds_ns.__errors.push({ path: "ui_kits/mug-customizer/CrmShell.jsx", error: String((e && e.message) || e) }); }
+
 // ui_kits/mug-customizer/DesignSteps.jsx
 try { (() => {
 const {
@@ -2537,7 +4963,7 @@ const PRESETS = [{
     ink: 'auto'
   },
   logo: {
-    src: 'assets/logo/partners/las-rocas-gecko-white.png',
+    src: '../../assets/logo/partners/las-rocas-gecko-white.png',
     name: 'Las Rocas gecko'
   }
 }, {
@@ -2764,7 +5190,8 @@ function StepLogo({
     const r = new FileReader();
     r.onload = () => setLogo({
       src: r.result,
-      name: f.name
+      name: f.name,
+      mine: true
     });
     r.readAsDataURL(f);
   };
@@ -2910,7 +5337,7 @@ function StepLogo({
     }]
   }), R('Logo size', 'logoScale', .3, .95, .01)));
 }
-const MC_DEFAULT_LOGO = 'assets/logo/mtnshade-mark-white.png';
+const MC_DEFAULT_LOGO = '../../assets/logo/mtnshade-mark-white.png';
 Object.assign(window, {
   HOLD_COLORS,
   StepHead,
@@ -3607,16 +6034,17 @@ function MugStudioApp() {
   }));
   const [myLogo, setMyLogo] = React.useState(() => {
     try {
-      return JSON.parse(localStorage.getItem('mtnshade-mylogo-v1'));
+      const v = JSON.parse(localStorage.getItem('mtnshade-mylogo-v2'));
+      return v && v.mine ? v : null;
     } catch (e) {
       return null;
     }
   });
   React.useEffect(() => {
-    if (logo && logo.src && logo.src.startsWith('data:') && (!myLogo || myLogo.src !== logo.src)) {
+    if (logo && logo.mine && (!myLogo || myLogo.src !== logo.src)) {
       setMyLogo(logo);
       try {
-        localStorage.setItem('mtnshade-mylogo-v1', JSON.stringify(logo));
+        localStorage.setItem('mtnshade-mylogo-v2', JSON.stringify(logo));
       } catch (e) {}
     }
   }, [logo && logo.src]);
@@ -3724,7 +6152,10 @@ function MugStudioApp() {
   const idx = STEPS.findIndex(s => s.id === step);
   const shoot = () => {
     try {
-      if (api.current) shots.current[isBox ? 'box' : 'mug'] = api.current.snapshot();
+      if (api.current) {
+        shots.current[isBox ? 'box' : 'mug'] = api.current.snapshot();
+        if (isBox && pkg.mode === 'cobrand' && api.current.dieline) shots.current.dieline = api.current.dieline();
+      }
     } catch (e) {}
   };
   const go = s => {
@@ -3771,6 +6202,7 @@ function MugStudioApp() {
         payment_status: 'Paid',
         stripe_session: q.get('session_id') || ''
       }).catch(() => {});
+      mcLinkPayment(paid, q.get('session_id'));
     } else flash({
       tone: 'ink',
       title: 'Checkout canceled',
@@ -3816,7 +6248,8 @@ function MugStudioApp() {
       }).then(toData);
       get(url).catch(() => get('https://images.weserv.nl/?output=png&url=' + encodeURIComponent(url.replace(/^https?:\/\//, '')))).then(src => setLogo({
         src,
-        name: (brand || 'Gym') + ' logo'
+        name: (brand || 'Gym') + ' logo',
+        mine: true
       }), () => flash({
         tone: 'danger',
         title: 'Couldn\'t load logo',
@@ -3881,7 +6314,70 @@ function MugStudioApp() {
       src: shots.current.box,
       name: id + '-box.png'
     }].filter(Boolean);
-    const saved = mcSubmit(fields, files).then(() => true, () => false);
+    const order = {
+      id,
+      type: fields.type,
+      contact: {
+        name: f.name,
+        gym: f.org,
+        email: f.email
+      },
+      needed_by: f.date,
+      notes: f.notes,
+      summary,
+      total,
+      units: fields.units,
+      cartons: fields.cartons,
+      lines: sample ? [{
+        hold: cfg.hold,
+        name: cfg.holdName,
+        units: f.sq,
+        custom: mcIsCustom(cfg.hold),
+        unit_price: f.sPrice,
+        sample: true
+      }] : lines.map(l => ({
+        hold: l.hold,
+        name: l.name,
+        units: mcUnits(l),
+        cartons: mcCartons(mcUnits(l)),
+        custom: mcIsCustom(l.hold),
+        unit_price: mcUnitPrice(l.hold)
+      })),
+      pack_fee: !sample && pkg.mode === 'custom' ? mcPackFee(f.units) : 0,
+      mug: {
+        logo_name: logo ? logo.name : '',
+        logo_url: logo && logo.src && !logo.src.startsWith('data:') ? new URL(logo.src, location.href).href : '',
+        logo_scale: cfg.logoScale,
+        etch: cfg.ink,
+        logo_cleanup: !!cfg.logoHelp
+      },
+      packaging: {
+        route: pkg.mode,
+        brand_mode: pkg.brandMode,
+        brand_text: pkg.brandText,
+        font: pkg.brandFont,
+        caption: !!pkg.caption,
+        website: pkg.website,
+        instagram: pkg.instagram,
+        lid_ink: pkg.lidInk,
+        tweaks: (pkg.tweaks || '').trim()
+      },
+      attribution: mcAttribution(),
+      page: location.href.split('?')[0]
+    };
+    const crmFiles = [...files, pkg.lidLogo && pkg.lidLogo.src && {
+      field: 'lid_logo',
+      src: pkg.lidLogo.src,
+      name: pkg.lidLogo.name || 'lid-logo.png'
+    }, shots.current.dieline && pkg.mode === 'cobrand' && {
+      field: 'dieline',
+      src: shots.current.dieline,
+      name: id + '-dieline.jpg'
+    }].filter(Boolean).map(x => ({
+      ...x,
+      field: x.field === 'mug_render' ? 'mug' : x.field === 'box_render' ? 'box' : x.field
+    }));
+    const saved = Promise.all([mcSubmit(fields, files).then(() => true, () => false), mcSaveOrder(order, crmFiles)]).then(([a, b]) => a || b);
     if (mode === 'quote') return saved.then(ok => flash(ok ? {
       tone: 'brand',
       title: 'Quote request sent',
@@ -3943,7 +6439,7 @@ function MugStudioApp() {
   }, /*#__PURE__*/React.createElement(ALogo, {
     variant: "horizontal",
     height: 28,
-    assetBase: "assets/logo/"
+    assetBase: "../../assets/logo/"
   }), /*#__PURE__*/React.createElement("span", {
     style: {
       font: '600 15px/1 var(--font-display)',
@@ -4457,7 +6953,7 @@ function OrderStep({
     }
   }, /*#__PURE__*/React.createElement("div", {
     style: {
-      background: 'url(assets/reference/packaging/photo-b.jpg) center 62%/cover',
+      background: 'url(../../assets/reference/packaging/photo-b.jpg) center 62%/cover',
       minHeight: 110
     }
   }), /*#__PURE__*/React.createElement("div", {
@@ -5089,7 +7585,7 @@ function OrdersApp() {
   }, /*#__PURE__*/React.createElement(TLogo, {
     variant: "horizontal",
     height: 28,
-    assetBase: "assets/logo/"
+    assetBase: "../../assets/logo/"
   }), /*#__PURE__*/React.createElement("span", {
     style: {
       font: '600 15px/1 var(--font-display)',
@@ -5479,7 +7975,7 @@ try { (() => {
 // Co-brand box: composites the real Las Rocas dieline (assets/packaging/dieline-base.png, 2700×2025,
 // variable art removed) with the customer's logo, brand name, hold colour and the MTNShade UPC,
 // then maps panel crops onto a 3D box. Coordinates are in "preview units" (×3 = canvas px).
-const PK_A = 'assets/packaging/';
+const PK_A = '../../assets/packaging/';
 const PK_S = 3;
 const PK_PANELS = {
   back: [99, 272, 295.5, 440.5],
@@ -5825,7 +8321,8 @@ function BoxStage({
     };
     loop();
     if (apiRef) apiRef.current = {
-      snapshot: () => r.domElement.toDataURL('image/png')
+      snapshot: () => r.domElement.toDataURL('image/png'),
+      dieline: () => st.dc ? st.dc.toDataURL('image/jpeg', .9) : null
     };
     pkLoad().then(A => {
       st.A = A;
@@ -6342,6 +8839,646 @@ Object.assign(window, {
 });
 })(); } catch (e) { __ds_ns.__errors.push({ path: "ui_kits/mug-customizer/PackagingStep.jsx", error: String((e && e.message) || e) }); }
 
+// ui_kits/mug-customizer/crm-data.js
+try { (() => {
+// Mug CRM — data layer: API client (live), demo client (preview without backend), and customer roll-ups.
+window.CRM_STAGES = ['Quote', 'Received', 'Proof sent', 'Proof approved', 'Sent to manufacturer', 'In production', 'Shipped', 'Delivered', 'Canceled'];
+window.CRM_STAGE_COLOR = {
+  'Quote': 'var(--steel-400)',
+  'Received': 'var(--warning)',
+  'Proof sent': 'var(--ice)',
+  'Proof approved': 'var(--brand-primary)',
+  'Sent to manufacturer': '#6A3FA0',
+  'In production': '#6A3FA0',
+  'Shipped': 'var(--steel-900)',
+  'Delivered': '#1F7A35',
+  'Canceled': 'var(--danger)'
+};
+window.CRM_PAY = ['Quote', 'Awaiting payment', 'Invoiced', 'Paid', 'Refunded'];
+window.CRM_CUST_STATUS = ['Lead', 'Sampled', 'Customer', 'Repeat', 'Inactive', 'Not a fit'];
+window.CRM_FILES = [['mug', 'Mug render'], ['box', 'Box render'], ['dieline', 'Box dieline (print layout)'], ['logo', 'Logo file'], ['lid_logo', 'Lid logo']];
+(function () {
+  const money = n => {
+    const v = Math.round((+n || 0) * 100) / 100;
+    return '$' + v.toLocaleString(undefined, {
+      minimumFractionDigits: Number.isInteger(v) ? 0 : 2,
+      maximumFractionDigits: 2
+    });
+  };
+  const slug = s => String(s || '').toLowerCase().replace(/[^a-z0-9]+/g, '-').replace(/^-+|-+$/g, '').slice(0, 80);
+  window.crmMoney = money;
+  window.crmDate = s => s ? new Date(s).toLocaleDateString(undefined, {
+    month: 'short',
+    day: 'numeric',
+    year: 'numeric'
+  }) : '—';
+  window.crmDay = s => s ? String(s).slice(0, 10) : '';
+  window.crmKey = o => {
+    const c = o.contact || {};
+    const g = slug(c.gym);
+    if (g) return 'gym-' + g;
+    const e = slug(c.email);
+    return e ? 'em-' + e : 'unknown';
+  };
+  window.crmPaid = o => !!(o.payment && o.payment.status === 'Paid');
+  window.crmTotal = o => crmPaid(o) && o.payment.amount != null ? o.payment.amount : +o.total || 0;
+  window.crmType = o => ({
+    bulk_order: 'Bulk',
+    sample_order: 'Sample',
+    quote_request: 'Quote'
+  })[o.type] || 'Manual';
+  window.crmLoc = o => {
+    const a = o.ship && o.ship.address || {};
+    if (a.city || a.state) return {
+      city: a.city || '',
+      region: a.state || '',
+      country: a.country || '',
+      postal: a.postal_code || '',
+      src: 'ship'
+    };
+    const g = o.geo_ip || {};
+    return {
+      city: g.city || '',
+      region: g.region || '',
+      country: g.country || '',
+      postal: '',
+      src: g.city || g.region ? 'ip' : ''
+    };
+  };
+  window.crmLocStr = l => l ? [l.city, l.region].filter(Boolean).join(', ') || l.country || '—' : '—';
+  window.crmAddr = a => a ? [a.line1, a.line2, [a.city, a.state, a.postal_code].filter(Boolean).join(' '), a.country].filter(Boolean).join('\n') : '';
+  // Groups orders into customers and tags each order New/Repeat.
+  window.crmDerive = function (orders, over) {
+    const by = {};
+    orders.forEach(o => {
+      const k = o.customer_key || crmKey(o);
+      o._ckey = k;
+      (by[k] = by[k] || []).push(o);
+    });
+    const list = Object.entries(by).map(([key, os]) => {
+      os = os.slice().sort((a, b) => a.created < b.created ? -1 : 1);
+      const last = os[os.length - 1];
+      const ov = (over || {})[key] || {};
+      const paid = os.filter(crmPaid),
+        bulk = paid.filter(o => o.type === 'bulk_order' || o.source === 'manual');
+      os.forEach(o => {
+        o._prior = paid.filter(p => p !== o && p.created < o.created).length;
+      });
+      const loc = [...os].reverse().map(crmLoc).find(l => l.src === 'ship') || crmLoc(last);
+      const auto = bulk.length >= 2 ? 'Repeat' : bulk.length === 1 ? 'Customer' : paid.length ? 'Sampled' : 'Lead';
+      const units = bulk.reduce((s, o) => s + (o.lines || []).reduce((t, l) => t + (+l.units || 0), 0), 0);
+      const colors = [...new Set(os.flatMap(o => (o.lines || []).map(l => l.name)))];
+      const lastPaid = paid.length ? paid[paid.length - 1].created : null;
+      return {
+        key,
+        gym: last.contact && last.contact.gym || '(no gym name)',
+        name: last.contact && last.contact.name || '',
+        email: last.contact && last.contact.email || '',
+        emails: [...new Set(os.map(o => o.contact && o.contact.email).filter(Boolean))],
+        contacts: [...new Set(os.map(o => o.contact && o.contact.name).filter(Boolean))],
+        phone: ov.phone || [...os].reverse().map(o => o.contact && o.contact.phone).find(Boolean) || '',
+        website: ov.website || [...os].reverse().map(o => o.packaging && o.packaging.website).find(Boolean) || '',
+        instagram: ov.instagram || [...os].reverse().map(o => o.packaging && o.packaging.instagram).find(Boolean) || '',
+        address: [...os].reverse().map(o => o.ship && o.ship.address).find(a => a && a.line1) || null,
+        loc,
+        orders: os,
+        paid,
+        bulk,
+        units,
+        colors,
+        ltv: paid.reduce((s, o) => s + crmTotal(o), 0),
+        first: os[0].created,
+        last: last.created,
+        lastPaid,
+        reorderDue: bulk.length && lastPaid && Date.now() - new Date(lastPaid) > 150 * 864e5,
+        source: os[0].attribution && os[0].attribution.utm_campaign || '(direct)',
+        status: ov.status || auto,
+        autoStatus: auto,
+        notes: ov.notes || '',
+        tags: ov.tags || '',
+        follow_up: ov.follow_up || '',
+        owner: ov.owner || '',
+        size: ov.size || ''
+      };
+    });
+    const byKey = {};
+    list.forEach(c => byKey[c.key] = c);
+    return {
+      customers: list.sort((a, b) => a.last < b.last ? 1 : -1),
+      byKey
+    };
+  };
+  // Live client — talks to /api/crm with the CRM password.
+  window.crmLive = function (key) {
+    const h = {
+      'x-crm-key': key
+    };
+    const J = r => r.ok ? r.json() : r.json().catch(() => ({})).then(e => {
+      const x = new Error(e.error || 'HTTP ' + r.status);
+      x.status = r.status;
+      throw x;
+    });
+    const post = (op, b) => fetch('api/crm?op=' + op, {
+      method: 'POST',
+      headers: {
+        ...h,
+        'content-type': 'application/json'
+      },
+      body: JSON.stringify(b)
+    }).then(J);
+    const cache = {};
+    return {
+      live: true,
+      list: () => fetch('api/crm?op=list', {
+        headers: h
+      }).then(J),
+      update: (id, patch, note) => post('update', {
+        id,
+        patch,
+        note
+      }),
+      customer: (key, patch) => post('customer', {
+        key,
+        patch
+      }),
+      sync: id => post('sync', {
+        id
+      }),
+      upload: (id, field, name, dataUrl) => post('upload', {
+        id,
+        field,
+        name,
+        dataUrl
+      }),
+      create: order => post('create', {
+        order
+      }),
+      fileUrl: (o, f) => {
+        const k = o.id + '/' + f;
+        if (!cache[k]) cache[k] = fetch('api/crm?op=file&id=' + encodeURIComponent(o.id) + '&field=' + f, {
+          headers: h
+        }).then(r => r.ok ? r.blob() : null).then(b => b ? URL.createObjectURL(b) : null).catch(() => null);
+        return cache[k];
+      },
+      hasFile: (o, f) => (o.files || []).includes(f)
+    };
+  };
+  window.crmProbe = () => fetch('api/crm?op=ping').then(r => {
+    const ct = r.headers.get('content-type') || '';
+    return ct.includes('json') ? 'live' : 'demo';
+  }, () => 'demo');
+  // Demo client — sample data so the CRM can be previewed without the backend.
+  window.crmDemo = function () {
+    const d = n => new Date(Date.now() - n * 864e5).toISOString();
+    const A = '../../assets/';
+    const pk = (b, w, i) => ({
+      route: 'cobrand',
+      brand_mode: 'text',
+      brand_text: b,
+      font: 'rounded',
+      caption: true,
+      website: w,
+      instagram: i,
+      tweaks: ''
+    });
+    const addr = (l1, c, s, z) => ({
+      line1: l1,
+      city: c,
+      state: s,
+      postal_code: z,
+      country: 'US'
+    });
+    const O = [{
+      id: 'MS-260712-A7Q2',
+      type: 'bulk_order',
+      created: d(96),
+      contact: {
+        name: 'Carla Ruiz',
+        gym: 'Las Rocas',
+        email: 'carla@lasrocasclimbing.com',
+        phone: '+1 305 555 0142'
+      },
+      lines: [{
+        hold: '#16B5BF',
+        name: 'Teal',
+        units: 324,
+        cartons: 9,
+        custom: true,
+        unit_price: 13.5
+      }],
+      total: 4374,
+      units: 324,
+      cartons: 9,
+      mug: {
+        logo_name: 'Las Rocas gecko',
+        logo_url: A + 'logo/partners/las-rocas-gecko-white.png',
+        logo_scale: .5,
+        etch: 'auto'
+      },
+      packaging: pk('las rocas', 'lasrocasclimbing.com', '@Lasrocasmiami'),
+      attribution: {
+        utm_campaign: 'fall-gyms',
+        utm_source: 'email'
+      },
+      payment: {
+        status: 'Paid',
+        amount: 4374,
+        paid_at: d(96)
+      },
+      ship: {
+        name: 'Las Rocas Climbing',
+        address: addr('2200 NW 7th Ave', 'Miami', 'FL', '33127')
+      },
+      stage: 'Delivered',
+      ship_date: crmDay(d(20)),
+      carrier: 'UPS',
+      tracking: '1Z999AA10123456784',
+      manufacturer: 'Ningbo factory',
+      mfg_po: 'PO-1042',
+      history: [{
+        at: d(96),
+        text: 'Bulk order submitted from studio'
+      }, {
+        at: d(96),
+        text: 'Paid via Stripe · $4374'
+      }, {
+        at: d(93),
+        text: 'Stage → Proof sent'
+      }, {
+        at: d(90),
+        text: 'Stage → Proof approved'
+      }, {
+        at: d(89),
+        text: 'Stage → Sent to manufacturer'
+      }, {
+        at: d(30),
+        text: 'Stage → Shipped'
+      }, {
+        at: d(20),
+        text: 'Stage → Delivered'
+      }],
+      _demoFiles: {
+        logo: A + 'logo/partners/las-rocas-gecko-white.png',
+        dieline: A + 'packaging/dieline-base.png',
+        box: A + 'reference/packaging/photo-b.jpg'
+      }
+    }, {
+      id: 'MS-261002-K3PD',
+      type: 'bulk_order',
+      created: d(13),
+      contact: {
+        name: 'Carla Ruiz',
+        gym: 'Las Rocas',
+        email: 'carla@lasrocasclimbing.com',
+        phone: '+1 305 555 0142'
+      },
+      lines: [{
+        hold: '#2141A8',
+        name: 'Summit Blue',
+        units: 144,
+        cartons: 4,
+        custom: false,
+        unit_price: 12
+      }],
+      total: 1728,
+      units: 144,
+      cartons: 4,
+      mug: {
+        logo_name: 'Las Rocas gecko',
+        logo_url: A + 'logo/partners/las-rocas-gecko-white.png',
+        logo_scale: .5,
+        etch: 'auto'
+      },
+      packaging: pk('las rocas', 'lasrocasclimbing.com', '@Lasrocasmiami'),
+      attribution: {
+        utm_campaign: 'reorder'
+      },
+      needed_by: crmDay(new Date(Date.now() + 40 * 864e5).toISOString()),
+      payment: {
+        status: 'Paid',
+        amount: 1728,
+        paid_at: d(13)
+      },
+      ship: {
+        name: 'Las Rocas Climbing',
+        address: addr('2200 NW 7th Ave', 'Miami', 'FL', '33127')
+      },
+      stage: 'Proof approved',
+      history: [{
+        at: d(13),
+        text: 'Bulk order submitted from studio'
+      }, {
+        at: d(13),
+        text: 'Paid via Stripe · $1728'
+      }, {
+        at: d(10),
+        text: 'Stage → Proof sent'
+      }, {
+        at: d(8),
+        text: 'Stage → Proof approved'
+      }],
+      _demoFiles: {
+        logo: A + 'logo/partners/las-rocas-gecko-white.png',
+        dieline: A + 'packaging/dieline-base.png'
+      }
+    }, {
+      id: 'MS-261006-BR4N',
+      type: 'bulk_order',
+      created: d(9),
+      contact: {
+        name: 'Devon Park',
+        gym: 'Boulder Barn',
+        email: 'devon@boulderbarn.com'
+      },
+      lines: [{
+        hold: '#C8102E',
+        name: 'Crimp Red',
+        units: 72,
+        cartons: 2,
+        custom: false,
+        unit_price: 12
+      }],
+      total: 864,
+      units: 72,
+      cartons: 2,
+      mug: {
+        logo_name: 'boulderbarn.png',
+        logo_scale: .55,
+        etch: 'auto'
+      },
+      packaging: pk('boulder barn', 'boulderbarn.com', '@boulderbarn'),
+      attribution: {
+        utm_campaign: 'agent-denver',
+        utm_source: 'agent'
+      },
+      payment: {
+        status: 'Paid',
+        amount: 864,
+        paid_at: d(9)
+      },
+      ship: {
+        name: 'Boulder Barn',
+        address: addr('410 Walnut St', 'Denver', 'CO', '80204')
+      },
+      stage: 'Received',
+      history: [{
+        at: d(9),
+        text: 'Bulk order submitted from studio'
+      }, {
+        at: d(9),
+        text: 'Paid via Stripe · $864'
+      }]
+    }, {
+      id: 'MS-261009-T8MX',
+      type: 'sample_order',
+      created: d(6),
+      contact: {
+        name: 'Priya Shah',
+        gym: 'Crux Collective',
+        email: 'priya@cruxcollective.co'
+      },
+      lines: [{
+        hold: '#1F7A35',
+        name: 'Green',
+        units: 1,
+        custom: true,
+        unit_price: 100,
+        sample: true
+      }],
+      total: 100,
+      units: 1,
+      mug: {
+        logo_name: 'crux-logo.png',
+        logo_scale: .5,
+        etch: 'dark'
+      },
+      packaging: pk('crux collective', 'cruxcollective.co', '@cruxcollective'),
+      attribution: {
+        utm_campaign: 'agent-austin',
+        utm_source: 'agent'
+      },
+      payment: {
+        status: 'Paid',
+        amount: 100,
+        paid_at: d(6)
+      },
+      ship: {
+        name: 'Priya Shah',
+        address: addr('1801 E 6th St', 'Austin', 'TX', '78702')
+      },
+      stage: 'In production',
+      history: [{
+        at: d(6),
+        text: 'Sample order submitted from studio'
+      }]
+    }, {
+      id: 'MS-261011-Q2ZL',
+      type: 'quote_request',
+      created: d(4),
+      contact: {
+        name: 'Sam Okafor',
+        gym: 'Vertical Hive',
+        email: 'sam@verticalhive.com'
+      },
+      lines: [{
+        hold: '#F5C400',
+        name: 'Yellow',
+        units: 396,
+        cartons: 11,
+        custom: true,
+        unit_price: 13.5
+      }],
+      total: 5346,
+      units: 396,
+      cartons: 11,
+      mug: {
+        logo_name: 'hive.svg',
+        logo_scale: .5,
+        etch: 'auto'
+      },
+      packaging: {
+        ...pk('vertical hive', 'verticalhive.com', '@verticalhive'),
+        route: 'custom'
+      },
+      pack_fee: 250,
+      notes: 'Opening a second location in spring — may double the order.',
+      attribution: {
+        utm_campaign: 'fall-gyms',
+        utm_source: 'email'
+      },
+      geo_ip: {
+        city: 'Portland',
+        region: 'OR',
+        country: 'US'
+      },
+      payment: {
+        status: 'Quote'
+      },
+      stage: 'Quote',
+      history: [{
+        at: d(4),
+        text: 'Quote request submitted from studio'
+      }]
+    }, {
+      id: 'MS-261013-W5HC',
+      type: 'bulk_order',
+      created: d(2),
+      contact: {
+        name: 'Jordan Lee',
+        gym: 'Granite Gym',
+        email: 'jordan@granitegym.com'
+      },
+      lines: [{
+        hold: '#2141A8',
+        name: 'Summit Blue',
+        units: 36,
+        cartons: 1,
+        custom: false,
+        unit_price: 12
+      }],
+      total: 432,
+      units: 36,
+      cartons: 1,
+      mug: {
+        logo_name: 'granite.png',
+        logo_scale: .5,
+        etch: 'auto'
+      },
+      packaging: pk('granite gym', 'granitegym.com', '@granitegym'),
+      attribution: {
+        utm_campaign: 'agent-denver',
+        utm_source: 'agent'
+      },
+      geo_ip: {
+        city: 'Boulder',
+        region: 'CO',
+        country: 'US'
+      },
+      payment: {
+        status: 'Awaiting payment'
+      },
+      stage: 'Received',
+      history: [{
+        at: d(2),
+        text: 'Bulk order submitted from studio'
+      }]
+    }];
+    O.forEach(o => {
+      o.customer_key = crmKey(o);
+      o.files = Object.keys(o._demoFiles || {});
+    });
+    const C = {
+      'gym-las-rocas': {
+        notes: 'Front desk sells ~40/month. Wants a holiday colorway.',
+        tags: 'flagship, florida',
+        follow_up: crmDay(d(-3)),
+        size: 'Large (1,500+ members)'
+      },
+      'gym-vertical-hive': {
+        follow_up: crmDay(d(1)),
+        tags: 'hot lead'
+      }
+    };
+    const later = v => new Promise(r => setTimeout(() => r(v), 120));
+    const find = id => O.find(o => o.id === id);
+    return {
+      live: false,
+      list: () => later({
+        orders: JSON.parse(JSON.stringify(O)),
+        customers: JSON.parse(JSON.stringify(C))
+      }),
+      update: (id, patch, note) => {
+        const o = find(id);
+        const h = [];
+        if (patch.stage && patch.stage !== o.stage) h.push('Stage → ' + patch.stage);
+        if (patch.payment_status) {
+          o.payment = {
+            ...o.payment,
+            status: patch.payment_status
+          };
+          h.push('Payment → ' + patch.payment_status);
+          delete patch.payment_status;
+        }
+        Object.assign(o, patch);
+        o.history = [...o.history, ...h.map(t => ({
+          at: new Date().toISOString(),
+          text: t
+        })), ...(note ? [{
+          at: new Date().toISOString(),
+          text: note,
+          note: true
+        }] : [])];
+        return later({
+          order: JSON.parse(JSON.stringify(o))
+        });
+      },
+      customer: (key, patch) => {
+        C[key] = {
+          ...(C[key] || {}),
+          ...patch
+        };
+        return later({
+          customer: C[key]
+        });
+      },
+      sync: id => later({
+        order: JSON.parse(JSON.stringify(find(id))),
+        changed: false
+      }),
+      upload: (id, field, name, dataUrl) => {
+        const o = find(id);
+        o._demoFiles = {
+          ...(o._demoFiles || {}),
+          [field]: dataUrl
+        };
+        o.files = Object.keys(o._demoFiles);
+        return later({
+          ok: true
+        });
+      },
+      create: order => {
+        const o = {
+          ...order,
+          id: 'MS-' + new Date().toISOString().slice(2, 10).replace(/-/g, '') + '-' + Math.random().toString(36).slice(2, 6).toUpperCase(),
+          created: new Date().toISOString(),
+          source: 'manual',
+          payment: {
+            status: order.payment_status || 'Invoiced'
+          },
+          stage: 'Received',
+          history: [{
+            at: new Date().toISOString(),
+            text: 'Created manually in CRM'
+          }],
+          files: []
+        };
+        o.customer_key = crmKey(o);
+        O.push(o);
+        return later({
+          order: o
+        });
+      },
+      fileUrl: (o, f) => {
+        const x = find(o.id);
+        return Promise.resolve(x && x._demoFiles && x._demoFiles[f] || null);
+      },
+      hasFile: (o, f) => (o.files || []).includes(f)
+    };
+  };
+  const csvCell = v => '"' + String(v == null ? '' : v).replace(/"/g, '""') + '"';
+  window.crmCSV = (rows, name) => {
+    const ks = Object.keys(rows[0] || {});
+    const t = [ks.join(','), ...rows.map(r => ks.map(k => csvCell(r[k])).join(','))].join('\n');
+    const a = document.createElement('a');
+    a.href = URL.createObjectURL(new Blob([t], {
+      type: 'text/csv'
+    }));
+    a.download = name;
+    a.click();
+  };
+})();
+})(); } catch (e) { __ds_ns.__errors.push({ path: "ui_kits/mug-customizer/crm-data.js", error: String((e && e.message) || e) }); }
+
 // ui_kits/mug-customizer/mc-config.js
 try { (() => {
 // Business rules for the Custom Mug Studio. Edit here — UI reads everything from this object.
@@ -6384,7 +9521,7 @@ window.MC_CONFIG = {
     url: 'https://www.amazon.com/dp/B0CK2RZZPX?th=1'
   }],
   // ⚠ confirm which ASIN is which color
-  contactEmail: 'partners@mtnshade.com',
+  contactEmail: 'morrisonbibi17@gmail.com',
   formspree: 'https://formspree.io/f/xqpedoyo',
   // every order, quote and sample request lands here
   checkoutEndpoint: 'api/checkout',
@@ -6516,6 +9653,48 @@ try { (() => {
       return r.json();
     });
   };
+  // Saves the full order + images to the CRM backend (Netlify Blobs). Never blocks checkout if it fails.
+  window.mcSaveOrder = function (order, files) {
+    var post = function (p, b) {
+      return fetch('api/' + p, {
+        method: 'POST',
+        headers: {
+          'Content-Type': 'application/json'
+        },
+        body: JSON.stringify(b)
+      });
+    };
+    return post('order', order).then(function (r) {
+      if (!r.ok) throw new Error('crm ' + r.status);
+      return Promise.all((files || []).filter(function (f) {
+        return f.src && /^data:image\//.test(f.src) && f.src.length < 7.3e6;
+      }).map(function (f) {
+        return post('order-file', {
+          id: order.id,
+          field: f.field,
+          name: f.name,
+          dataUrl: f.src
+        }).catch(function () {});
+      }));
+    }).then(function () {
+      return true;
+    }, function () {
+      return false;
+    });
+  };
+  window.mcLinkPayment = function (id, sid) {
+    if (!id || !sid) return Promise.resolve();
+    return fetch('api/payment', {
+      method: 'POST',
+      headers: {
+        'Content-Type': 'application/json'
+      },
+      body: JSON.stringify({
+        id: id,
+        session_id: sid
+      })
+    }).catch(function () {});
+  };
   // Asks the serverless function for a Stripe Checkout URL (prices are recomputed server-side).
   window.mcCheckout = function (payload) {
     return fetch(C.checkoutEndpoint, {
@@ -6531,7 +9710,9 @@ try { (() => {
       return r.ok ? r.json() : Promise.reject(new Error('checkout ' + r.status));
     }).then(function (j) {
       if (!j.url) throw new Error(j.error || 'no url');
-      return j.url;
+      return window.mcLinkPayment(payload.orderId, j.id).then(function () {
+        return j.url;
+      });
     });
   };
 })();
@@ -6625,526 +9806,3 @@ __ds_ns.StepIndicator = __ds_scope.StepIndicator;
 __ds_ns.TabBar = __ds_scope.TabBar;
 
 })();
-</script>
-<style>html,body,#root{height:100%}body{background:var(--surface-sunken)}input[type=range]{width:100%;accent-color:var(--brand-primary)}.mc-layout{display:grid;grid-template-columns:minmax(0,1fr) 440px;height:calc(100% - 60px)}.mc-panel{overflow-y:auto}@media (max-width:900px){.mc-layout{grid-template-columns:1fr;height:auto}.mc-stage{height:58vh;min-height:380px}.mc-panel{overflow:visible}}</style></head>
-<body><div id="root"></div>
-<script>// Business rules for the Custom Mug Studio. Edit here — UI reads everything from this object.
-window.MC_CONFIG={
-  carton:36, // units per carton; bulk orders are whole cartons
-  pricing:{standard:12,custom:13.5}, // $ per mug
-  customMOQ:300, // minimum units per custom (non MTNShade Blue/Red) color
-  standardColors:['#2141A8','#C8102E'], // MTNShade Blue / Red — anything else is a custom color
-  sample:{standard:100,custom:100,weeks:2,customExtraWeeks:2},
-  production:{weeks:[10,12],customExtraWeeks:2},
-  customPackaging:{perUnit:1,cap:250}, // one-time fee for a fully custom box: $1/unit or $250, whichever is lower
-  retailDefault:25, // recommended front-desk price
-  amazon:[{label:'Blue',hold:'#2141A8',url:'https://www.amazon.com/dp/B0CK2W7TL8?th=1'},{label:'Red',hold:'#C8102E',url:'https://www.amazon.com/dp/B0CK2RZZPX?th=1'}], // ⚠ confirm which ASIN is which color
-  contactEmail:'morrisonbibi17@gmail.com',
-  formspree:'https://formspree.io/f/xqpedoyo', // every order, quote and sample request lands here
-  checkoutEndpoint:'api/checkout', // Stripe Checkout — see DEPLOY.md. Prices are mirrored in netlify/functions/checkout.js
-  stages:['Received','Proof sent','Approved','In production','Shipped','Delivered','Canceled']
-};
-window.mcIsCustom=hex=>!window.MC_CONFIG.standardColors.map(c=>c.toLowerCase()).includes((hex||'').toLowerCase());
-window.mcUnitPrice=hex=>window.mcIsCustom(hex)?window.MC_CONFIG.pricing.custom:window.MC_CONFIG.pricing.standard;
-window.mcMinCartons=hex=>window.mcIsCustom(hex)?Math.ceil(window.MC_CONFIG.customMOQ/window.MC_CONFIG.carton):1;
-// Quantities: standard colors in cartons of 36. Custom colors: 300 MOQ → 324 → then +36.
-window.mcSnap=(hex,u)=>{const C=window.MC_CONFIG,k=C.carton,m=C.customMOQ;u=Math.max(0,Math.round(+u||0));if(!window.mcIsCustom(hex))return Math.max(k,Math.ceil(u/k)*k);if(u<=m)return m;const f=Math.ceil(m/k)*k;return u<=f?f:f+Math.ceil((u-f)/k)*k};
-window.mcMinUnits=hex=>window.mcSnap(hex,0);
-window.mcUnits=l=>l.units!=null?l.units:(l.cartons||1)*window.MC_CONFIG.carton;
-window.mcStepUnits=(hex,u,dir)=>{const k=window.MC_CONFIG.carton,min=window.mcMinUnits(hex);if(dir>0)return window.mcSnap(hex,u+1);if(u<=min)return 0;const f=Math.ceil(min/k)*k;return u<=f?min:u-k};
-window.mcCartons=u=>Math.ceil(u/window.MC_CONFIG.carton);
-window.mcWeeks=custom=>{const p=window.MC_CONFIG.production;const e=custom?p.customExtraWeeks:0;return [p.weeks[0]+e,p.weeks[1]+e]};
-window.mcMoney=n=>'$'+(Math.round(n*100)/100).toLocaleString(undefined,{minimumFractionDigits:Number.isInteger(Math.round(n*100)/100)?0:2,maximumFractionDigits:2});
-window.mcPackFee=units=>Math.min(units*window.MC_CONFIG.customPackaging.perUnit,window.MC_CONFIG.customPackaging.cap);
-</script>
-<script>// Opens a printable one-page proof (mug + box renders, order lines, price, timeline) for sharing with a gym manager.
-window.mcOpenProof=function(o){
-  var C=window.MC_CONFIG,lines=o.lines,units=lines.reduce(function(s,l){return s+window.mcUnits(l)},0),total=lines.reduce(function(s,l){return s+window.mcUnits(l)*window.mcUnitPrice(l.hold)},0),pack=o.customBox?window.mcPackFee(units):0;total+=pack;
-  var cu=lines.some(function(l){return window.mcIsCustom(l.hold)}),w=window.mcWeeks(cu),sh=o.shots||{},brand=o.brand||'Your gym';
-  function esc(s){return String(s).replace(/[&<>"]/g,function(c){return {'&':'&amp;','<':'&lt;','>':'&gt;','"':'&quot;'}[c]})}
-  function fig(src,label,hint){return src?'<figure><img src="'+src+'"><figcaption>'+label+'</figcaption></figure>':'<figure class="e"><figcaption>'+label+(hint?' — '+hint:'')+'</figcaption></figure>'}
-  var rows=lines.map(function(l){return '<tr><td><i style="background:'+l.hold+'"></i>'+esc(l.name)+(window.mcIsCustom(l.hold)?' (custom color)':'')+'</td><td>'+window.mcCartons(window.mcUnits(l))+' carton'+(window.mcCartons(window.mcUnits(l))>1?'s':'')+'</td><td>'+window.mcUnits(l)+' mugs × '+window.mcMoney(window.mcUnitPrice(l.hold))+'</td><td style="text-align:right">'+window.mcMoney(window.mcUnits(l)*window.mcUnitPrice(l.hold))+'</td></tr>'}).join('');
-  var box=o.customBox?fig(null,'Custom box','designed with the MTNShade team'):fig(sh.box,'Box','open the Packaging step to capture');
-  var css='body{font:15px/1.45 system-ui,sans-serif;color:#15171A;max-width:860px;margin:32px auto;padding:0 24px}h1{font:800 34px/1 "Arial Narrow",sans-serif;text-transform:uppercase;margin:0 0 4px}.m{color:#6B7179}.g{display:grid;grid-template-columns:1fr 1fr;gap:16px;margin:20px 0}figure{margin:0;background:#EEF0F2;border-radius:8px;overflow:hidden}figure img{width:100%;display:block}figcaption{padding:8px 12px;font-size:12px;text-transform:uppercase;letter-spacing:.05em;color:#4C5158}.e{min-height:220px;display:flex;align-items:flex-end}table{width:100%;border-collapse:collapse}td{padding:8px 0;border-bottom:1px solid #D3D7DC}i{display:inline-block;width:12px;height:12px;border-radius:50%;margin-right:8px;vertical-align:-1px}.t{display:flex;justify-content:space-between;font-weight:700;font-size:20px;padding:12px 0}.n{font-size:13px;color:#6B7179}button{font:700 14px Arial;padding:10px 18px;background:#1F4E9E;color:#fff;border:0;border-radius:4px;cursor:pointer;float:right}@media print{button{display:none}}';
-  var html='<!doctype html><meta charset="utf-8"><title>MTNShade proof — '+esc(brand)+'</title><style>'+css+'</style><button onclick="print()">Save as PDF</button>'+
-    '<h1>'+esc(brand)+' × MTNShade</h1><div class="m">Custom Crimp Mug proof · '+new Date().toLocaleDateString()+'</div>'+
-    '<div class="g">'+fig(sh.mug,'Mug','open the Hold step to capture')+box+'</div><table>'+rows+(pack?'<tr><td>One-time custom packaging</td><td>'+window.mcMoney(C.customPackaging.perUnit)+'/mug, max '+window.mcMoney(C.customPackaging.cap)+'</td><td style="text-align:right">'+window.mcMoney(pack)+'</td></tr>':'')+'</table>'+
-    '<div class="t"><span>'+units+' mugs</span><span>'+window.mcMoney(total)+'</span></div>'+
-    '<p class="n">'+esc(o.summary)+'<br>At your door in '+w[0]+'–'+w[1]+' weeks after proof approval. Ships in cartons of '+C.carton+'. Design exclusive to your gym.'+'<br>Recommended front-desk price: '+window.mcMoney(C.retailDefault)+' → '+window.mcMoney(C.retailDefault-(units?total/units:0))+' profit per mug.'+'</p><p class="n">Questions? '+C.contactEmail+'</p>';
-  var win=window.open('','_blank');if(!win)return false;win.document.write(html);win.document.close();return true};
-</script>
-<script>// Order capture (Formspree), Stripe checkout hand-off, and outreach attribution.
-(function(){
-  var C=window.MC_CONFIG,AK='mtnshade-attribution-v1';
-  // First-touch attribution from outreach links: ?utm_source=&utm_campaign=&gym=&name=&email=
-  var q=new URLSearchParams(location.search),keys=['utm_source','utm_medium','utm_campaign','utm_content','gym','name','email'],hit={};
-  keys.forEach(function(k){if(q.get(k))hit[k]=q.get(k)});
-  var saved={};try{saved=JSON.parse(localStorage.getItem(AK))||{}}catch(e){}
-  if(Object.keys(hit).length){saved=Object.assign({},hit.utm_campaign?{}:saved,hit,{landed:new Date().toISOString()});try{localStorage.setItem(AK,JSON.stringify(saved))}catch(e){}}
-  window.mcAttribution=function(){return saved};
-  window.mcOrderId=function(){var d=new Date(),p=function(n){return String(n).padStart(2,'0')},r=Math.random().toString(36).slice(2,6).toUpperCase();return 'MS-'+String(d.getFullYear()).slice(2)+p(d.getMonth()+1)+p(d.getDate())+'-'+r};
-  function blob(dataUrl){try{var a=dataUrl.split(','),m=a[0].match(/:(.*?);/)[1],b=atob(a[1]),u=new Uint8Array(b.length);for(var i=0;i<b.length;i++)u[i]=b.charCodeAt(i);return new Blob([u],{type:m})}catch(e){return null}}
-  function body(fields,files){var fd=new FormData();Object.keys(fields).forEach(function(k){if(fields[k]!==undefined&&fields[k]!==null)fd.append(k,fields[k])});(files||[]).forEach(function(f){var b=f.src&&blob(f.src);if(b)fd.append(f.field,b,f.name)});return fd}
-  // POST to Formspree. File uploads need a paid Formspree plan — if rejected, retries without files.
-  window.mcSubmit=function(fields,files){
-    var a=saved,f=Object.assign({utm_source:a.utm_source||'',utm_medium:a.utm_medium||'',utm_campaign:a.utm_campaign||'(direct)',utm_content:a.utm_content||'',submitted_from:location.href.split('?')[0]},fields);
-    var post=function(withFiles){return fetch(C.formspree,{method:'POST',headers:{Accept:'application/json'},body:body(f,withFiles?files:[])})};
-    return post(true).then(function(r){if(r.ok||!(files&&files.length))return r;return post(false)}).then(function(r){if(!r.ok)throw new Error('Formspree '+r.status);return r.json()});
-  };
-  // Asks the serverless function for a Stripe Checkout URL (prices are recomputed server-side).
-  window.mcCheckout=function(payload){
-    return fetch(C.checkoutEndpoint,{method:'POST',headers:{'Content-Type':'application/json'},body:JSON.stringify(Object.assign({returnPath:location.pathname,returnUrl:location.origin+location.pathname},payload))})
-      .then(function(r){return r.ok?r.json():Promise.reject(new Error('checkout '+r.status))}).then(function(j){if(!j.url)throw new Error(j.error||'no url');return j.url});
-  };
-})();
-</script>
-<script type="text/babel">// 3D mug: lathe body (stainless only), photo-matched climbing hold, canvas-texture laser etch.
-THREE.ColorManagement.legacyMode=false;
-const MUG_R=1,MUG_H=2.8; // ~2.75" dia × ~3.9" tall
-function mcNoise(x,y,z){return Math.sin(x*3.1+1.7)*Math.sin(y*2.3+.4)*Math.cos(z*2.9+2.1)*.55+Math.sin(x*6.7+y*5.3)*Math.cos(z*7.1+x*1.3)*.22+Math.sin(y*11+z*9)*.07}
-function mcCanvasTex(w,h,draw,rep){const c=document.createElement('canvas');c.width=w;c.height=h;draw(c.getContext('2d'),w,h);const t=new THREE.CanvasTexture(c);t.wrapS=t.wrapT=THREE.RepeatWrapping;if(rep)t.repeat.set(rep[0],rep[1]);return t}
-function mcBuildEnv(renderer){
-  const s=new THREE.Scene();const box=new THREE.Mesh(new THREE.BoxGeometry(30,30,30),new THREE.MeshBasicMaterial({color:0x5f646b,side:THREE.BackSide}));s.add(box);
-  const panel=(w,h,k,pos)=>{const m=new THREE.Mesh(new THREE.PlaneGeometry(w,h),new THREE.MeshBasicMaterial({side:THREE.DoubleSide}));m.material.color.setScalar(k);m.position.set(...pos);m.lookAt(0,pos[1],0);s.add(m)};
-  panel(2.2,20,5,[-7,2,6]);panel(1,20,3,[7,2,5]);panel(4,20,1.6,[0,2,-10]);panel(1.4,20,2.2,[-9,2,-3]);
-  const top=new THREE.Mesh(new THREE.PlaneGeometry(14,14),new THREE.MeshBasicMaterial());top.material.color.setScalar(1.8);top.position.y=12;top.rotation.x=Math.PI/2;s.add(top);
-  const fl=new THREE.Mesh(new THREE.PlaneGeometry(30,30),new THREE.MeshBasicMaterial({color:0x2b2e33}));fl.position.y=-6;fl.rotation.x=-Math.PI/2;s.add(fl);
-  const pm=new THREE.PMREMGenerator(renderer);const env=pm.fromScene(s,.03).texture;pm.dispose();return env}
-// Hold modelled from reference photos (assets/reference/hold-*.png):
-// peanut / dog-bone outline ~0.6x mug height, ~0.5x mug diameter, waist just above centre,
-// spine ridge along the long axis, soft bevelled flanks, bolt in a countersunk dimple ~60% down.
-const HOLD={A:.52,B:.8,T:.44,yc:1.47,tilt:.1,bolt:[.03,-.04]};
-function mcHoldShape(){
-  const {A,B,T,tilt}=HOLD;const ct=Math.cos(tilt),st=Math.sin(tilt);
-  const outline=phi=>{const c=Math.cos(phi),s=Math.sin(phi);let r=A*B/Math.sqrt((B*c)**2+(A*s)**2);
-    r*=1+.035*Math.sin(3*phi+.7)+.022*Math.sin(5*phi+2.1)+.012*Math.sin(9*phi+.3);return r};
-  const warp=(u,v)=>{const w=1-.27*Math.exp(-(((v-.06)/.3)**2));const lobe=1+.07*(v/B);return [u*w*lobe+.05*v,v]};
-  const rot=(u,v)=>[u*ct-v*st,u*st+v*ct];
-  const [bu,bv]=warp(...HOLD.bolt);
-  const height=(sN,phi,u,v)=>{let h=T*Math.pow(Math.max(0,1-Math.pow(sN,5)),.32);
-    h*=1-.12*Math.pow(sN,1.5)*Math.abs(Math.cos(phi));h*=1-.08*Math.exp(-(((v-.04)/.22)**2));h*=1+.05*Math.sin(v*5.2+.6);h*=1+.1*(v/B);
-    h+=T*.07*(Math.sin(u*9+v*4)*Math.sin(v*7-u*3))*sN*(1-sN)*4;
-    const d=Math.hypot(u-bu,v-bv);if(d<.15)h-=.035*Math.pow(1-(d/.15)**2,1.5);return Math.max(h,.004)};
-  const point=(sN,phi)=>{const r=outline(phi)*sN;let [u,v]=warp(r*Math.cos(phi),r*Math.sin(phi));const h=height(sN,phi,u,v);[u,v]=rot(u,v);return {u,v,h}};
-  const boltPt=(()=>{const [u,v]=rot(bu,bv);const T0=T;const h=height(.25,Math.atan2(HOLD.bolt[1],HOLD.bolt[0]),bu,bv);return {u,v,h}})();
-  return {point,boltPt}}
-function mcHoldGeo(){const {point}=mcHoldShape();const M=180,N=44;const pos=[],uv=[],idx=[];
-  const base=u=>Math.sqrt(Math.max(0,1-u*u));
-  const rows=[];for(let i=0;i<=N;i++)rows.push([i/N,1]);for(let i=N;i>=0;i--)rows.push([i/N,0]);
-  rows.forEach(([sN,front])=>{for(let j=0;j<=M;j++){const phi=j/M*Math.PI*2;const p=point(sN,phi);const x=base(p.u)+(front?p.h:-.03);pos.push(x,HOLD.yc+p.v,p.u);uv.push(p.u*1.6+.5,p.v*1.6+.5)}});
-  for(let r=0;r<rows.length-1;r++)for(let j=0;j<M;j++){const a=r*(M+1)+j,b=a+M+1;idx.push(a,b,a+1,b,b+1,a+1)}
-  const g=new THREE.BufferGeometry();g.setAttribute('position',new THREE.Float32BufferAttribute(pos,3));g.setAttribute('uv',new THREE.Float32BufferAttribute(uv,2));g.setIndex(idx);g.computeVertexNormals();return g}
-// Button-head hex socket bolt + thin flange washer, seated at the bottom of the countersink (see hold-*-front.png).
-function mcBolt(mat,holdGeo){const {A,B,tilt}=HOLD;const ct=Math.cos(tilt),st=Math.sin(tilt);
-  const [u0,v0]=HOLD.bolt;const w=1-.27*Math.exp(-(((v0-.06)/.3)**2));const lobe=1+.07*(v0/B);let bu=u0*w*lobe+.05*v0,bv=v0;
-  const tu=bu*ct-bv*st,tv=bu*st+bv*ct;
-  const P=holdGeo.attributes.position,Nm=holdGeo.attributes.normal;const half=P.count/2|0;let best=1e9,bi=0;
-  for(let i=0;i<half;i++){const dz=P.getZ(i)-tu,dy=P.getY(i)-(HOLD.yc+tv);const d=dz*dz+dy*dy;if(d<best){best=d;bi=i}}
-  const pos=new THREE.Vector3(P.getX(bi),P.getY(bi),P.getZ(bi));const n=new THREE.Vector3(Nm.getX(bi),Nm.getY(bi),Nm.getZ(bi));if(n.x<0)n.negate();n.lerp(new THREE.Vector3(1,0,0),.85).normalize();
-  const g=new THREE.Group();
-  const flange=new THREE.Mesh(new THREE.CylinderGeometry(.15,.155,.02,56),mat);flange.rotation.z=-Math.PI/2;flange.position.x=.01;
-  const prof=[];for(let k=0;k<=24;k++){const t=k/24;prof.push(new THREE.Vector2(.128*Math.pow(Math.cos(t*Math.PI/2),.5),.078*Math.sin(t*Math.PI/2)))}
-  const head=new THREE.Mesh(new THREE.LatheGeometry(prof,56),mat);head.rotation.z=-Math.PI/2;head.position.x=.018;
-  const sock=new THREE.Mesh(new THREE.CylinderGeometry(.024,.024,.01,6),new THREE.MeshStandardMaterial({color:0x4a4d52,metalness:.8,roughness:.4}));sock.rotation.z=-Math.PI/2;sock.position.x=.093;
-  g.add(flange,head,sock);g.position.copy(pos).addScaledVector(n,.004);g.quaternion.setFromUnitVectors(new THREE.Vector3(1,0,0),n);return g}
-const MC_LOGO_Y=.47;
-const MC_FONTS={condensed:{label:'Condensed (brand)',family:'"Barlow Condensed"',weight:700,track:.14},
-  heavy:{label:'Heavy sans',family:'"Archivo"',weight:800,track:.04},
-  classic:{label:'Classic sans',family:'"Source Sans 3"',weight:600,track:.06},
-  serif:{label:'Serif',family:'"Playfair Display"',weight:700,track:.04},
-  slab:{label:'Slab',family:'"Roboto Slab"',weight:700,track:.05},
-  stencil:{label:'Stencil',family:'"Big Shoulders Stencil Text"',weight:800,track:.1},
-  script:{label:'Script',family:'"Pacifico"',weight:400,track:0},
-  mono:{label:'Mono',family:'"JetBrains Mono"',weight:600,track:.08}};
-function mcDrawDecal(canvas,o){
-  const W=canvas.width,H=canvas.height,x=canvas.getContext('2d');x.clearRect(0,0,W,H);let ty=H*MC_LOGO_Y;
-  if(o.logoImg){const img=o.logoImg;const w=W*o.logoScale;const h=Math.min(w*img.height/img.width,H*.62);const ww=h*img.width/img.height;
-    const c=document.createElement('canvas');c.width=Math.max(1,Math.round(ww));c.height=Math.max(1,Math.round(h));const cx=c.getContext('2d');cx.drawImage(img,0,0,c.width,c.height);
-    const d=cx.getImageData(0,0,c.width,c.height),p=d.data;let opaque=true;for(let i=3;i<p.length;i+=40){if(p[i]<250){opaque=false;break}}
-    const mode=o.ink==='auto'?(opaque?'dark':'shape'):o.ink;const [er,eg,eb]=o.etchRGB;
-    for(let i=0;i<p.length;i+=4){const L=(.299*p[i]+.587*p[i+1]+.114*p[i+2])/255,A=p[i+3]/255;let a=mode==='shape'?A:mode==='dark'?A*(1-L):A*L;a=Math.max(0,Math.min(1,(a-.12)/.72));p[i]=er;p[i+1]=eg;p[i+2]=eb;p[i+3]=a*255}
-    cx.putImageData(d,0,0);x.drawImage(c,W/2-ww/2,ty-h/2);ty=ty+h/2+H*.085}
-  if(o.text){const F=MC_FONTS[o.font]||MC_FONTS.condensed;const fs=H*(o.font==='script'?.062:.07);x.font=F.weight+' '+fs+'px '+F.family+', sans-serif';x.textAlign='center';x.textBaseline='middle';try{x.letterSpacing=(fs*F.track)+'px'}catch(e){}
-    x.fillStyle='rgb('+o.etchRGB.join(',')+')';let t=o.caps?o.text.toUpperCase():o.text;let f2=fs;const setF=()=>{x.font=F.weight+' '+f2+'px '+F.family+', sans-serif';try{x.letterSpacing=(f2*F.track)+'px'}catch(e){}};while(x.measureText(t).width>W*.7&&f2>H*.036){f2*=.94;setF()}while(x.measureText(t).width>W*.7&&t.length>1)t=t.slice(0,-1);x.fillText(t,W/2,Math.min(ty,H*.92))}}
-const MC_STEEL={color:'#d3d7dc',metal:1,rough:.55,etch:[218,214,202],etchMetal:.35,etchRough:.7};
-const MC_VIEWS={'3/4':-.5,'Front':0,'Handle':-Math.PI/2,'Back':Math.PI};
-function MugStage({config,logoImg,view,onDrag,apiRef}){
-  const host=React.useRef();const S=React.useRef({});
-  React.useEffect(()=>{const el=host.current;const st=S.current;
-    const r=new THREE.WebGLRenderer({antialias:true,alpha:true,preserveDrawingBuffer:true});r.setPixelRatio(Math.min(2,window.devicePixelRatio));r.outputEncoding=THREE.sRGBEncoding;r.toneMapping=THREE.ACESFilmicToneMapping;r.toneMappingExposure=1.05;
-    el.appendChild(r.domElement);r.domElement.style.display='block';r.domElement.style.touchAction='none';
-    const scene=new THREE.Scene();scene.environment=mcBuildEnv(r);
-    const cam=new THREE.PerspectiveCamera(28,1,.1,100);
-    scene.add(new THREE.HemisphereLight(0xffffff,0x444444,.35));const dl=new THREE.DirectionalLight(0xffffff,1.1);dl.position.set(3,6,5);scene.add(dl);
-    const mug=new THREE.Group();scene.add(mug);
-    const brushed=mcCanvasTex(1024,1024,(x,w,h)=>{x.fillStyle='#8c8c8c';x.fillRect(0,0,w,h);for(let i=0;i<5000;i++){const v=100+Math.random()*80|0;x.strokeStyle='rgba('+v+','+v+','+v+',.14)';x.lineWidth=.5+Math.random()*.8;const y=Math.random()*h;x.beginPath();x.moveTo(0,y);x.lineTo(w,y+(Math.random()-.5)*3);x.stroke()}},[1,6]);
-    const V=(a,b)=>new THREE.Vector2(a,b);
-    const outerPts=[V(0,0),V(.9,0),V(.97,.015),V(.995,.06),V(1,.14),V(1,2.7),V(.997,2.76),V(.99,2.785)];
-    const innerPts=[V(.99,2.785),V(.975,2.805),V(.955,2.8),V(.94,2.77),V(.935,2.7),V(.935,.32),V(.9,.29),V(0,.28)];
-    const outerMat=new THREE.MeshStandardMaterial({roughnessMap:brushed,side:THREE.DoubleSide,envMapIntensity:1.1});
-    const innerMat=new THREE.MeshStandardMaterial({color:0xcfd3d8,metalness:1,roughness:.5,roughnessMap:brushed,side:THREE.DoubleSide});
-    mug.add(new THREE.Mesh(new THREE.LatheGeometry(outerPts,128),outerMat));mug.add(new THREE.Mesh(new THREE.LatheGeometry(innerPts,128),innerMat));
-    const ARC=1.7,DH=2.4;const dc=document.createElement('canvas');dc.width=Math.round(512*ARC/DH*2);dc.height=1024;const dtex=new THREE.CanvasTexture(dc);dtex.encoding=THREE.sRGBEncoding;dtex.anisotropy=8;
-    const decalMat=new THREE.MeshStandardMaterial({map:dtex,transparent:true,polygonOffset:true,polygonOffsetFactor:-2,depthWrite:false});
-    const decal=new THREE.Mesh(new THREE.CylinderGeometry(1.003,1.003,DH,96,1,true,-ARC/2,ARC),decalMat);decal.position.y=1.42;mug.add(decal);
-    const grit=mcCanvasTex(512,512,(x,w,h)=>{const d=x.createImageData(w,h);for(let i=0;i<d.data.length;i+=4){const v=Math.random()*255;d.data[i]=d.data[i+1]=d.data[i+2]=v;d.data[i+3]=255}x.putImageData(d,0,0)},[3,3]);
-    const holdMat=new THREE.MeshStandardMaterial({roughness:.9,metalness:0,bumpMap:grit,bumpScale:.01,side:THREE.DoubleSide,envMapIntensity:.45});
-    const holdGeo=mcHoldGeo();mug.add(new THREE.Mesh(holdGeo,holdMat));
-    mug.add(mcBolt(new THREE.MeshStandardMaterial({color:0xe4e7eb,metalness:1,roughness:.12}),holdGeo));
-    const sh=new THREE.Mesh(new THREE.PlaneGeometry(4.2,4.2),new THREE.MeshBasicMaterial({transparent:true,depthWrite:false,map:mcCanvasTex(256,256,(x,w,h)=>{const g=x.createRadialGradient(w/2,h/2,0,w/2,h/2,w/2);g.addColorStop(0,'rgba(0,0,0,.42)');g.addColorStop(.45,'rgba(0,0,0,.16)');g.addColorStop(1,'rgba(0,0,0,0)');x.fillStyle=g;x.fillRect(0,0,w,h)})}));sh.rotation.x=-Math.PI/2;sh.position.y=.002;scene.add(sh);
-    Object.assign(st,{r,scene,cam,mug,outerMat,decalMat,dtex,dc,holdMat,rot:-.5,target:-.5,drag:null});
-    const fit=()=>{const w=el.clientWidth,h=el.clientHeight;if(!w||!h)return;r.setSize(w,h);cam.aspect=w/h;const dist=w/h<.85?12.5:10;cam.position.set(0,2.3,dist);cam.lookAt(0,1.25,0);cam.updateProjectionMatrix()};
-    const ro=new ResizeObserver(fit);ro.observe(el);fit();
-    const cv=r.domElement;
-    const down=e=>{st.drag={x:e.clientX,rot:st.target};cv.setPointerCapture(e.pointerId);cv.style.cursor='grabbing'};
-    const move=e=>{if(!st.drag)return;st.target=st.drag.rot+(e.clientX-st.drag.x)*.011;onDrag&&onDrag()};
-    const up=()=>{st.drag=null;cv.style.cursor='grab'};cv.style.cursor='grab';
-    cv.addEventListener('pointerdown',down);cv.addEventListener('pointermove',move);cv.addEventListener('pointerup',up);cv.addEventListener('pointercancel',up);
-    let raf;const loop=()=>{st.rot+=(st.target-st.rot)*.12;mug.rotation.y=st.rot;r.render(scene,cam);raf=requestAnimationFrame(loop)};loop();
-    if(apiRef)apiRef.current={snapshot:()=>r.domElement.toDataURL('image/png')};
-    return()=>{cancelAnimationFrame(raf);ro.disconnect();r.dispose();el.removeChild(cv)}},[]);
-  React.useEffect(()=>{const st=S.current;if(!st.outerMat)return;const b=MC_STEEL;st.outerMat.color.set(b.color);st.outerMat.metalness=b.metal;st.outerMat.roughness=b.rough;st.decalMat.metalness=b.etchMetal;st.decalMat.roughness=b.etchRough;st.holdMat.color.set(config.hold)},[config.hold]);
-  React.useEffect(()=>{const st=S.current;if(!st.dc)return;const b=MC_STEEL;
-    const draw=()=>{mcDrawDecal(st.dc,{logoImg,logoScale:config.logoScale,text:config.text,ink:config.ink,font:config.textFont,caps:config.textCaps,etchRGB:b.etch});st.dtex.needsUpdate=true};
-    const F=MC_FONTS[config.textFont]||MC_FONTS.condensed;draw();document.fonts&&document.fonts.load(F.weight+' 60px '+F.family).then(draw)},[logoImg,config.logoScale,config.text,config.ink,config.textFont,config.textCaps]);
-  React.useEffect(()=>{const st=S.current;if(view==null||!(view in MC_VIEWS))return;const t=MC_VIEWS[view];const cur=st.target;const k=Math.round((cur-t)/(Math.PI*2));st.target=t+k*Math.PI*2},[view]);
-  return <div ref={host} style={{position:'absolute',inset:0}}></div>;
-}
-Object.assign(window,{MugStage,MC_STEEL,MC_VIEWS,MC_FONTS,MC_LOGO_Y});
-</script>
-<script type="text/babel">const {Button:DButton,Input:DInput,Select:DSelect,Badge:DBadge,Switch:DSwitch,Checkbox:DCheck}=window.MTNShadeDesignSystem_e114fa||{};
-const HOLD_COLORS=[['#2141A8','Summit Blue'],['#C8102E','Crimp Red'],['#FF6720','Orange · PMS 165 C'],['#1F7A35','Green'],['#F5C400','Yellow'],['#16B5BF','Teal'],['#EE5FA7','Pink'],['#1E1F22','Jet Black'],['#EDEBE6','Chalk White'],['#6A3FA0','Grape']];
-const PRESETS=[
-  {id:'mine',label:'Your gym logo',cfg:{logoScale:.5,ink:'auto'},logo:'mine'},
-  {id:'rocas',label:'Example: Las Rocas',cfg:{hold:'#16B5BF',holdName:'Teal',text:'',logoScale:.5,ink:'auto'},logo:{src:'assets/logo/partners/las-rocas-gecko-white.png',name:'Las Rocas gecko'}},
-  {id:'blue',label:'MTNShade Blue',cfg:{hold:'#2141A8',holdName:'Summit Blue',text:''},logo:'default'},
-  {id:'red',label:'MTNShade Red',cfg:{hold:'#C8102E',holdName:'Crimp Red',text:''},logo:'default'}];
-const mcLabel={font:'700 13px/1 var(--font-body)',textTransform:'uppercase',letterSpacing:'.05em',color:'var(--text-strong)'};
-function StepHead({k,t,d}){return <div style={{marginBottom:18}}><div style={{font:'700 13px/1 var(--font-display)',letterSpacing:'.08em',textTransform:'uppercase',color:'var(--brand-primary)'}}>{k}</div>
-  <div style={{font:'700 34px/1 var(--font-display)',textTransform:'uppercase',color:'var(--text-strong)',margin:'6px 0 6px'}}>{t}</div>{d&&<div style={{font:'400 16px/1.4 var(--font-body)',color:'var(--text-muted)'}}>{d}</div>}</div>}
-function SwatchGrid({value,onPick}){return <div style={{display:'grid',gridTemplateColumns:'repeat(5,1fr)',gap:10}}>
-  {HOLD_COLORS.map(([c,n])=>{const on=c.toLowerCase()===value.toLowerCase();return <button key={c} title={n} aria-label={n} onClick={()=>onPick(c,n)} style={{aspectRatio:'1/1',padding:3,borderRadius:'50%',border:on?'2px solid var(--steel-900)':'2px solid transparent',background:'transparent',cursor:'pointer'}}>
-    <span style={{display:'block',width:'100%',height:'100%',borderRadius:'50%',background:c,boxShadow:'inset 0 -4px 8px rgba(0,0,0,.25),inset 0 2px 4px rgba(255,255,255,.25)'+(c==='#EDEBE6'?',inset 0 0 0 1px var(--steel-300)':'')}}></span></button>})}</div>}
-function HexField({value,onChange,label}){const [t,setT]=React.useState(value);React.useEffect(()=>setT(value),[value]);
-  return <div style={{display:'flex',gap:10,alignItems:'flex-end'}}><label style={{display:'flex',flexDirection:'column',gap:6}}><span style={mcLabel}>{label}</span>
-    <input type="color" value={value} onChange={e=>onChange(e.target.value)} style={{width:44,height:44,padding:2,border:'1.5px solid var(--border-strong)',borderRadius:'var(--radius-sm)',background:'#fff',cursor:'pointer'}}/></label>
-    <DInput style={{flex:1}} value={t} onChange={e=>{const v=e.target.value;setT(v);if(/^#[0-9a-f]{6}$/i.test(v))onChange(v)}} placeholder="#16B5BF" hint="Enter your brand hex"/></div>}
-function StepHold({cfg,set,applyPreset}){
-  return <div><StepHead k="Step 01" t="Hold color" d="Match your gym's colors, or keep it classic MTNShade blue or red."/>
-    <div style={{...mcLabel,marginBottom:10}}>Start from</div>
-    <div style={{display:'flex',flexWrap:'wrap',gap:8,marginBottom:22}}>{PRESETS.map(p=><DButton key={p.id} size="sm" variant="outline" onClick={()=>applyPreset(p)}>{p.label}</DButton>)}</div>
-    <div style={{...mcLabel,marginBottom:12}}>Hold: <span style={{fontWeight:400,textTransform:'none',letterSpacing:0}}>{cfg.holdName}</span></div>
-    <SwatchGrid value={cfg.hold} onPick={(c,n)=>set({hold:c,holdName:n})}/>
-    {mcIsCustom(cfg.hold)?<div style={{marginTop:14,padding:'10px 12px',background:'var(--steel-50)',borderRadius:'var(--radius-sm)',font:'400 13px/1.4 var(--font-body)',color:'var(--text-body)'}}><b>Custom color.</b> {mcMoney(MC_CONFIG.pricing.custom)}/mug · minimum {MC_CONFIG.customMOQ} mugs · adds ~2 weeks lead time.</div>:<div style={{marginTop:14,font:'400 13px/1.4 var(--font-body)',color:'var(--text-muted)'}}>Standard MTNShade color · {mcMoney(MC_CONFIG.pricing.standard)}/mug · no minimum · fastest lead time.</div>}
-    <div style={{marginTop:20}}><HexField label="Custom" value={cfg.hold} onChange={c=>set({hold:c,holdName:'Custom '+c.toUpperCase()})}/></div></div>}
-function StepLogo({cfg,set,logo,setLogo}){const ref=React.useRef();const [over,setOver]=React.useState(false);
-  const read=f=>{if(!f||!f.type.startsWith('image/'))return;const r=new FileReader();r.onload=()=>setLogo({src:r.result,name:f.name,mine:true});r.readAsDataURL(f)};
-  const R=(label,k,min,max,step)=><label style={{display:'flex',flexDirection:'column',gap:8}}><span style={{...mcLabel,display:'flex',justifyContent:'space-between'}}>{label}<span style={{fontWeight:400,color:'var(--text-muted)'}}>{Math.round(cfg[k]*100)}%</span></span>
-    <input type="range" min={min} max={max} step={step} value={cfg[k]} onChange={e=>set({[k]:+e.target.value})}/></label>;
-  return <div><StepHead k="Step 02" t="Your logo" d="Upload your gym or company logo. One-color, high-contrast art etches best."/>
-    <button onClick={()=>ref.current.click()} onDragOver={e=>{e.preventDefault();setOver(true)}} onDragLeave={()=>setOver(false)} onDrop={e=>{e.preventDefault();setOver(false);read(e.dataTransfer.files[0])}}
-      style={{width:'100%',padding:'22px 16px',border:'2px dashed '+(over?'var(--brand-primary)':'var(--border-strong)'),borderRadius:'var(--radius-md)',background:over?'var(--blue-50)':'#fff',cursor:'pointer',font:'600 16px/1.4 var(--font-body)',color:'var(--text-body)',display:'flex',alignItems:'center',justifyContent:'center',gap:14}}>
-      {logo&&logo.src?<><img src={logo.src} alt="" style={{height:40,maxWidth:80,objectFit:'contain',background:'var(--steel-700)',borderRadius:4,padding:4}}/><span>{logo.name} · <u>Replace</u></span></>:<span>Drop your logo here or <u>browse</u><br/><span style={{fontWeight:400,fontSize:14,color:'var(--text-muted)'}}>PNG, SVG or JPG</span></span>}</button>
-    <input ref={ref} type="file" accept="image/*" onChange={e=>read(e.target.files[0])} style={{display:'none'}}/>
-    <div style={{display:'flex',gap:8,marginTop:10,marginBottom:20}}>{logo&&<DButton size="sm" variant="ghost" onClick={()=>setLogo(null)}>Remove logo</DButton>}</div>
-    <div style={{display:'flex',flexDirection:'column',gap:6,padding:'12px 14px',background:'var(--steel-50)',borderRadius:'var(--radius-md)',marginBottom:20}}><DCheck checked={!!cfg.logoHelp} onChange={v=>set({logoHelp:v})} label="Only have a JPG or low-res logo? We'll clean it up"/><span style={{font:'400 13px/1.4 var(--font-body)',color:'var(--text-muted)',paddingLeft:32}}>Upload what you have. We'll send a clean, etch-ready version with your proof.</span></div>
-    <div style={{display:'flex',flexDirection:'column',gap:18}}>
-      <DSelect label="Etch from" value={cfg.ink} onChange={v=>set({ink:v})} options={[{value:'auto',label:'Auto-detect'},{value:'shape',label:'Logo shape (transparent PNG)'},{value:'dark',label:'Dark areas of logo'},{value:'light',label:'Light areas of logo'}]}/>
-      {R('Logo size','logoScale',.3,.95,.01)}
-      {/* Engraved text option removed for now — restore from git history if needed */}</div></div>}
-const MC_DEFAULT_LOGO='assets/logo/mtnshade-mark-white.png';
-Object.assign(window,{HOLD_COLORS,StepHead,StepHold,StepLogo,PRESETS,MC_DEFAULT_LOGO,mcLabel});
-</script>
-<script type="text/babel">// Co-brand box: composites the real Las Rocas dieline (assets/packaging/dieline-base.png, 2700×2025,
-// variable art removed) with the customer's logo, brand name, hold colour and the MTNShade UPC,
-// then maps panel crops onto a 3D box. Coordinates are in "preview units" (×3 = canvas px).
-const PK_A='assets/packaging/';
-const PK_S=3;
-const PK_PANELS={back:[99,272,295.5,440.5],left:[298.5,272,462.5,440.5],front:[465.5,272,662.5,440.5],right:[665.5,272,828.5,440.5],top:[99.5,106,295.5,268]};
-const PK_DIMS={w:1.98,d:1.65,h:1.70};
-const PK_FONTS={rounded:{label:'Rounded (original)',family:'"Comfortaa"',weight:500,track:.02},...MC_FONTS};
-let PK_ASSETS=null;
-function pkLoad(){if(PK_ASSETS)return PK_ASSETS;const L=s=>new Promise((res,rej)=>{const i=new Image();i.onload=()=>res(i);i.onerror=rej;i.src=PK_A+s});
-  PK_ASSETS=Promise.all(['dieline-base.png','mug-outline.png','mug-handle-mask.png','mtnshade-lockup-mark.png','upc-850017644854.png'].map(L)).then(([base,mug,handle,mtn,upc])=>({base,mug,handle,mtn,upc}));return PK_ASSETS}
-function pkInk(img,ink,rgb){const c=document.createElement('canvas');c.width=img.naturalWidth||img.width;c.height=img.naturalHeight||img.height;const x=c.getContext('2d');x.drawImage(img,0,0);
-  const d=x.getImageData(0,0,c.width,c.height),p=d.data;let opaque=true;for(let i=3;i<p.length;i+=40){if(p[i]<250){opaque=false;break}}const mode=ink==='auto'||!ink?(opaque?'dark':'shape'):ink;
-  for(let i=0;i<p.length;i+=4){const L=(.299*p[i]+.587*p[i+1]+.114*p[i+2])/255,A=p[i+3]/255;let a=mode==='shape'?A:mode==='dark'?A*(1-L):A*L;a=Math.max(0,Math.min(1,(a-.1)/.75));p[i]=rgb[0];p[i+1]=rgb[1];p[i+2]=rgb[2];p[i+3]=a*255}x.putImageData(d,0,0);return c}
-function pkFit(x,src,cx,cy,mw,mh){const w=src.width,h=src.height;const k=Math.min(mw/w,mh/h);x.drawImage(src,cx-w*k/2,cy-h*k/2,w*k,h*k)}
-function pkText(x,t,cx,cy,px,fontKey,color,maxW){const F=PK_FONTS[fontKey]||PK_FONTS.rounded;let s=px;const set=()=>{x.font=F.weight+' '+s+'px '+F.family+', sans-serif';try{x.letterSpacing=(s*F.track)+'px'}catch(e){}};set();
-  while(maxW&&x.measureText(t).width>maxW&&s>px*.4){s*=.94;set()}x.fillStyle=color;x.textAlign='center';x.textBaseline='middle';x.fillText(t,cx,cy)}
-function pkLabel(x,ox,oy,k,A,name){const S=PK_S*k;x.fillStyle='#fff';x.fillRect(ox,oy,73*S,64*S);x.strokeStyle='#9a9a9a';x.lineWidth=.6*S;x.strokeRect(ox,oy,73*S,64*S);
-  x.fillStyle='#111';x.textAlign='center';x.textBaseline='middle';x.font='400 '+(6.6*S)+'px "Source Sans 3", Arial, sans-serif';try{x.letterSpacing='0px'}catch(e){}x.fillText(name,ox+36.5*S,oy+7*S);
-  x.drawImage(A.upc,ox+3*S,oy+11*S,66*S,42*S);x.fillStyle='#111';x.font='400 '+(5.6*S)+'px "Source Sans 3", Arial, sans-serif';x.fillText('Made in China',ox+36.5*S,oy+58.5*S)}
-function pkCompose(A,o,dc,bc){const x=dc.getContext('2d');const S=PK_S;x.drawImage(A.base,0,0);
-  const logoInk=o.logoImg?pkInk(o.logoImg,o.ink,[20,20,22]):null;const brand=(o.brandText||'').trim()||'Enter brand name';const cap=o.caption;
-  [97,297,464,664].forEach(px=>{x.drawImage(A.mtn,(px+4)*S,273*S,26*S,38*S);
-    x.fillStyle='#222';x.font='400 '+(8*S)+'px "Source Sans 3", Arial, sans-serif';try{x.letterSpacing='0px'}catch(e){}x.textAlign='center';x.textBaseline='middle';x.fillText('x',(px+35)*S,296*S);
-    if(logoInk)pkFit(x,logoInk,(px+54)*S,(cap?288:292)*S,(cap?22:28)*S,(cap?24:32)*S);
-    if(cap)pkText(x,brand,(px+54)*S,(logoInk?305:292)*S,7.6*S,o.brandFont,'#414143',36*S)});
-  const hold=document.createElement('canvas');hold.width=A.handle.width;hold.height=A.handle.height;const hx=hold.getContext('2d');hx.drawImage(A.handle,0,0);hx.globalCompositeOperation='source-in';hx.fillStyle=o.hold;hx.fillRect(0,0,hold.width,hold.height);
-  [[536,308],[723,307]].forEach(([mx,my])=>{const w=76*S,h=74*S;x.drawImage(hold,mx*S,my*S,w,h);x.drawImage(A.mug,mx*S,my*S,w,h);if(logoInk)pkFit(x,logoInk,mx*S+w*.405,my*S+h*.5,w*.24,h*.3)});
-  if(o.brandMode==='logo'&&o.lidLogoImg)pkFit(x,pkInk(o.lidLogoImg,o.lidInk,[255,255,255]),197*S,186*S,150*S,80*S);
-  else if(brand)pkText(x,brand,197*S,186*S,31*S,o.brandFont,'#fff',165*S);
-  pkText(x,'Find us online at',381*S,244*S,6.8*S,o.brandFont,'#fff',150*S);pkText(x,(o.website||'').trim()||'Enter website',381*S,253*S,6.8*S,o.brandFont,'#fff',150*S);
-  pkText(x,'Follow us on socials',747*S,244*S,6.8*S,o.brandFont,'#fff',150*S);pkText(x,(o.instagram||'').trim()||'@Social Media Handle',747*S,253*S,6.8*S,o.brandFont,'#fff',150*S);
-  const bx=bc.getContext('2d');bx.fillStyle='#414143';bx.fillRect(0,0,bc.width,bc.height);}
-const PK_VIEWS={'3/4':{y:-.6,x:.42},'Front':{y:0,x:.2},'Side':{y:-Math.PI/2,x:.2},'Top':{y:0,x:1.25},'Bottom':{y:0,x:-1.35}};
-function BoxStage({opts,custom,view,onDrag,apiRef,flat}){
-  const host=React.useRef();const flatHost=React.useRef();const S=React.useRef({});const [ready,setReady]=React.useState(false);
-  React.useEffect(()=>{const el=host.current;const st=S.current;
-    st.dc=document.createElement('canvas');st.dc.width=2700;st.dc.height=2025;st.bc=document.createElement('canvas');st.bc.width=Math.round(198*PK_S);st.bc.height=Math.round(165*PK_S);
-    const r=new THREE.WebGLRenderer({antialias:true,alpha:true,preserveDrawingBuffer:true});r.setPixelRatio(Math.min(2,window.devicePixelRatio));r.outputEncoding=THREE.sRGBEncoding;r.toneMapping=THREE.NoToneMapping;
-    el.appendChild(r.domElement);r.domElement.style.display='block';r.domElement.style.touchAction='none';
-    const scene=new THREE.Scene();scene.add(new THREE.AmbientLight(0xffffff,.55));const dl=new THREE.DirectionalLight(0xffffff,.62);dl.position.set(-2.5,5,4);scene.add(dl);const dl2=new THREE.DirectionalLight(0xffffff,.25);dl2.position.set(4,2,3);scene.add(dl2);
-    const cam=new THREE.PerspectiveCamera(28,1,.1,100);
-    const base=new THREE.CanvasTexture(st.dc);base.encoding=THREE.sRGBEncoding;base.anisotropy=8;
-    const crop=([x0,y0,x1,y1],rot)=>{const t=base.clone();t.needsUpdate=true;const W=900,H=675;if(rot){t.repeat.set(-(x1-x0)/W,-(y1-y0)/H);t.offset.set(x1/W,1-y0/H)}else{t.repeat.set((x1-x0)/W,(y1-y0)/H);t.offset.set(x0/W,1-y1/H)}return t};
-    const tex={front:crop(PK_PANELS.front),back:crop(PK_PANELS.back),left:crop(PK_PANELS.left),right:crop(PK_PANELS.right),top:crop(PK_PANELS.top,Math.PI),bottom:new THREE.CanvasTexture(st.bc)};
-    tex.bottom.encoding=THREE.sRGBEncoding;
-    const M=t=>new THREE.MeshLambertMaterial({map:t});
-    st.mats=[M(tex.right),M(tex.left),M(tex.top),M(tex.bottom),M(tex.front),M(tex.back)];st.tex=tex;
-    st.plain=new THREE.MeshLambertMaterial({color:0xf6f6f4});
-    const {w,d,h}=PK_DIMS;const box=new THREE.Mesh(new THREE.BoxGeometry(w,h,d),st.mats);
-    const g=new THREE.Group();g.position.y=h/2;g.add(box);scene.add(g);st.box=box;
-    const sh=new THREE.Mesh(new THREE.PlaneGeometry(4.6,4.6),new THREE.MeshBasicMaterial({transparent:true,depthWrite:false,map:mcCanvasTex(256,256,(x,W,H)=>{const gr=x.createRadialGradient(W/2,H/2,0,W/2,H/2,W/2);gr.addColorStop(0,'rgba(0,0,0,.38)');gr.addColorStop(.42,'rgba(0,0,0,.14)');gr.addColorStop(1,'rgba(0,0,0,0)');x.fillStyle=gr;x.fillRect(0,0,W,H)})}));sh.rotation.x=-Math.PI/2;sh.position.y=.002;scene.add(sh);st.sh=sh;
-    Object.assign(st,{r,scene,cam,g,ry:-.6,rx:.42,ty:-.6,tx:.42});
-    const fit=()=>{const W=el.clientWidth,H=el.clientHeight;if(!W||!H)return;r.setSize(W,H);cam.aspect=W/H;const dist=W/H<.85?11:8.6;cam.position.set(0,.9,dist);cam.lookAt(0,.85,0);cam.updateProjectionMatrix()};
-    const ro=new ResizeObserver(fit);ro.observe(el);fit();
-    const cv=r.domElement;cv.style.cursor='grab';
-    cv.addEventListener('pointerdown',e=>{st.drag={x:e.clientX,y:e.clientY,ty:st.ty,tx:st.tx};cv.setPointerCapture(e.pointerId);cv.style.cursor='grabbing'});
-    cv.addEventListener('pointermove',e=>{if(!st.drag)return;st.ty=st.drag.ty+(e.clientX-st.drag.x)*.011;st.tx=Math.max(-1.4,Math.min(1.4,st.drag.tx+(e.clientY-st.drag.y)*.008));onDrag&&onDrag()});
-    const up=()=>{st.drag=null;cv.style.cursor='grab'};cv.addEventListener('pointerup',up);cv.addEventListener('pointercancel',up);
-    let raf;const loop=()=>{st.ry+=(st.ty-st.ry)*.12;st.rx+=(st.tx-st.rx)*.12;g.rotation.order='XYZ';g.rotation.x=st.rx;g.rotation.y=st.ry;const lift=Math.abs(st.rx)>.7?(Math.abs(st.rx)-.7)*.6:0;g.position.y=h/2+lift;st.sh.material.opacity=1-Math.min(1,lift*2);r.render(scene,cam);raf=requestAnimationFrame(loop)};loop();
-    if(apiRef)apiRef.current={snapshot:()=>r.domElement.toDataURL('image/png')};
-    pkLoad().then(A=>{st.A=A;setReady(true)});
-    return()=>{cancelAnimationFrame(raf);ro.disconnect();r.dispose();el.removeChild(cv)}},[]);
-  React.useEffect(()=>{const st=S.current;if(!ready||!st.A)return;
-    const go=()=>{pkCompose(st.A,opts,st.dc,st.bc);Object.values(st.tex).forEach(t=>t.needsUpdate=true);if(flatHost.current&&!flatHost.current.contains(st.dc)){flatHost.current.innerHTML='';st.dc.style.width='100%';st.dc.style.height='auto';st.dc.style.display='block';flatHost.current.appendChild(st.dc)}};
-    const F=PK_FONTS[opts.brandFont]||PK_FONTS.rounded;go();document.fonts&&Promise.all([document.fonts.load(F.weight+' 40px '+F.family),document.fonts.load('400 20px "Source Sans 3"')]).then(go)},[ready,opts,flat]);
-  React.useEffect(()=>{const st=S.current;if(!st.box)return;st.box.material=custom?st.plain:st.mats},[custom,ready]);
-  React.useEffect(()=>{const st=S.current;if(view==null||!PK_VIEWS[view])return;const v=PK_VIEWS[view];const k=Math.round((st.ty-v.y)/(Math.PI*2));st.ty=v.y+k*Math.PI*2;st.tx=v.x},[view]);
-  return <><div ref={host} style={{position:'absolute',inset:0,visibility:flat?'hidden':'visible'}}></div>
-    <div style={{position:'absolute',inset:'96px 24px 96px',display:flat?'flex':'none',alignItems:'center',justifyContent:'center'}}><div ref={flatHost} style={{width:'100%',maxWidth:900,background:'#fff',boxShadow:'var(--shadow-md)',borderRadius:'var(--radius-sm)',overflow:'hidden'}}></div></div></>;
-}
-Object.assign(window,{BoxStage,PK_VIEWS,PK_FONTS});
-</script>
-<script type="text/babel">const {Button:PButton,Input:PInput,Select:PSelect,Switch:PSwitch,Card:PCard}=window.MTNShadeDesignSystem_e114fa||{};
-const PK_DEFAULT={mode:'cobrand',brandMode:'text',brandText:'',brandFont:'rounded',caption:true,lidLogo:null,lidInk:'auto',website:'',instagram:'',labelName:''};
-function PkOption({on,title,body,onClick}){return <button onClick={onClick} style={{textAlign:'left',padding:16,background:'#fff',border:on?'2px solid var(--steel-900)':'1px solid var(--border-subtle)',borderRadius:'var(--radius-md)',cursor:'pointer',display:'flex',flexDirection:'column',gap:6}}>
-  <span style={{display:'flex',alignItems:'center',gap:10}}><span style={{width:18,height:18,borderRadius:'50%',border:'2px solid '+(on?'var(--steel-900)':'var(--steel-400)'),display:'inline-flex',alignItems:'center',justifyContent:'center',flex:'none'}}>{on&&<span style={{width:8,height:8,borderRadius:'50%',background:'var(--steel-900)'}}></span>}</span>
-  <span style={{font:'700 18px/1.05 var(--font-display)',textTransform:'uppercase',color:'var(--text-strong)'}}>{title}</span></span>
-  <span style={{font:'400 14px/1.4 var(--font-body)',color:'var(--text-muted)',paddingLeft:28}}>{body}</span></button>}
-function PkSeg({value,options,onChange}){return <div style={{display:'flex',background:'var(--steel-100)',borderRadius:'var(--radius-sm)',padding:3,gap:3}}>{options.map(([v,l])=><button key={v} onClick={()=>onChange(v)} style={{flex:1,border:'none',cursor:'pointer',padding:'9px 10px',borderRadius:3,font:'700 14px/1 var(--font-display)',textTransform:'uppercase',letterSpacing:'.05em',background:value===v?'#fff':'transparent',color:value===v?'var(--text-strong)':'var(--text-muted)',boxShadow:value===v?'var(--shadow-sm)':'none'}}>{l}</button>)}</div>}
-function StepPackaging({pkg,setPkg,logo,goLogo,autoLabel,onCustom}){
-  const ref=React.useRef();const up=p=>setPkg(x=>({...x,...p}));const [f,setF]=React.useState({name:'',email:'',notes:''});const [err,setErr]=React.useState({});
-  const read=file=>{if(!file||!file.type.startsWith('image/'))return;const r=new FileReader();r.onload=()=>up({lidLogo:{src:r.result,name:file.name}});r.readAsDataURL(file)};
-  const send=()=>{const e={};if(!f.name.trim())e.name='Required';if(!/^[^@\s]+@[^@\s]+\.[^@\s]+$/.test(f.email))e.email='Enter a valid email';setErr(e);if(!Object.keys(e).length)onCustom(f)};
-  const sec={display:'flex',flexDirection:'column',gap:12,paddingTop:18,marginTop:18,borderTop:'1px solid var(--border-subtle)'};
-  return <div><StepHead k="Step 03" t="Packaging" d="Retail-ready gift box. Go co-branded, or bring your own full design."/>
-    <div style={{display:'flex',flexDirection:'column',gap:10}}>
-      <PkOption on={pkg.mode==='cobrand'} onClick={()=>up({mode:'cobrand'})} title="Gym logo × MTNShade" body="Our mountain box with your logo on every side and on the mug drawing, plus your name on the lid."/>
-      <PkOption on={pkg.mode==='custom'} onClick={()=>up({mode:'custom'})} title="Custom" body={'Your own full box design. We\'ll reach out and work through it with you. One-time fee: '+mcMoney(MC_CONFIG.customPackaging.perUnit)+'/mug or '+mcMoney(MC_CONFIG.customPackaging.cap)+', whichever is lower.'}/></div>
-    {pkg.mode==='cobrand'&&<>
-      <div style={sec}><div style={mcLabel}>Your logo</div>
-        <div style={{display:'flex',alignItems:'center',gap:12}}>{logo&&logo.src?<img src={logo.src} alt="" style={{width:52,height:52,objectFit:'contain',background:'var(--steel-700)',borderRadius:6,padding:6,flex:'none'}}/>:<span style={{width:52,height:52,borderRadius:6,border:'1.5px dashed var(--border-strong)',flex:'none'}}></span>}
-          <div style={{flex:1,minWidth:0,font:'400 14px/1.4 var(--font-body)',color:'var(--text-muted)'}}>{logo?<>Using <b style={{color:'var(--text-strong)'}}>{logo.name}</b> from your mug on the lockups and the mug drawing.</>:'No logo on your mug yet.'}</div>
-          <PButton size="sm" variant="outline" onClick={goLogo}>{logo?'Change':'Add logo'}</PButton></div></div>
-      <div style={sec}><div style={mcLabel}>Lid · brand name</div>
-        <PkSeg value={pkg.brandMode} onChange={v=>up({brandMode:v})} options={[['text','Text'],['logo','Logo']]}/>
-        <PInput label="Brand name" value={pkg.brandText} maxLength={24} onChange={e=>up({brandText:e.target.value})} placeholder="Enter brand name" hint={pkg.brandMode==='text'?'Printed on the lid and under your logo':'Printed under your logo'}/>
-        <PSelect label="Font" value={pkg.brandFont} onChange={v=>up({brandFont:v})} options={Object.entries(PK_FONTS).map(([value,x])=>({value,label:x.label}))}/>
-        {pkg.brandMode==='logo'&&<><button onClick={()=>ref.current.click()} style={{padding:16,border:'2px dashed var(--border-strong)',borderRadius:'var(--radius-md)',background:'#fff',cursor:'pointer',font:'600 15px/1.4 var(--font-body)',color:'var(--text-body)',display:'flex',alignItems:'center',justifyContent:'center',gap:12}}>
-          {pkg.lidLogo?<><img src={pkg.lidLogo.src} alt="" style={{height:36,maxWidth:90,objectFit:'contain',background:'#414143',borderRadius:4,padding:4}}/>{pkg.lidLogo.name} · <u>Replace</u></>:<span>Upload a lid logo · <u>browse</u></span>}</button>
-          <input ref={ref} type="file" accept="image/*" style={{display:'none'}} onChange={e=>read(e.target.files[0])}/>
-          <PSelect label="Print from" value={pkg.lidInk} onChange={v=>up({lidInk:v})} options={[{value:'auto',label:'Auto-detect'},{value:'shape',label:'Logo shape (transparent PNG)'},{value:'dark',label:'Dark areas of logo'},{value:'light',label:'Light areas of logo'}]}/></>}
-        <PSwitch checked={pkg.caption} onChange={v=>up({caption:v})} label="Show brand name under logo"/></div>
-      <div style={sec}><div style={mcLabel}>Inside flaps</div>
-        <PInput label="Website" value={pkg.website} onChange={e=>up({website:e.target.value})} placeholder="Enter website"/>
-        <PInput label="Socials handle" value={pkg.instagram} onChange={e=>up({instagram:e.target.value})} placeholder="@Social Media Handle"/></div>
-      <div style={sec}><div style={mcLabel}>Design tweaks</div>
-        <span style={{font:'400 13px/1.4 var(--font-body)',color:'var(--text-muted)',marginTop:-4}}>Any small changes? Our designer will apply them before your proof.</span>
-        <textarea value={pkg.tweaks||''} onChange={e=>up({tweaks:e.target.value})} rows={3} maxLength={500} placeholder="e.g. Make the logo a little bigger, use our darker orange…" style={{font:'400 15px/1.4 var(--font-body)',padding:'10px 12px',border:'1.5px solid var(--border-strong)',borderRadius:'var(--radius-sm)',resize:'vertical',minHeight:72,color:'var(--text-strong)'}}></textarea>
-        <span style={{font:'400 12px/1 var(--font-body)',color:'var(--text-muted)',alignSelf:'flex-end'}}>{(pkg.tweaks||'').length}/500</span></div>
-</>}
-    {pkg.mode==='custom'&&<PCard variant="sunken" padding={18} style={{display:'flex',flexDirection:'column',gap:12,marginTop:18}}>
-      <div style={{font:'400 15px/1.45 var(--font-body)',color:'var(--text-body)'}}>Tell us what you have in mind. We'll send the box dieline and help you finish the artwork.</div>
-      <div style={{display:'grid',gridTemplateColumns:'1fr 1fr',gap:12}}><PInput label="Name" value={f.name} error={err.name} onChange={e=>setF(x=>({...x,name:e.target.value}))}/><PInput label="Email" type="email" value={f.email} error={err.email} onChange={e=>setF(x=>({...x,email:e.target.value}))}/></div>
-      <label style={{display:'flex',flexDirection:'column',gap:6}}><span style={mcLabel}>Your idea</span><textarea rows={3} value={f.notes} onChange={e=>setF(x=>({...x,notes:e.target.value}))} placeholder="Colors, artwork, finish…" style={{font:'400 16px/1.4 var(--font-body)',padding:12,border:'1.5px solid var(--border-strong)',borderRadius:'var(--radius-sm)',resize:'vertical'}}></textarea></label>
-      <PButton variant="ink" onClick={send}>Contact us about a custom box</PButton></PCard>}
-  </div>;
-}
-const PK_ROCAS={brandText:'las rocas',website:'lasrocasclimbing.com',instagram:'@Lasrocasmiami'};
-Object.assign(window,{StepPackaging,PK_DEFAULT,PK_ROCAS});
-</script>
-<script type="text/babel">const {Button:OButton,Input:OInput,Select:OSelect,Card:OCard,Badge:OBadge,QuantityStepper:OQty}=window.MTNShadeDesignSystem_e114fa||{};
-const SAMPLE_PRICE=MC_CONFIG.sample.standard;
-const oLbl={font:'700 13px/1 var(--font-body)',textTransform:'uppercase',letterSpacing:'.05em',color:'var(--text-strong)'};
-const oTitle={font:'700 24px/1 var(--font-display)',textTransform:'uppercase',color:'var(--text-strong)'};
-const oMuted={font:'400 14px/1.45 var(--font-body)',color:'var(--text-muted)'};
-const money=n=>mcMoney(n);
-function Dot({c}){return <span style={{width:16,height:16,borderRadius:'50%',background:c,flex:'none',boxShadow:'inset 0 -2px 3px rgba(0,0,0,.25)'}}></span>}
-function Timeline({custom}){const [a,b]=mcWeeks(custom);const steps=[['Design','Today'],['Proof','~3 days'],['Approve','You sign off'],['At your door',a+'–'+b+' wks']];
-  return <div style={{display:'grid',gridTemplateColumns:'repeat(4,1fr)',gap:6}}>{steps.map(([t,s],i)=><div key={t} style={{display:'flex',flexDirection:'column',gap:6}}>
-    <span style={{height:4,borderRadius:2,background:i===3?'var(--brand-primary)':'var(--steel-300)'}}></span>
-    <span style={{font:'700 13px/1.1 var(--font-display)',textTransform:'uppercase',letterSpacing:'.04em',color:'var(--text-strong)'}}>{t}</span><span style={{font:'400 12px/1.2 var(--font-body)',color:'var(--text-muted)'}}>{s}</span></div>)}</div>}
-function OrderStep({cfg,lines,setLines,summary,onSubmit,onProof,packCustom}){
-  const C=MC_CONFIG;const [retail,setRetail]=React.useState(C.retailDefault);const [mode,setMode]=React.useState(null);const [busy,setBusy]=React.useState(false);
-  const att=mcAttribution();const [f,setF]=React.useState({name:att.name||'',org:att.gym||'',email:att.email||'',date:'',notes:''});const [err,setErr]=React.useState({});const [sq,setSq]=React.useState(1);
-  const units=lines.reduce((s,l)=>s+mcUnits(l),0);const cartons=lines.reduce((s,l)=>s+mcCartons(mcUnits(l)),0);const subtotal=lines.reduce((s,l)=>s+mcUnits(l)*mcUnitPrice(l.hold),0);const packFee=packCustom?mcPackFee(units):0;const total=subtotal+packFee;const avg=units?total/units:0;
-  const anyCustom=lines.some(l=>mcIsCustom(l.hold));const [wa,wb]=mcWeeks(anyCustom);
-  const designCustom=mcIsCustom(cfg.hold);const sPrice=designCustom?C.sample.custom:C.sample.standard;const sWeeks=C.sample.weeks+(designCustom?C.sample.customExtraWeeks:0);
-  const used=lines.map(l=>l.hold.toLowerCase());const addable=HOLD_COLORS.filter(([c])=>!used.includes(c.toLowerCase()));
-  const setLine=(i,p)=>setLines(ls=>ls.map((l,k)=>k===i?{...l,...p}:l));
-  const up=k=>e=>setF(x=>({...x,[k]:e.target.value}));
-  const send=()=>{const e={};if(!f.name.trim())e.name='Required';if(!/^[^@\s]+@[^@\s]+\.[^@\s]+$/.test(f.email))e.email='Enter a valid email';if(mode!=='quote'&&!f.org.trim())e.org='Required';setErr(e);if(Object.keys(e).length)return;setBusy(true);Promise.resolve(onSubmit(mode,{...f,cartons,units,total,sq,sPrice})).finally(()=>setBusy(false))};
-  const open=m=>{setMode(m);setErr({})};
-  const form=<OCard padding={20} style={{display:'flex',flexDirection:'column',gap:12,border:'1.5px solid var(--steel-900)'}}>
-    <div style={{display:'flex',justifyContent:'space-between',alignItems:'flex-start',gap:12}}><div style={oTitle}>{mode==='quote'?'Request a quote':mode==='sample'?'Sample checkout':'Checkout'}</div><button onClick={()=>setMode(null)} aria-label="Close" style={{border:'none',background:'none',cursor:'pointer',font:'400 22px/1 var(--font-body)',color:'var(--text-muted)',padding:0}}>×</button></div>
-    <div style={{...oMuted,marginTop:-6}}>{mode==='sample'?sq+' sample'+(sq>1?'s':'')+' · '+money(sq*sPrice):units+' mugs · '+money(total)} · {summary}</div>
-    <div style={{display:'grid',gridTemplateColumns:'1fr 1fr',gap:12}}><OInput label="Name" value={f.name} onChange={up('name')} error={err.name}/><OInput label="Gym" value={f.org} onChange={up('org')} error={err.org} placeholder="Las Rocas"/></div>
-    <div style={{display:'grid',gridTemplateColumns:'1fr 1fr',gap:12}}><OInput label="Email" type="email" value={f.email} onChange={up('email')} error={err.email} placeholder="you@yourgym.com"/><OInput label="Needed by" type="date" value={f.date} onChange={up('date')}/></div>
-    <label style={{display:'flex',flexDirection:'column',gap:6}}><span style={oLbl}>Notes</span><textarea value={f.notes} onChange={up('notes')} rows={3} placeholder={mode==='quote'?'Event date, reorders, questions…':'Anything we should know before production'} style={{font:'400 16px/1.4 var(--font-body)',padding:12,border:'1.5px solid var(--border-strong)',borderRadius:'var(--radius-sm)',resize:'vertical'}}></textarea></label>
-    <OButton fullWidth size="lg" variant="ink" disabled={busy} onClick={send}>{busy?'Working…':mode==='quote'?'Send request':'Continue to secure payment · '+money(mode==='sample'?sq*sPrice:total)}</OButton>
-    {mode!=='quote'&&<div style={{...oMuted,fontSize:12,textAlign:'center'}}>Paid securely through Stripe. Shipping address is collected at payment. We email a digital proof before anything is made.</div>}</OCard>;
-  const profit=retail-avg;
-  return <div><StepHead k="Step 04" t="Order" d="Bulk orders ship in cartons of 36. Your design is exclusive to your gym."/>
-    <div style={{display:'flex',flexDirection:'column',gap:14}}>
-      <OCard padding={0} style={{overflow:'hidden',display:'grid',gridTemplateColumns:'110px 1fr'}}>
-        <div style={{background:'url(assets/reference/packaging/photo-b.jpg) center 62%/cover',minHeight:110}}></div>
-        <div style={{padding:'14px 16px',display:'flex',flexDirection:'column',gap:4,justifyContent:'center'}}><OBadge tone="ink">Gym partner</OBadge>
-          <div style={{font:'700 18px/1.1 var(--font-display)',textTransform:'uppercase',color:'var(--text-strong)',marginTop:4}}>Las Rocas · Miami</div>
-          <div style={oMuted}>Gecko-etched mugs in co-branded boxes, sold at the front desk.</div></div></OCard>
-      <OCard padding={20} style={{display:'flex',flexDirection:'column',gap:16}}>
-        <div style={oTitle}>Bulk order</div>
-        <div style={{display:'grid',gridTemplateColumns:'1fr 1fr',border:'1px solid var(--border-subtle)',borderRadius:'var(--radius-sm)',overflow:'hidden'}}>
-          {[['MTNShade Blue / Red',C.pricing.standard,'No minimum · from 1 carton',!lines.every(l=>mcIsCustom(l.hold))],['Custom color',C.pricing.custom,'Min '+C.customMOQ+' per color',anyCustom]].map(([t,pr,s,on],k)=><div key={t} style={{padding:'12px 10px',background:on?'var(--steel-900)':'#fff',color:on?'#fff':'var(--text-strong)',borderLeft:k?'1px solid var(--border-subtle)':'none'}}>
-            <div style={{font:'700 13px/1.1 var(--font-display)',textTransform:'uppercase',letterSpacing:'.04em',opacity:.85}}>{t}</div><div style={{font:'700 24px/1.1 var(--font-display)',marginTop:4}}>{money(pr)}<span style={{font:'400 13px var(--font-body)'}}> / mug</span></div><div style={{font:'400 12px/1.3 var(--font-body)',color:on?'rgba(255,255,255,.8)':'var(--text-muted)',marginTop:2}}>{s}</div></div>)}</div>
-        <div style={{display:'flex',flexDirection:'column',gap:10}}>
-          {lines.map((l,i)=><div key={l.hold} style={{display:'flex',alignItems:'center',gap:10,flexWrap:'wrap'}}>
-            <Dot c={l.hold}/><span style={{flex:1,minWidth:110,font:'600 15px/1.2 var(--font-body)',color:'var(--text-strong)'}}>{l.name}{mcIsCustom(l.hold)&&<span style={{marginLeft:8}}><OBadge tone="steel">Custom</OBadge></span>}</span>
-                        {(()=>{const u=mcUnits(l),min=mcMinUnits(l.hold),b={width:36,height:36,border:'1.5px solid var(--border-strong)',background:'#fff',borderRadius:'var(--radius-sm)',cursor:'pointer',font:'700 18px/1 var(--font-body)',color:'var(--text-strong)'};const step=d=>{const v=mcStepUnits(l.hold,u,d);if(v===0){if(i>0)setLines(ls=>ls.filter((_,k)=>k!==i))}else setLine(i,{units:v})};
-              return <div style={{display:'flex',alignItems:'center',gap:6}}><button aria-label="Fewer" disabled={i===0&&u<=min} onClick={()=>step(-1)} style={{...b,opacity:i===0&&u<=min?.4:1}}>−</button><span style={{minWidth:44,textAlign:'center',font:'700 16px/1 var(--font-display)',color:'var(--text-strong)'}}>{u}</span><button aria-label="More" disabled={u>=3564} onClick={()=>step(1)} style={b}>+</button></div>})()}
-            <span style={{width:96,textAlign:'right',font:'400 13px/1.2 var(--font-body)',color:'var(--text-muted)'}}>{mcCartons(mcUnits(l))} carton{mcCartons(mcUnits(l))>1?'s':''}<br/>{money(mcUnits(l)*mcUnitPrice(l.hold))}</span></div>)}
-          {addable.length>0&&<div style={{display:'flex',alignItems:'center',gap:8,flexWrap:'wrap'}}><span style={{...oMuted,fontSize:13}}>Split with another color:</span>
-            {addable.slice(0,6).map(([c,n])=><button key={c} title={n} aria-label={'Add '+n} onClick={()=>setLines(ls=>[...ls,{hold:c,name:n,units:mcMinUnits(c)}])} style={{width:26,height:26,borderRadius:'50%',border:'1.5px dashed var(--steel-400)',background:'#fff',padding:3,cursor:'pointer'}}><span style={{display:'block',width:'100%',height:'100%',borderRadius:'50%',background:c}}></span></button>)}</div>}</div>
-        <div style={{display:'flex',justifyContent:'space-between',alignItems:'flex-end',gap:12,paddingTop:14,borderTop:'1px solid var(--border-subtle)'}}>
-          <div><div style={oMuted}>{units} mugs · {cartons} carton{cartons>1?'s':''}{lines.length>1?' · avg '+money(avg)+'/mug':''}</div><div style={{...oMuted,fontSize:13}}>At your door in {wa}–{wb} weeks{anyCustom?' (custom color +2 wks)':''}</div></div>
-          <div style={{font:'700 30px/1 var(--font-display)',color:'var(--text-strong)'}}>{money(total)}</div></div>
-        {packCustom&&<div style={{display:'flex',justifyContent:'space-between',gap:12,font:'400 13px/1.4 var(--font-body)',color:'var(--text-muted)',marginTop:-8}}><span>Includes one-time custom packaging fee ({money(C.customPackaging.perUnit)}/mug, max {money(C.customPackaging.cap)})</span><span style={{color:'var(--text-strong)',fontWeight:600}}>{money(packFee)}</span></div>}
-        {anyCustom&&<div style={{font:'400 12px/1.4 var(--font-body)',color:'var(--text-muted)'}}>Custom colors start at {C.customMOQ} mugs, then {mcSnap('#000',C.customMOQ+1)}, then add cartons of {C.carton}.</div>}
-      </OCard>
-      <OCard variant="sunken" padding={20} style={{display:'flex',flexDirection:'column',gap:12}}>
-        <div style={oTitle}>Your margin</div>
-        <div style={{display:'flex',alignItems:'flex-end',gap:14,flexWrap:'wrap'}}>
-          <OInput label="Front-desk price" type="number" min={0} value={retail} onChange={e=>setRetail(Math.max(0,+e.target.value||0))} style={{width:140}}/>
-          <div style={{display:'grid',gridTemplateColumns:'repeat(3,auto)',gap:'2px 18px',flex:1}}>
-            {[['Per mug',profit],['Per carton',profit*C.carton],['This order',profit*units]].map(([k,v])=><div key={k}><div style={{...oMuted,fontSize:12,textTransform:'uppercase',letterSpacing:'.05em'}}>{k}</div><div style={{font:'700 22px/1.1 var(--font-display)',color:v>=0?'var(--text-strong)':'var(--danger)'}}>{money(v)}</div></div>)}</div></div>
-        <div style={{...oMuted,fontSize:13}}>{retail>0?Math.round(profit/retail*100):0}% margin at {money(retail)} · we recommend {money(C.retailDefault)} at the front desk.</div></OCard>
-      <div style={{display:'flex',flexDirection:'column',gap:10}}><div style={oLbl}>How it works</div><Timeline custom={anyCustom}/></div>
-      <OButton size="lg" fullWidth onClick={()=>open('checkout')}>Checkout · {money(total)}</OButton>
-      <div style={{display:'grid',gridTemplateColumns:'1fr 1fr',gap:10,marginTop:-4}}>
-        <OButton fullWidth variant="outline" onClick={()=>open('quote')}>Request quote</OButton>
-        <OButton fullWidth variant="outline" onClick={onProof}>Share proof</OButton></div>
-      {(mode==='checkout'||mode==='quote')&&form}
-      <OCard padding={20} style={{display:'flex',flexDirection:'column',gap:12}}>
-        <div style={{display:'flex',justifyContent:'space-between',alignItems:'flex-start',gap:12}}><div><div style={oTitle}>Try a sample first</div><div style={{...oMuted,marginTop:6}}>Your exact design, landed in ~{sWeeks} weeks.{designCustom?' Custom colors take 2 weeks longer.':''}</div></div>
-          <div style={{textAlign:'right',flex:'none'}}><div style={{font:'700 24px/1 var(--font-display)',color:'var(--text-strong)'}}>{money(sPrice)}</div><div style={{...oMuted,fontSize:12}}>/ mug{designCustom?' · custom color':''}</div></div></div>
-        <div style={{display:'flex',alignItems:'center',justifyContent:'space-between',gap:12,flexWrap:'wrap'}}><OQty value={sq} min={1} max={5} onChange={setSq}/>
-          <OButton variant="outline" onClick={()=>open('sample')}>Order {sq} sample{sq>1?'s':''} · {money(sq*sPrice)}</OButton></div>
-        {mode==='sample'&&form}
-        <div style={{display:'flex',alignItems:'center',justifyContent:'space-between',gap:12,flexWrap:'wrap',padding:'12px 14px',border:'1px solid var(--border-subtle)',borderRadius:'var(--radius-md)'}}>
-          <span><span style={{display:'block',font:'700 15px/1.1 var(--font-display)',textTransform:'uppercase',color:'var(--text-strong)'}}>Just want to hold one?</span><span style={oMuted}>Buy a standard MTNShade mug on Amazon</span></span>
-          <span style={{display:'flex',gap:8}}>{C.amazon.map(l=><a key={l.label} href={l.url} target="_blank" rel="noopener" style={{display:'inline-flex',alignItems:'center',gap:8,height:36,padding:'0 12px',border:'1.5px solid var(--steel-900)',borderRadius:'var(--radius-sm)',font:'700 14px/1 var(--font-display)',textTransform:'uppercase',letterSpacing:'.05em',color:'var(--text-strong)',textDecoration:'none'}}><Dot c={l.hold}/>{l.label} →</a>)}</span></div></OCard>
-    </div></div>;
-}
-Object.assign(window,{OrderStep,SAMPLE_PRICE});
-</script>
-<script type="text/babel">const {TabBar:ATabs,Button:AButton,Dialog:ADialog,Toast:AToast,Logo:ALogo}=window.MTNShadeDesignSystem_e114fa||{};
-const MC_KEY='mtnshade-customizer-v1';
-const MC_DEFAULT={hold:'#2141A8',holdName:'Summit Blue',logoScale:.5,text:'',textFont:'condensed',textCaps:true,ink:'auto',logoHelp:false};
-const STEPS=[{id:'hold',label:'Hold'},{id:'logo',label:'Logo'},{id:'packaging',label:'Packaging'},{id:'order',label:'Order'}];
-function load(){try{return JSON.parse(localStorage.getItem(MC_KEY))||{}}catch(e){return {}}}
-function MugStudioApp(){
-  const saved=React.useMemo(load,[]);
-  const [cfg,setCfg]=React.useState(()=>{const c={...MC_DEFAULT,...(saved.cfg||{})};delete c.body;delete c.bodyColor;delete c.logoY;c.text='';return c});
-  const [logo,setLogo]=React.useState(saved.logo!==undefined?saved.logo:null);
-  const [logoImg,setLogoImg]=React.useState(null);
-  const [step,setStep]=React.useState(saved.step&&saved.step!=='body'?saved.step:'hold');const [view,setView]=React.useState('3/4');
-  const [pkg,setPkg]=React.useState(()=>{const v={...PK_DEFAULT,...(saved.pkg||{})};if(!(saved.logo&&saved.logo.name==='Las Rocas gecko'))Object.keys(PK_ROCAS).forEach(k=>{if(v[k]===PK_ROCAS[k])v[k]=''});return v});const [boxView,setBoxView]=React.useState('3/4');const [flat,setFlat]=React.useState(false);const [lidImg,setLidImg]=React.useState(null);
-  const [lines,setLines]=React.useState(saved.lines&&saved.lines.length?saved.lines.map(l=>({hold:l.hold,name:l.name,units:mcSnap(l.hold,mcUnits(l))})):[{hold:cfg.hold,name:cfg.holdName,units:mcMinUnits(cfg.hold)}]);const shots=React.useRef({});
-  const [dlg,setDlg]=React.useState(null);const [toast,setToast]=React.useState(null);const api=React.useRef();
-  const set=p=>setCfg(c=>({...c,...p}));
-  const [myLogo,setMyLogo]=React.useState(()=>{try{const v=JSON.parse(localStorage.getItem('mtnshade-mylogo-v2'));return v&&v.mine?v:null}catch(e){return null}});
-  React.useEffect(()=>{if(logo&&logo.mine&&(!myLogo||myLogo.src!==logo.src)){setMyLogo(logo);try{localStorage.setItem('mtnshade-mylogo-v2',JSON.stringify(logo))}catch(e){}}},[logo&&logo.src]);
-  React.useEffect(()=>{if(!logo||!logo.src){setLogoImg(null);return}const i=new Image();i.onload=()=>setLogoImg(i);i.src=logo.src},[logo&&logo.src]);
-  React.useEffect(()=>{if(!pkg.lidLogo){setLidImg(null);return}const i=new Image();i.onload=()=>setLidImg(i);i.src=pkg.lidLogo.src},[pkg.lidLogo&&pkg.lidLogo.src]);
-  React.useEffect(()=>{setLines(ls=>{const rest=ls.slice(1).filter(l=>l.hold.toLowerCase()!==cfg.hold.toLowerCase()).map(l=>({...l,units:mcSnap(l.hold,mcUnits(l))}));const f=ls[0]||{units:0};return [{hold:cfg.hold,name:cfg.holdName,units:mcSnap(cfg.hold,mcUnits(f))},...rest]})},[cfg.hold,cfg.holdName]);
-  React.useEffect(()=>{try{localStorage.setItem(MC_KEY,JSON.stringify({cfg,logo,step,pkg,lines}))}catch(e){try{localStorage.setItem(MC_KEY,JSON.stringify({cfg,step,lines,pkg:{...pkg,lidLogo:null}}))}catch(_){}}},[cfg,logo,step,pkg,lines]);
-  const autoLabel=((pkg.brandText||'MTNShade').trim().replace(/\b\w/g,m=>m.toUpperCase()))+' '+(cfg.holdName||'').split(' ')[0];
-  const boxOpts=React.useMemo(()=>({logoImg,ink:cfg.ink,hold:cfg.hold,brandMode:pkg.brandMode,brandText:pkg.brandText,brandFont:pkg.brandFont,caption:pkg.caption,lidLogoImg:lidImg,lidInk:pkg.lidInk,website:pkg.website,instagram:pkg.instagram,labelName:pkg.labelName||autoLabel}),[logoImg,cfg.ink,cfg.hold,pkg,lidImg,autoLabel]);
-  const isBox=step==='packaging';
-  const applyPreset=p=>{setCfg(c=>({...c,...p.cfg}));if(p.logo==='default')setLogo({src:MC_DEFAULT_LOGO,name:'MTNShade mark'});if(p.logo==='none')setLogo(null);if(p.logo==='mine')setLogo(myLogo||null);if(p.logo&&typeof p.logo==='object')setLogo(p.logo);setPkg(x=>{const v={...x};Object.keys(PK_ROCAS).forEach(k=>{if(p.id==='rocas')v[k]=PK_ROCAS[k];else if(v[k]===PK_ROCAS[k])v[k]=''});return v})};
-  const summary=cfg.holdName+' hold · '+(logo?logo.name:'No logo yet')+(cfg.logoHelp?' (logo clean-up requested)':'')+' · '+(pkg.mode==='custom'?'Custom box (we\'ll reach out)':'Co-brand box'+(pkg.tweaks&&pkg.tweaks.trim()?' — box notes: "'+pkg.tweaks.trim()+'"':''));
-  const flash=t=>{setToast(t);clearTimeout(window.__mcT);window.__mcT=setTimeout(()=>setToast(null),4000)};
-  const idx=STEPS.findIndex(s=>s.id===step);
-  const shoot=()=>{try{if(api.current)shots.current[isBox?'box':'mug']=api.current.snapshot()}catch(e){}};
-  const go=s=>{shoot();setStep(s)};
-  const proof=()=>{shoot();const ok=mcOpenProof({lines,shots:shots.current,brand:pkg.brandText,summary,customBox:pkg.mode==='custom'});if(!ok)flash({tone:'danger',title:'Pop-up blocked',body:'Allow pop-ups to open the proof.'})};
-  const snap=()=>{const a=document.createElement('a');a.href=api.current.snapshot();a.download=isBox?'mtnshade-custom-box.png':'mtnshade-custom-mug.png';a.click()};
-  const minPrice=MC_CONFIG.pricing.standard;
-  React.useEffect(()=>{const q=new URLSearchParams(location.search),paid=q.get('paid'),cx=q.get('canceled');if(!paid&&!cx)return;
-    if(paid){flash({tone:'brand',title:'Payment received',body:'Order '+paid+' is confirmed. We\'ll email your digital proof within ~3 business days.'});mcSubmit({_subject:'Paid · '+paid,type:'payment',order_id:paid,payment_status:'Paid',stripe_session:q.get('session_id')||''}).catch(()=>{})}
-    else flash({tone:'ink',title:'Checkout canceled',body:'Your design is saved — pick up where you left off any time.'});
-    history.replaceState(null,'',location.pathname)},[]);
-  // Agent/outreach prefill: ?gym=&logo=<url>&hold=<hex>&web=&ig=&font=  (overrides saved state once, then strips itself from the URL)
-  React.useEffect(()=>{const q=new URLSearchParams(location.search);const g=k=>(q.get(k)||'').trim();if(!['logo','hold','brand','web','ig'].some(k=>q.get(k)))return;
-    const hex=g('hold').replace(/^#?/,'#');if(/^#[0-9a-f]{6}$/i.test(hex)){const hit=HOLD_COLORS.find(([c])=>c.toLowerCase()===hex.toLowerCase());set({hold:hit?hit[0]:hex,holdName:hit?hit[1]:(g('holdName')||'Custom '+hex.toUpperCase())})}
-    const brand=g('brand')||g('gym');setPkg(x=>({...x,mode:'cobrand',brandMode:'text',brandText:brand?brand.toLowerCase():x.brandText,website:g('web')||x.website,instagram:g('ig')?(g('ig').startsWith('@')?g('ig'):'@'+g('ig')):x.instagram,brandFont:g('font')||x.brandFont}));
-    const url=g('logo');if(url){const toData=b=>new Promise((ok,no)=>{if(!b.type.startsWith('image/'))return no();const r=new FileReader();r.onload=()=>ok(r.result);r.onerror=no;r.readAsDataURL(b)});
-      const get=u=>fetch(u).then(r=>{if(!r.ok)throw 0;return r.blob()}).then(toData);
-      get(url).catch(()=>get('https://images.weserv.nl/?output=png&url='+encodeURIComponent(url.replace(/^https?:\/\//,'')))).then(src=>setLogo({src,name:(brand||'Gym')+' logo',mine:true}),()=>flash({tone:'danger',title:'Couldn\'t load logo',body:'Upload it in the Logo step.'}))}
-    setStep('hold');const keep=new URLSearchParams();q.forEach((v,k)=>{if(/^utm_|^(name|email|gym)$/.test(k))keep.set(k,v)});history.replaceState(null,'',location.pathname+(keep.toString()?'?'+keep:''))},[]);
-  const submitOrder=(mode,f)=>{shoot();const C=MC_CONFIG,id=mcOrderId(),sample=mode==='sample';
-    const colors=sample?cfg.holdName+(mcIsCustom(cfg.hold)?' (custom '+cfg.hold+')':''):lines.map(l=>l.name+(mcIsCustom(l.hold)?' (custom '+l.hold+')':'')+' × '+mcUnits(l)+' mugs ('+mcCartons(mcUnits(l))+' ctn)').join('; ');
-    const total=sample?f.sq*f.sPrice:f.total;
-    const fields={_subject:{checkout:'New bulk order',sample:'New sample order',quote:'Quote request'}[mode]+' · '+id+' · '+(f.org||f.name)+' · '+mcMoney(total),_replyto:f.email,
-      type:{checkout:'bulk_order',sample:'sample_order',quote:'quote_request'}[mode],order_id:id,name:f.name,gym:f.org,email:f.email,needed_by:f.date,notes:f.notes,
-      hold_colors:colors,cartons:sample?0:f.cartons,units:sample?f.sq:f.units,packaging_route:pkg.mode==='custom'?'Custom':'Gym logo × MTNShade',box_notes:(pkg.tweaks||'').trim(),
-      logo_name:logo?logo.name:'(none)',logo_cleanup:cfg.logoHelp?'Yes':'No',summary,total:total,payment_status:mode==='quote'?'Quote':'Awaiting payment',production_stage:'Received',ship_date:''};
-    const files=[logo&&logo.src&&{field:'logo',src:logo.src,name:logo.name||'logo.png'},shots.current.mug&&{field:'mug_render',src:shots.current.mug,name:id+'-mug.png'},shots.current.box&&{field:'box_render',src:shots.current.box,name:id+'-box.png'}].filter(Boolean);
-    const saved=mcSubmit(fields,files).then(()=>true,()=>false);
-    if(mode==='quote')return saved.then(ok=>flash(ok?{tone:'brand',title:'Quote request sent',body:'Thanks '+f.name.split(' ')[0]+' — we\'ll email '+f.email+' a quote and proof for '+f.units+' mugs.'}:{tone:'danger',title:'Couldn\'t send',body:'Please email '+C.contactEmail+'.'}));
-    const pay=sample?{kind:'sample',hold:cfg.hold,holdName:cfg.holdName,qty:f.sq}:{kind:'bulk',lines,packCustom:pkg.mode==='custom'};
-    return saved.then(ok=>mcCheckout({...pay,orderId:id,email:f.email,gym:f.org}).then(url=>{location.href=url},()=>flash(ok?{tone:'ink',title:'Order '+id+' received',body:'Online payment isn\'t live yet — we\'ll email '+f.email+' a secure invoice.'}:{tone:'danger',title:'Couldn\'t place order',body:'Please email '+C.contactEmail+'.'})))};
-  return <div style={{height:'100%'}}>
-    <header style={{height:60,display:'flex',alignItems:'center',justifyContent:'space-between',gap:16,padding:'0 24px',background:'var(--steel-900)',color:'#fff'}}>
-      <div style={{display:'flex',alignItems:'center',gap:14,minWidth:0}}><ALogo variant="horizontal" height={28} assetBase="assets/logo/"/><span style={{font:'600 15px/1 var(--font-display)',textTransform:'uppercase',letterSpacing:'.12em',opacity:.8,whiteSpace:'nowrap'}}>Custom Mug Studio</span></div>
-      <div style={{display:'flex',gap:8}}><AButton size="sm" variant="ghost" style={{color:'#fff'}} onClick={snap}>Save image</AButton><AButton size="sm" variant="inverse" onClick={proof}>Share proof</AButton></div></header>
-    <div className="mc-layout">
-      <section className="mc-stage" style={{position:'relative',overflow:'hidden',background:'radial-gradient(120% 90% at 50% 35%,#FAFAFA 0%,#E9EBED 55%,#D5D9DD 100%)'}}>
-        {!isBox&&!logo&&<button onClick={()=>go('logo')} style={{position:'absolute',left:'50%',top:'46%',transform:'translate(-50%,-50%)',zIndex:3,background:'rgba(255,255,255,.92)',border:'1.5px dashed var(--steel-500)',borderRadius:'var(--radius-md)',padding:'14px 20px',cursor:'pointer',font:'700 16px/1.1 var(--font-display)',textTransform:'uppercase',letterSpacing:'.05em',color:'var(--text-strong)',boxShadow:'var(--shadow-sm)'}}>+ Add your gym's logo</button>}
-        {isBox?<BoxStage opts={boxOpts} custom={pkg.mode==='custom'} view={boxView} flat={flat&&pkg.mode==='cobrand'} onDrag={()=>setBoxView(null)} apiRef={api}/>:<MugStage config={cfg} logoImg={logoImg} view={view} onDrag={()=>setView(null)} apiRef={api}/>}
-        <div style={{position:'absolute',left:20,top:20,display:'flex',flexDirection:'column',gap:6,pointerEvents:'none'}}>
-          <div style={{font:'700 clamp(28px,3.4vw,44px)/0.95 var(--font-display)',textTransform:'uppercase',color:'var(--text-strong)'}}>{isBox?'The Box':'The Crimp Mug'}</div>
-          <div style={{font:'400 15px/1.3 var(--font-body)',color:'var(--steel-600)'}}>{isBox?(pkg.mode==='custom'?'Custom artwork — designed with our team':'Your logo × MTNShade · retail gift box'):'Your logo, laser-etched · exclusive to your gym'}</div></div>
-        <div style={{position:'absolute',left:0,right:0,bottom:18,display:'flex',flexDirection:'column',alignItems:'center',gap:10}}>
-          <div style={{display:'flex',background:'rgba(255,255,255,.85)',borderRadius:'var(--radius-pill)',padding:4,boxShadow:'var(--shadow-sm)'}}>
-            {(isBox?[...Object.keys(PK_VIEWS),...(pkg.mode==='cobrand'?['Flat']:[])]:Object.keys(MC_VIEWS)).map(v=>{const on=isBox?(v==='Flat'?flat:!flat&&boxView===v):view===v;return <button key={v} onClick={()=>{if(!isBox)return setView(v);if(v==='Flat')return setFlat(true);setFlat(false);setBoxView(v)}} style={{border:'none',cursor:'pointer',padding:'8px 14px',borderRadius:'var(--radius-pill)',font:'700 14px/1 var(--font-display)',textTransform:'uppercase',letterSpacing:'.06em',whiteSpace:'nowrap',background:on?'var(--steel-900)':'transparent',color:on?'#fff':'var(--steel-700)'}}>{v==='Flat'?'Flat dieline':v}</button>})}</div>
-          <div style={{font:'400 13px/1 var(--font-body)',color:'var(--steel-500)'}}>{isBox?(flat?'Print layout · cut lines in red':'Drag to rotate · drag up/down to tilt'):'Drag the mug to rotate'}</div></div></section>
-      <aside className="mc-panel" style={{background:'#fff',borderLeft:'1px solid var(--border-subtle)',display:'flex',flexDirection:'column'}}>
-        <ATabs tone="light" items={STEPS} value={step} onChange={go} style={{gap:28,position:'sticky',top:0,background:'#fff',zIndex:2}}/>
-        <div style={{padding:'24px 28px',flex:1}}>
-          {step==='hold'&&<StepHold cfg={cfg} set={set} applyPreset={applyPreset}/>}
-          {step==='logo'&&<StepLogo cfg={cfg} set={set} logo={logo} setLogo={setLogo}/>}
-          {step==='packaging'&&<StepPackaging pkg={pkg} setPkg={setPkg} logo={logo} goLogo={()=>go('logo')} autoLabel={autoLabel} onCustom={f=>{mcSubmit({_subject:'Custom packaging request · '+(f.name||''),_replyto:f.email,type:'custom_packaging',order_id:mcOrderId(),name:f.name,email:f.email,notes:f.notes,hold_colors:cfg.holdName,summary,payment_status:'Quote',production_stage:'Received'}).catch(()=>{});flash({tone:'brand',title:'Request sent',body:'Thanks '+f.name.split(' ')[0]+' — we\'ll reach out to '+f.email+' about your custom box.'})}}/>}
-          {step==='order'&&<OrderStep packCustom={pkg.mode==='custom'} cfg={cfg} lines={lines} setLines={setLines} summary={summary} onProof={proof} onSubmit={submitOrder}/>}</div>
-        {step!=='order'&&<div style={{position:'sticky',bottom:0,background:'#fff',borderTop:'1px solid var(--border-subtle)',padding:'14px 28px',display:'flex',alignItems:'center',justifyContent:'space-between',gap:14}}>
-          <div style={{minWidth:0}}><div style={{font:'400 12px/1 var(--font-body)',textTransform:'uppercase',letterSpacing:'.05em',color:'var(--text-muted)'}}>Bulk · cartons of {MC_CONFIG.carton}</div><div style={{font:'700 24px/1.1 var(--font-display)',color:'var(--text-strong)'}}>From ${minPrice} / mug</div></div>
-          <AButton size="lg" onClick={()=>go(STEPS[idx+1].id)}>Next: {STEPS[idx+1].label}</AButton></div>}
-      </aside></div>
-    {toast&&<div style={{position:'fixed',right:24,bottom:24,zIndex:200}}><AToast tone={toast.tone} title={toast.title} onClose={()=>setToast(null)}>{toast.body}</AToast></div>}
-  </div>;
-}
-ReactDOM.createRoot(document.getElementById('root')).render(<MugStudioApp/>);
-</script>
-</body></html>

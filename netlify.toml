@@ -1,5 +1,6 @@
 [build]
-  publish = "."
+  command = "node build.mjs"
+  publish = "dist"
   functions = "netlify/functions"
 
 # Checkout called relatively (api/checkout) so it works at / and at /customize/
@@ -10,6 +11,40 @@
 [[redirects]]
   from = "/customize/api/checkout"
   to = "/.netlify/functions/checkout"
+  status = 200
+
+# CRM backend (works at / and /customize/)
+[[redirects]]
+  from = "/api/order"
+  to = "/.netlify/functions/order"
+  status = 200
+[[redirects]]
+  from = "/customize/api/order"
+  to = "/.netlify/functions/order"
+  status = 200
+[[redirects]]
+  from = "/api/order-file"
+  to = "/.netlify/functions/order-file"
+  status = 200
+[[redirects]]
+  from = "/customize/api/order-file"
+  to = "/.netlify/functions/order-file"
+  status = 200
+[[redirects]]
+  from = "/api/payment"
+  to = "/.netlify/functions/payment"
+  status = 200
+[[redirects]]
+  from = "/customize/api/payment"
+  to = "/.netlify/functions/payment"
+  status = 200
+[[redirects]]
+  from = "/api/crm"
+  to = "/.netlify/functions/crm"
+  status = 200
+[[redirects]]
+  from = "/customize/api/crm"
+  to = "/.netlify/functions/crm"
   status = 200
 
 # Studio also reachable at /customize/ (same files)
@@ -26,6 +61,16 @@
   to = "/assets/:splat"
   status = 200
 [[redirects]]
-  from = "/customize/orders.html"
-  to = "/orders.html"
-  status = 200
+  from = "/orders.html"
+  to = "/crm.html"
+  status = 301
+[[redirects]]
+  from = "/customize/crm.html"
+  to = "/crm.html"
+  status = 301
+
+# Keep the CRM out of search engines
+[[headers]]
+  for = "/crm.html"
+  [headers.values]
+    X-Robots-Tag = "noindex, nofollow"

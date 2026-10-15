@@ -1,0 +1,23 @@
+:root{
+/* Summit Blue — primary. Logo panels, banners, comparison column */
+--blue-900:#0B1F45;--blue-800:#102C5F;--blue-700:#173C7E;--blue-600:#1F4E9E;--blue-500:#1660B0;--blue-400:#2D7FD3;--blue-300:#7FB0E6;--blue-100:#DCE8F7;--blue-50:#EEF4FB;
+/* Crimp Red — second colorway */
+--red-800:#8E1F18;--red-700:#B02820;--red-600:#D9362B;--red-500:#E8483C;--red-300:#F49A92;--red-100:#FBE1DE;
+/* Hold colours (the physical urethane holds) */
+--hold-blue:#2141A8;--hold-red:#C8102E;
+/* Steel neutrals — brushed 18/8 stainless */
+--steel-0:#FFFFFF;--steel-50:#F4F5F6;--steel-100:#E8EAED;--steel-200:#D3D7DC;--steel-300:#B4BAC1;--steel-400:#8F959D;--steel-500:#6B7179;--steel-600:#4C5158;--steel-700:#33373C;--steel-800:#22252A;--steel-900:#15171A;
+/* Feature accents (icon strip) */
+--hot:#E8483C;--ice:#4FC3E8;--ember:#F2A63B;
+/* Semantic */
+--success:#1660B0;--danger:#B02820;--warning:#F2A63B;--muted-mark:#6E6E6E;
+
+/* Aliases */
+--brand-primary:var(--blue-600);--brand-primary-hover:var(--blue-700);--brand-primary-press:var(--blue-800);--brand-on-primary:#FFFFFF;
+--brand-secondary:var(--red-600);--brand-secondary-hover:var(--red-700);--brand-on-secondary:#FFFFFF;
+--brand-accent:var(--blue-400);
+--text-strong:var(--steel-900);--text-body:var(--steel-800);--text-muted:var(--steel-500);--text-inverse:#FFFFFF;--text-link:var(--blue-500);
+--surface-page:#FFFFFF;--surface-sunken:var(--steel-50);--surface-card:#FFFFFF;--surface-ink:var(--steel-900);--surface-nav:#1E2125;--surface-brand:var(--blue-600);
+--border-subtle:var(--steel-200);--border-strong:var(--steel-400);--border-focus:var(--blue-400);
+--rule-accent:var(--blue-400);
+}

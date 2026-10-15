@@ -29,5 +29,5 @@ exports.handler=async e=>{
   const r=await fetch('https://api.stripe.com/v1/checkout/sessions',{method:'POST',headers:{Authorization:'Bearer '+process.env.STRIPE_SECRET_KEY,'Content-Type':'application/x-www-form-urlencoded'},body:p});
   const j=await r.json();
   if(!r.ok)return {statusCode:502,body:JSON.stringify({error:(j.error&&j.error.message)||'stripe error'})};
-  return {statusCode:200,headers:{'Content-Type':'application/json'},body:JSON.stringify({url:j.url})};
+  return {statusCode:200,headers:{'Content-Type':'application/json'},body:JSON.stringify({url:j.url,id:j.id})};
 };
