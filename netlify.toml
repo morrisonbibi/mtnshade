@@ -2,7 +2,7 @@
   publish = "."
   functions = "netlify/functions"
 
-# Checkout called relatively (api/checkout) so it works both directly and behind mtnshade.com/customize/
+# Checkout called relatively (api/checkout) so it works at / and at /customize/
 [[redirects]]
   from = "/api/checkout"
   to = "/.netlify/functions/checkout"
@@ -10,4 +10,22 @@
 [[redirects]]
   from = "/customize/api/checkout"
   to = "/.netlify/functions/checkout"
+  status = 200
+
+# Studio also reachable at /customize/ (same files)
+[[redirects]]
+  from = "/customize"
+  to = "/customize/"
+  status = 301
+[[redirects]]
+  from = "/customize/"
+  to = "/index.html"
+  status = 200
+[[redirects]]
+  from = "/customize/assets/*"
+  to = "/assets/:splat"
+  status = 200
+[[redirects]]
+  from = "/customize/orders.html"
+  to = "/orders.html"
   status = 200
