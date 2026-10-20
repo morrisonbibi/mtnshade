@@ -32,7 +32,7 @@ Steps: Hold → Logo → Packaging → Order.
 - `mc-proof.js` — printable proof page. `mc-orders.js` — Formspree submit, CRM save, Stripe checkout, UTM attribution.
 
 ### Prefilled outreach links
-`/customize/?gym=Name&logo=<image url>&hold=<6-hex>&web=site.com&ig=handle&font=<key>&utm_source=…&utm_campaign=…`
+`/customize/?gym=Name&logo=<image url>&hold=<6-hex>&web=site.com&ig=handle&font=<key>&ink=<auto|shape|dark|light>&scale=<0.3-0.95>&utm_source=…&utm_campaign=…`
 Logo is fetched (falls back to images.weserv.nl proxy for CORS), applied once, then design params are stripped from the URL (utm/gym/name/email kept for attribution).
 
 ## Outreach prospects + private gym mockup pages

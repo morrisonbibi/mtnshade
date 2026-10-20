@@ -38,6 +38,7 @@ function MugStudioApp(){
   // Agent/outreach prefill: ?gym=&logo=<url>&hold=<hex>&web=&ig=&font=  (overrides saved state once, then strips itself from the URL)
   React.useEffect(()=>{const q=new URLSearchParams(location.search);const g=k=>(q.get(k)||'').trim();if(!['logo','hold','brand','web','ig'].some(k=>q.get(k)))return;
     const hex=g('hold').replace(/^#?/,'#');if(/^#[0-9a-f]{6}$/i.test(hex)){const hit=HOLD_COLORS.find(([c])=>c.toLowerCase()===hex.toLowerCase());set({hold:hit?hit[0]:hex,holdName:hit?hit[1]:(g('holdName')||'Custom '+hex.toUpperCase())})}
+    const ink=g('ink');if(['auto','shape','dark','light'].includes(ink))set({ink});const sc=parseFloat(g('scale'));if(sc>=.3&&sc<=.95)set({logoScale:sc});
     const brand=g('brand')||g('gym');setPkg(x=>({...x,mode:'cobrand',brandMode:'text',brandText:brand?brand.toLowerCase():x.brandText,website:g('web')||x.website,instagram:g('ig')?(g('ig').startsWith('@')?g('ig'):'@'+g('ig')):x.instagram,brandFont:g('font')||x.brandFont}));
     const url=g('logo');if(url){const toData=b=>new Promise((ok,no)=>{if(!b.type.startsWith('image/'))return no();const r=new FileReader();r.onload=()=>ok(r.result);r.onerror=no;r.readAsDataURL(b)});
       const get=u=>fetch(u).then(r=>{if(!r.ok)throw 0;return r.blob()}).then(toData);
@@ -47,7 +48,7 @@ function MugStudioApp(){
   const [gym,setGym]=React.useState(null);const [noteOpen,setNoteOpen]=React.useState(true);
   const unlockGym=g=>{
     const hold=/^#[0-9a-f]{6}$/i.test(g.hold||'')?g.hold:MC_DEFAULT.hold,holdName=g.holdName||('Custom '+hold.toUpperCase());
-    const gcfg={hold,holdName,logoScale:g.logo_scale||.5,ink:'auto'};
+    const gcfg={hold,holdName,logoScale:g.logo_scale||.5,ink:g.ink||'auto'}; // ink: which part of the logo gets etched (auto/shape/dark/light)
     const gpkg={mode:'cobrand',brandMode:'text',brandText:(g.brand_text||g.gym||'').toLowerCase(),website:g.website||'',instagram:g.instagram||'',brandFont:g.font||PK_DEFAULT.brandFont,labelName:''};
     const glogo=g.logo?{src:g.logo,name:g.gym+' logo',mine:true}:null;
     window.MC_GYM_PRESET={id:'gym',label:g.gym+' design',cfg:gcfg,logo:glogo||undefined,pkg:gpkg};

@@ -73,5 +73,5 @@ async function setLogoUpload(slug,dataUrl,name){
   await pFiles().set(slug+'/logo-upload',toBuf(buf),{metadata:{type:m[1],name:String(name||'logo').slice(0,120),size:buf.length}});return true;
 }
 // What the gym's page receives after the right password. Internal fields (research, notes, email…) never leave the server.
-const publicView=p=>({slug:p.slug,gym:p.gym,hold:p.hold,holdName:p.holdName,brand_text:p.brand_text,website:p.website,instagram:p.instagram,font:p.font,logo_scale:p.logo_scale,note:p.note,logo_url:p.logo_url});
+const publicView=p=>({slug:p.slug,gym:p.gym,hold:p.hold,holdName:p.holdName,brand_text:p.brand_text,website:p.website,instagram:p.instagram,font:p.font,logo_scale:p.logo_scale,ink:p.ink,note:p.note,logo_url:p.logo_url});
 module.exports={STAGES,SLUG,norm,getProspect,listProspects,saveProspect,logView,getLogo,setLogoUpload,pwOk,publicView,pFiles};
