@@ -67,6 +67,8 @@ Password = env `CRM_PASSWORD` (a random key, sent as header `x-crm-key`). Morris
 - `PUBLIC_URL` (optional) — e.g. `https://mtnshade.com/customize`.
 
 ## Open items
+- **Netlify production deploys paused (Oct 20, 2026):** team ran out of build credits for the billing cycle. Commits from 3f2aa0e on were Skipped. NJ Rock Gym, Rockville and Kinetic were added through the CRM (Blobs) instead, with logos uploaded via the CRM (Rockville/Kinetic pre-processed to white-on-transparent). When credits reset or the plan is upgraded, trigger a deploy (push a commit) so the skipped code ships: per-gym `ink`, ink/scale prefill params, the seed entries.
+- Known issue: Netlify Blobs reads are eventually consistent, so rapid back-to-back CRM edits on one prospect can overwrite each other (saveProspect reads the current blob, merges, writes). Fix when deploys resume: merge only the changed fields server-side using a fresh read with retries, or store fields per key.
 - Confirm Amazon ASINs: B0CK2W7TL8 = Blue?, B0CK2RZZPX = Red? (`mc-config.js` → `amazon`).
 - Real box dimensions in inches (currently estimated).
 - Optional: Stripe webhook for payments when a buyer closes the tab before returning (today the CRM re-checks unpaid orders with a session on every load, and has a "Check Stripe" button).

@@ -92,7 +92,7 @@ module.exports=[
     logo_scale:.5,ink:'dark',
     brand_text:'kinetic climbing',
     font:'condensed',
-    note:'Hi Kinetic, your badge logo was made for a mug. Here it is etched on our Crimp Mug with the hold in your teal. These could make a good prize for your Christmas comp too.',
+    note:'Hi Kinetic, your badge logo was made for a mug. Here it is etched on our Crimp Mug with the hold in your teal. Spin it around and check out the box too.',
     stage:'Mockup ready',
     research:'Single location (1155 S Black Horse Pike, Williamstown, South Jersey). Bills itself as NJ\'s first and only bouldering-specific gym; about 80 problems reset weekly. Fun, casual voice ("the dopest members"). Members\' Christmas party and comp on Fri Dec 19. Badge logo: mountains, sun, pines and lake in teal/copper/brown on white. Contact email on the site is a personal Gmail (cmcconnell222@gmail.com), likely the owner or manager.'
   }
