@@ -1,7 +1,7 @@
 // Outreach prospects: seed list (prospects-seed.js) + CRM edits/views stored in Netlify Blobs.
 const {getStore}=require('@netlify/blobs');
 const SEED=require('./prospects-seed.js');
-const store=name=>getStore({name,consistency:'strong'});
+const store=name=>getStore({name});
 const pStore=()=>store('mug-prospects'),pFiles=()=>store('mug-prospect-files');
 const STAGES=['Researching','Mockup ready','Emailed','Follow-up 1 sent','Follow-up 2 sent','Replied','Meeting','Sample ordered','Won','Not now'];
 // Days until the next follow-up after a stage change (Emailed → +5, first follow-up → +7 more, i.e. day 12).

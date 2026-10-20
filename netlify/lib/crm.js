@@ -1,6 +1,6 @@
 // Shared helpers for the Mug CRM backend (Netlify Functions + Netlify Blobs — no extra accounts needed).
 const {getStore,connectLambda}=require('@netlify/blobs');
-const store=name=>getStore({name,consistency:'strong'});
+const store=name=>getStore({name});
 const orderStore=()=>store('mug-orders'),fileStore=()=>store('mug-order-files'),customerStore=()=>store('mug-customers');
 const ID=/^MS-\d{6}-[A-Z0-9]{4}$/;
 const res=(o,s)=>({statusCode:s||200,headers:{'content-type':'application/json','cache-control':'no-store'},body:JSON.stringify(o)});
