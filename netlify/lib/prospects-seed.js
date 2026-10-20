@@ -95,5 +95,35 @@ module.exports=[
     note:'Hi Kinetic, your badge logo was made for a mug. Here it is etched on our Crimp Mug with the hold in your teal. Spin it around and check out the box too.',
     stage:'Mockup ready',
     research:'Single location (1155 S Black Horse Pike, Williamstown, South Jersey). Bills itself as NJ\'s first and only bouldering-specific gym; about 80 problems reset weekly. Fun, casual voice ("the dopest members"). Members\' Christmas party and comp on Fri Dec 19. Badge logo: mountains, sun, pines and lake in teal/copper/brown on white. Contact email on the site is a personal Gmail (cmcconnell222@gmail.com), likely the owner or manager.'
+  },
+  {
+    slug:'rocksteady',gym:'RockSteady Climbing',password:'rocksteady',town:'Setauket, NY',
+    address:'4016 Nesconset Hwy, Suite C, Setauket, NY',email:'info@rocksteadyclimb.com',phone:'631-675-1076',
+    website:'rocksteadyclimb.com',instagram:'@rocksteadyclimb',hold:'#2A2D3F',holdName:'RockSteady Navy',
+    logo_url:'https://www.rocksteadyclimb.com/wp-content/uploads/2026/04/ROCKSTEADY-Main-Logo-cropped.jpg',logo_scale:.6,ink:'dark',
+    brand_text:'rocksteady climbing',font:'condensed',
+    note:'Hi Erik and Kristin, congrats on opening RockSteady. A new gym needs merch for the front desk, so here\'s your logo etched on our Crimp Mug with the hold in your navy. Spin it around and check out the box too.',
+    stage:'Mockup ready',
+    research:'Single location (behind Ethan Allen on Route 347). Opened summer 2026; owners Erik and Kristin Cline, local mom-and-pop gym. Climb, Connect, Improve. Youth programs, parties, yoga. Black wordmark with climber icon; navy #2A2D3F with olive/brown accents.'
+  },
+  {
+    slug:'islandrock',gym:'Island Rock',password:'island rock',town:'Plainview, NY',
+    address:'60 Skyline Dr, Plainview, NY',email:'info@islandrock.com',phone:'516-822-7625',
+    website:'islandrock.com',instagram:'@island_rock_gym',hold:'#004C4C',holdName:'Island Rock Teal',
+    logo_url:'https://images.squarespace-cdn.com/content/v1/67e552538540f75d940a11bf/04e40ae3-683c-49ac-a8f1-f2b85395842a/Untitled+design+%283%29.png?format=1000w',logo_scale:.5,ink:'shape',
+    brand_text:'island rock',font:'heavy',
+    note:'Hi Island Rock, thirty years as Long Island\'s O.G. climbing gym deserves its own mug. This is your logo etched on our Crimp Mug with the hold in your teal. Spin it around and check out the box too.',
+    stage:'Mockup ready',
+    research:'Single location. Est. 1996, "Long Island\'s O.G. climbing gym". Ropes and bouldering, youth programs, classes, yoga, parties. Circle logo with climber; deep teal #004C4C with cream.'
+  },
+  {
+    slug:'bcs',gym:"BC's New Paltz Climbing Gym",password:'bcs',town:'New Paltz, NY',
+    address:'234 Main St, New Paltz, NY 12561',email:'contact@bcclimbinggym.com',phone:'845-255-7625',
+    website:'bcclimbinggym.com',instagram:'@bc_climbing_gym',hold:'#36B3A8',holdName:'BC Teal',
+    logo_url:'https://images.squarespace-cdn.com/content/v1/5689867ca12f44306f8cd182/1515269950827-WALJLXQNXRXI0Y91DC0Z/BClogovWHITE-01.png?format=1000w',logo_scale:.5,ink:'shape',
+    brand_text:"bc's climbing gym",font:'condensed',
+    note:"Hi Big Chris, I saw your hoodies and tees, so a BC's mug felt like the next drop. This is your logo etched on our Crimp Mug with the hold in your teal. Spin it around and check out the box too.",
+    stage:'Mockup ready',
+    research:'Single location. Formerly The Inner Wall (1994); bought and renamed by Christopher "Big Chris" Scott, est. Jan 8, 2018. Adult-focused bouldering (13+), sells its own hoodies and tees. White circle logo with handprint; teal #36B3A8. Instagram is their main channel.'
   }
 ];
