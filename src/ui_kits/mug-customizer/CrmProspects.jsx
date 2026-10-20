@@ -38,7 +38,7 @@ function CrmProspectDetail({ctx,p,onBack,onSaved}){
           <div style={{display:'grid',gridTemplateColumns:'minmax(80px,120px) minmax(0,1fr)',gap:10,font:'400 14px/1.4 var(--font-body)'}}>
             <span style={{color:'var(--text-muted)'}}>Link</span><a href={prLink(p)} target="_blank" rel="noopener" style={{overflowWrap:'anywhere'}}>{prLink(p).replace(/^https?:\/\//,'')}</a>
             <span style={{color:'var(--text-muted)'}}>Password</span><span style={{color:'var(--text-strong)',fontWeight:600}}>{p.password||p.brand_text||p.gym} <span style={{fontWeight:400,color:'var(--text-muted)'}}>(capital letters don't matter)</span></span>
-            <span style={{color:'var(--text-muted)'}}>Opened</span><PrViews p={p}/></div>
+            <span style={{color:'var(--text-muted)'}}>Opened</span><span><PrViews p={p}/>{p.views>0&&<button onClick={()=>save({reset_views:true},'Reset page views (my own test visits)')} style={{marginLeft:10,border:'none',background:'none',padding:0,cursor:'pointer',font:'600 12px/1 var(--font-body)',color:'var(--brand-primary)'}}>Reset</button>}</span></div>
           <PrEdit p={p} k="note" label="Your note at the top of their page" rows={4} save={save}/>
           <div style={{...crmMuted,fontSize:12,marginTop:-8}}>Opening the page from this computer doesn't count as a view.</div></CCard>
         <CCard padding={0} style={card}><h2 style={crmH2}>Mockup</h2>

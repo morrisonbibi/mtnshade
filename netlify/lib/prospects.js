@@ -33,10 +33,12 @@ async function saveProspect(slug,patch,note){
     if(FOLLOW[p.stage]&&p.follow_up===undefined)p.follow_up=day(FOLLOW[p.stage]);
     if(['Replied','Meeting','Sample ordered','Won','Not now'].includes(p.stage)&&p.follow_up===undefined)p.follow_up='';
   }
-  ['slug','seeded','history','views','first_viewed','last_viewed','created'].forEach(k=>delete p[k]);
-  const n=Object.assign({},cur,p,{updated:now()});if(!n.created)n.created=now();
+  const reset=!!p.reset_views;
+  ['slug','seeded','history','views','first_viewed','last_viewed','created','reset_views'].forEach(k=>delete p[k]);
+  const n=Object.assign({},cur,p,{updated:now()});if(reset){n.views=0;delete n.first_viewed;delete n.last_viewed;hist.push('Page views reset')}if(!n.created)n.created=now();
   n.history=[...(cur.history||[]),...hist.map(t=>({at:now(),text:t})),...(note?[{at:now(),text:String(note).slice(0,2000),note:true}]:[])];
-  await st.setJSON(slug,n);return getProspect(slug);
+  // Return what was just written (a fresh read can lag a few seconds behind a write).
+  await st.setJSON(slug,n);return Object.assign({slug},seedOf(slug)||{},n,{seeded:!!seedOf(slug)});
 }
 // Logs that the gym unlocked its page (history entry at most once every 30 min so refreshes don't spam it).
 async function logView(slug,geo){

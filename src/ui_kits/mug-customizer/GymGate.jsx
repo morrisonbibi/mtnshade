@@ -18,7 +18,7 @@ function GymGate({slug,onUnlock}){
   React.useEffect(()=>{let saved='';try{saved=localStorage.getItem(ggPwKey(slug))||''}catch(e){}if(saved)go(saved,true);else setBusy(false)},[]);
   return <div style={{position:'fixed',inset:0,zIndex:300,display:'grid',placeItems:'center',padding:16,background:'rgba(21,23,26,.62)',backdropFilter:'blur(10px)',WebkitBackdropFilter:'blur(10px)'}}>
     <form onSubmit={e=>{e.preventDefault();if(pw.trim())go(pw.trim())}} style={{width:'100%',maxWidth:400,background:'#fff',borderRadius:'var(--radius-md)',padding:28,display:'flex',flexDirection:'column',gap:16,boxShadow:'var(--shadow-md)'}}>
-      <GLogo variant="horizontal" color="blue" height={28} assetBase="../../assets/logo/"/>
+      <div style={{display:'flex'}}><GLogo variant="horizontal" color="blue" height={28} assetBase="../../assets/logo/"/></div>
       {dead?<React.Fragment>
         <div style={{font:'700 26px/1 var(--font-display)',textTransform:'uppercase',color:'var(--text-strong)'}}>Link not found</div>
         <div style={{font:'400 15px/1.45 var(--font-body)',color:'var(--text-muted)'}}>This mockup link isn't active. Email <a href={'mailto:'+MC_CONFIG.contactEmail}>{MC_CONFIG.contactEmail}</a> and we'll send you a fresh one.</div>

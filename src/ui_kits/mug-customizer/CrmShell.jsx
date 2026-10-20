@@ -16,7 +16,7 @@ function CrmLabeled({label,children}){return <label style={{display:'flex',flexD
 function CrmLogin({onKey,err,busy}){const [k,setK]=React.useState('');
   return <div style={{minHeight:'100vh',display:'grid',placeItems:'center',background:'var(--steel-900)',padding:24}}>
     <form onSubmit={e=>{e.preventDefault();onKey(k)}} style={{width:'100%',maxWidth:380,background:'#fff',borderRadius:'var(--radius-md)',padding:28,display:'flex',flexDirection:'column',gap:16}}>
-      <CLogo variant="horizontal" color="blue" height={30} assetBase="../../assets/logo/"/>
+      <div style={{display:'flex'}}><CLogo variant="horizontal" color="blue" height={30} assetBase="../../assets/logo/"/></div>
       <h1 style={crmH}>Mug CRM</h1>
       <CInput label="CRM password" type="password" value={k} onChange={e=>setK(e.target.value)} error={err} autoFocus/>
       <CButton variant="ink" size="lg" fullWidth disabled={busy||!k}>{busy?'Checking…':'Open CRM'}</CButton>
