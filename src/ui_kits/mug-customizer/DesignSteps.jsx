@@ -18,7 +18,7 @@ function HexField({value,onChange,label}){const [t,setT]=React.useState(value);R
 function StepHold({cfg,set,applyPreset}){
   return <div><StepHead k="Step 01" t="Hold color" d="Match your gym's colors, or keep it classic MTNShade blue or red."/>
     <div style={{...mcLabel,marginBottom:10}}>Start from</div>
-    <div style={{display:'flex',flexWrap:'wrap',gap:8,marginBottom:22}}>{PRESETS.map(p=><DButton key={p.id} size="sm" variant="outline" onClick={()=>applyPreset(p)}>{p.label}</DButton>)}</div>
+    <div style={{display:'flex',flexWrap:'wrap',gap:8,marginBottom:22}}>{(window.MC_GYM_PRESET?[window.MC_GYM_PRESET,...PRESETS.filter(x=>x.id!=='mine')]:PRESETS).map(p=><DButton key={p.id} size="sm" variant="outline" onClick={()=>applyPreset(p)}>{p.label}</DButton>)}</div>
     <div style={{...mcLabel,marginBottom:12}}>Hold: <span style={{fontWeight:400,textTransform:'none',letterSpacing:0}}>{cfg.holdName}</span></div>
     <SwatchGrid value={cfg.hold} onPick={(c,n)=>set({hold:c,holdName:n})}/>
     {mcIsCustom(cfg.hold)?<div style={{marginTop:14,padding:'10px 12px',background:'var(--steel-50)',borderRadius:'var(--radius-sm)',font:'400 13px/1.4 var(--font-body)',color:'var(--text-body)'}}><b>Custom color.</b> {mcMoney(MC_CONFIG.pricing.custom)}/mug · minimum {MC_CONFIG.customMOQ} mugs · adds ~2 weeks lead time.</div>:<div style={{marginTop:14,font:'400 13px/1.4 var(--font-body)',color:'var(--text-muted)'}}>Standard MTNShade color · {mcMoney(MC_CONFIG.pricing.standard)}/mug · no minimum · fastest lead time.</div>}

@@ -1,4 +1,5 @@
 // PRIVATE CRM API. Every request needs header x-crm-key = env CRM_PASSWORD (Netlify → Site configuration → Environment variables).
+const P=require('../lib/prospects.js');
 const {connectLambda,orderStore,fileStore,customerStore,res:json,ID,now,customerKey,syncStripe,body,toBuf}=require('../lib/crm.js');
 const EDITABLE=['stage','ship_date','carrier','tracking','manufacturer','mfg_po','mfg_cost','internal_notes','proof_status','archived','ship','mfg_notes','contact','needed_by','quoted_total'];
 const STAGES=['Quote','Received','Proof sent','Proof approved','Sent to manufacturer','In production','Shipped','Delivered','Canceled'];
@@ -22,6 +23,8 @@ exports.handler=async e=>{
     const r=await fs.getWithMetadata(id+'/'+f,{type:'arrayBuffer'});if(!r)return json({error:'not found'},404);
     return {statusCode:200,headers:{'content-type':(r.metadata&&r.metadata.type)||'application/octet-stream','cache-control':'private, max-age=600'},body:Buffer.from(r.data).toString('base64'),isBase64Encoded:true};
   }
+  if(op==='prospects')return json({prospects:await P.listProspects(),stages:P.STAGES});
+  if(op==='prospect_logo'){const p=await P.getProspect((qp.slug||'').toLowerCase());if(!p)return json({error:'not found'},404);const d=await P.getLogo(p);return json({logo:d})}
   if(e.httpMethod!=='POST')return json({error:'POST only'},405);
   const b=body(e)||{};
   if(op==='update'){
@@ -56,6 +59,19 @@ exports.handler=async e=>{
     const d=new Date(),p=n=>String(n).padStart(2,'0');const id='MS-'+String(d.getFullYear()).slice(2)+p(d.getMonth()+1)+p(d.getDate())+'-'+Math.random().toString(36).slice(2,6).toUpperCase();
     const o={...(b.order||{}),id,created:now(),source:'manual',payment:{status:(b.order&&b.order.payment_status)||'Invoiced'},stage:(b.order&&b.order.stage)||'Received',history:[{at:now(),text:'Created manually in CRM'}]};
     delete o.payment_status;o.customer_key=customerKey(o);await os.setJSON(id,o);return json({order:o});
+  }
+  if(op==='prospect'){
+    const slug=String(b.slug||'').toLowerCase();if(!await P.getProspect(slug))return json({error:'not found'},404);
+    if(b.logo&&!(await P.setLogoUpload(slug,b.logo,b.logo_name)))return json({error:'Logo must be an image under 4 MB'},400);
+    return json({prospect:await P.saveProspect(slug,b.patch||{},b.note)});
+  }
+  if(op==='prospect_create'){
+    const x=b.prospect||{};const slug=String(x.slug||P.norm(x.gym)).toLowerCase().slice(0,40);
+    if(!P.SLUG.test(slug))return json({error:'Pick a short link name (letters, numbers, dashes)'},400);
+    if(await P.getProspect(slug))return json({error:'mtnshade.com/g/'+slug+' is already taken'},409);
+    if(!x.gym)return json({error:'Gym name required'},400);
+    if(b.logo&&!(await P.setLogoUpload(slug,b.logo,b.logo_name)))return json({error:'Logo must be an image under 4 MB'},400);
+    return json({prospect:await P.saveProspect(slug,Object.assign({stage:'Researching'},x),'Added in CRM')});
   }
   return json({error:'unknown op'},400);
 };

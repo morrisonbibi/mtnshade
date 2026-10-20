@@ -3,6 +3,8 @@ window.CRM_STAGES=['Quote','Received','Proof sent','Proof approved','Sent to man
 window.CRM_STAGE_COLOR={'Quote':'var(--steel-400)','Received':'var(--warning)','Proof sent':'var(--ice)','Proof approved':'var(--brand-primary)','Sent to manufacturer':'#6A3FA0','In production':'#6A3FA0','Shipped':'var(--steel-900)','Delivered':'#1F7A35','Canceled':'var(--danger)'};
 window.CRM_PAY=['Quote','Awaiting payment','Invoiced','Paid','Refunded'];
 window.CRM_CUST_STATUS=['Lead','Sampled','Customer','Repeat','Inactive','Not a fit'];
+window.CRM_PSTAGES=['Researching','Mockup ready','Emailed','Follow-up 1 sent','Follow-up 2 sent','Replied','Meeting','Sample ordered','Won','Not now'];
+window.CRM_PSTAGE_COLOR={'Researching':'var(--steel-400)','Mockup ready':'var(--warning)','Emailed':'var(--ice)','Follow-up 1 sent':'var(--ice)','Follow-up 2 sent':'var(--ice)','Replied':'var(--brand-primary)','Meeting':'#6A3FA0','Sample ordered':'#6A3FA0','Won':'#1F7A35','Not now':'var(--danger)'};
 window.CRM_FILES=[['mug','Mug render'],['box','Box render'],['dieline','Box dieline (print layout)'],['logo','Logo file'],['lid_logo','Lid logo']];
 (function(){
   const money=n=>{const v=Math.round((+n||0)*100)/100;return '$'+v.toLocaleString(undefined,{minimumFractionDigits:Number.isInteger(v)?0:2,maximumFractionDigits:2})};
@@ -49,7 +51,11 @@ window.CRM_FILES=[['mug','Mug render'],['box','Box render'],['dieline','Box diel
     return {live:true,list:()=>fetch('api/crm?op=list',{headers:h}).then(J),update:(id,patch,note)=>post('update',{id,patch,note}),customer:(key,patch)=>post('customer',{key,patch}),
       sync:id=>post('sync',{id}),upload:(id,field,name,dataUrl)=>post('upload',{id,field,name,dataUrl}),create:order=>post('create',{order}),
       fileUrl:(o,f)=>{const k=o.id+'/'+f;if(!cache[k])cache[k]=fetch('api/crm?op=file&id='+encodeURIComponent(o.id)+'&field='+f,{headers:h}).then(r=>r.ok?r.blob():null).then(b=>b?URL.createObjectURL(b):null).catch(()=>null);return cache[k]},
-      hasFile:(o,f)=>(o.files||[]).includes(f)};
+      hasFile:(o,f)=>(o.files||[]).includes(f),
+      prospects:()=>fetch('api/crm?op=prospects',{headers:h}).then(J),
+      prospect:(slug,patch,note,logo,logo_name)=>post('prospect',{slug,patch,note,logo,logo_name}),
+      prospectCreate:(prospect,logo,logo_name)=>post('prospect_create',{prospect,logo,logo_name}),
+      prospectLogo:slug=>fetch('api/crm?op=prospect_logo&slug='+encodeURIComponent(slug),{headers:h}).then(J).then(j=>j.logo||null,()=>null)};
   };
   window.crmProbe=()=>fetch('api/crm?op=ping').then(r=>{const ct=r.headers.get('content-type')||'';return ct.includes('json')?'live':'demo'},()=>'demo');
   // Demo client — sample data so the CRM can be previewed without the backend.
@@ -82,7 +88,16 @@ window.CRM_FILES=[['mug','Mug render'],['box','Box render'],['dieline','Box diel
     O.forEach(o=>{o.customer_key=crmKey(o);o.files=Object.keys(o._demoFiles||{})});
     const C={'gym-las-rocas':{notes:'Front desk sells ~40/month. Wants a holiday colorway.',tags:'flagship, florida',follow_up:crmDay(d(-3)),size:'Large (1,500+ members)'},'gym-vertical-hive':{follow_up:crmDay(d(1)),tags:'hot lead'}};
     const later=v=>new Promise(r=>setTimeout(()=>r(v),120));const find=id=>O.find(o=>o.id===id);
-    return {live:false,list:()=>later({orders:JSON.parse(JSON.stringify(O)),customers:JSON.parse(JSON.stringify(C))}),
+    const PD=n=>new Date(Date.now()+n*864e5).toISOString().slice(0,10);
+    const P=[{slug:'goat',gym:'GOAT Climbing Gym',password:'goat',town:'Hackensack, NJ',email:'info@goatclimbinggyms.com',phone:'201-402-9343',website:'goatclimbinggym.com',instagram:'@goatclimbinggym',hold:'#F86635',holdName:'GOAT Orange',logo_url:'',brand_text:'goat',note:'Hey GOAT, I grew up in Bergen County…',stage:'Emailed',emailed_at:PD(-6),follow_up:PD(-1),views:2,last_viewed:d(1),history:[{at:d(6),text:'Stage → Emailed'},{at:d(1),text:'Opened their mockup page (Hackensack, NJ)'}],research:'Demo prospect.'},
+      {slug:'method',gym:'Method Climbing + Fitness',password:'method',town:'Newark, NJ',email:'info@methodclimb.com',website:'methodclimb.com',instagram:'@methodclimb',hold:'#B8421C',holdName:'Method Rust',brand_text:'method',note:'Hi Method…',stage:'Mockup ready',history:[],research:'Demo prospect.'}];
+    const pfind=s=>P.find(p=>p.slug===s);
+    return {live:false,
+      prospects:()=>later({prospects:JSON.parse(JSON.stringify(P)),stages:CRM_PSTAGES}),
+      prospect:(slug,patch,note)=>{const p=pfind(slug);const h=[];if(patch.stage&&patch.stage!==p.stage){h.push('Stage → '+patch.stage);if(patch.stage==='Emailed'){p.emailed_at=PD(0);p.follow_up=PD(5)}if(patch.stage==='Follow-up 1 sent')p.follow_up=PD(7)}Object.assign(p,patch);p.history=[...(p.history||[]),...h.map(t=>({at:new Date().toISOString(),text:t})),...(note?[{at:new Date().toISOString(),text:note,note:true}]:[])];return later({prospect:JSON.parse(JSON.stringify(p))})},
+      prospectCreate:x=>{const p={...x,slug:x.slug||String(x.gym||'').toLowerCase().replace(/[^a-z0-9]/g,''),stage:'Researching',history:[{at:new Date().toISOString(),text:'Added in CRM'}]};P.push(p);return later({prospect:p})},
+      prospectLogo:()=>Promise.resolve(null),
+      list:()=>later({orders:JSON.parse(JSON.stringify(O)),customers:JSON.parse(JSON.stringify(C))}),
       update:(id,patch,note)=>{const o=find(id);const h=[];if(patch.stage&&patch.stage!==o.stage)h.push('Stage → '+patch.stage);if(patch.payment_status){o.payment={...o.payment,status:patch.payment_status};h.push('Payment → '+patch.payment_status);delete patch.payment_status}
         Object.assign(o,patch);o.history=[...o.history,...h.map(t=>({at:new Date().toISOString(),text:t})),...(note?[{at:new Date().toISOString(),text:note,note:true}]:[])];return later({order:JSON.parse(JSON.stringify(o))})},
       customer:(key,patch)=>{C[key]={...(C[key]||{}),...patch};return later({customer:C[key]})},

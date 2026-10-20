@@ -24,14 +24,14 @@ function CrmLogin({onKey,err,busy}){const [k,setK]=React.useState('');
 function CrmApp(){
   const [mode,setMode]=React.useState(null);const [key,setKey]=React.useState(()=>sessionStorage.getItem('mtnshade-crm-key')||'');
   const [api,setApi]=React.useState(null);const [data,setData]=React.useState(null);const [err,setErr]=React.useState('');const [busy,setBusy]=React.useState(false);
-  const [view,setView]=React.useState(()=>(location.hash.match(/^#(dashboard|orders|customers)/)||[])[1]||'dashboard');
+  const [view,setView]=React.useState(()=>((location.hash.match(/^#(dashboard|orders|customers|prospects?)\b/)||[])[1]||'dashboard').replace(/^prospect$/,'prospects'));
   const [sel,setSel]=React.useState(()=>{const m=location.hash.match(/^#(order|customer)\/(.+)$/);return m?{kind:m[1],id:decodeURIComponent(m[2])}:null});
   const [toast,setToast]=React.useState('');
   React.useEffect(()=>{crmProbe().then(m=>{setMode(m);if(m==='demo')setApi(crmDemo())})},[]);
   React.useEffect(()=>{if(mode==='live'&&key&&!api)login(key)},[mode]);
   React.useEffect(()=>{if(api)load()},[api]);
-  React.useEffect(()=>{const h=sel?'#'+sel.kind+'/'+encodeURIComponent(sel.id):'#'+view;if(location.hash!==h)history.replaceState(null,'',h)},[view,sel]);
-  function login(k){setBusy(true);setErr('');const c=crmLive(k);c.list().then(d=>{sessionStorage.setItem('mtnshade-crm-key',k);setKey(k);setApi(c);setData(d)},e=>{setErr(e.status===401?'Wrong password':e.message);sessionStorage.removeItem('mtnshade-crm-key')}).finally(()=>setBusy(false))}
+  React.useEffect(()=>{if(view==='prospects'&&!sel)return;const h=sel?'#'+sel.kind+'/'+encodeURIComponent(sel.id):'#'+view;if(location.hash!==h)history.replaceState(null,'',h)},[view,sel]);
+  function login(k){setBusy(true);setErr('');const c=crmLive(k);c.list().then(d=>{sessionStorage.setItem('mtnshade-crm-key',k);try{localStorage.setItem('mtnshade-owner','1')}catch(_){}setKey(k);setApi(c);setData(d)},e=>{setErr(e.status===401?'Wrong password':e.message);sessionStorage.removeItem('mtnshade-crm-key')}).finally(()=>setBusy(false))}
   function load(){return api.list().then(setData,e=>setToast('Could not load: '+e.message))}
   const flash=t=>{setToast(t);clearTimeout(window.__crmT);window.__crmT=setTimeout(()=>setToast(''),3500)};
   const derived=React.useMemo(()=>data?crmDerive(data.orders,data.customers):null,[data]);
@@ -43,7 +43,7 @@ function CrmApp(){
     addOrder:o=>setData(d=>({...d,orders:[...d.orders,o]}))};
   if(mode===null)return <div style={{padding:40,...crmMuted}}>Loading…</div>;
   if(mode==='live'&&!api)return <CrmLogin onKey={login} err={err} busy={busy}/>;
-  const tabs=[{id:'dashboard',label:'Dashboard'},{id:'orders',label:'Orders'},{id:'customers',label:'Customers'}];
+  const tabs=[{id:'dashboard',label:'Dashboard'},{id:'orders',label:'Orders'},{id:'customers',label:'Customers'},{id:'prospects',label:'Prospects'}];
   return <div style={{minHeight:'100vh',background:'var(--surface-sunken)'}}>
     <header style={{display:'flex',alignItems:'center',justifyContent:'space-between',gap:16,padding:'0 24px',minHeight:60,background:'var(--steel-900)',color:'#fff',flexWrap:'wrap'}}>
       <div style={{display:'flex',alignItems:'center',gap:14}}><CLogo variant="horizontal" height={26} assetBase="../../assets/logo/"/><span style={{font:'600 15px/1 var(--font-display)',textTransform:'uppercase',letterSpacing:'.12em',opacity:.8}}>Mug CRM</span></div>
@@ -54,7 +54,7 @@ function CrmApp(){
       {!derived?<div style={crmMuted}>Loading orders…</div>:
         sel&&sel.kind==='order'?<CrmOrderDetail ctx={ctx} id={sel.id}/>:
         sel&&sel.kind==='customer'?<CrmCustomerDetail ctx={ctx} id={sel.id}/>:
-        view==='orders'?<CrmOrders ctx={ctx}/>:view==='customers'?<CrmCustomers ctx={ctx}/>:<CrmDashboard ctx={ctx} go={setView}/>}
+        view==='prospects'?<CrmProspects ctx={ctx}/>:view==='orders'?<CrmOrders ctx={ctx}/>:view==='customers'?<CrmCustomers ctx={ctx}/>:<CrmDashboard ctx={ctx} go={setView}/>}
     </main>
     {toast&&<div style={{position:'fixed',bottom:20,left:'50%',transform:'translateX(-50%)',background:'var(--steel-900)',color:'#fff',padding:'12px 18px',borderRadius:'var(--radius-md)',font:'500 14px/1.3 var(--font-body)',boxShadow:'var(--shadow-md)',zIndex:20}}>{toast}</div>}
   </div>;

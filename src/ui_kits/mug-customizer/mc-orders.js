@@ -7,6 +7,8 @@
   var saved={};try{saved=JSON.parse(localStorage.getItem(AK))||{}}catch(e){}
   if(Object.keys(hit).length){saved=Object.assign({},hit.utm_campaign?{}:saved,hit,{landed:new Date().toISOString()});try{localStorage.setItem(AK,JSON.stringify(saved))}catch(e){}}
   window.mcAttribution=function(){return saved};
+  // Gym mockup pages (/g/<slug>) tag every order/quote/sample with that outreach campaign.
+  window.mcSetAttribution=function(o){saved=Object.assign({},o,{landed:new Date().toISOString()});try{localStorage.setItem(AK,JSON.stringify(saved))}catch(e){}};
   window.mcOrderId=function(){var d=new Date(),p=function(n){return String(n).padStart(2,'0')},r=Math.random().toString(36).slice(2,6).toUpperCase();return 'MS-'+String(d.getFullYear()).slice(2)+p(d.getMonth()+1)+p(d.getDate())+'-'+r};
   function blob(dataUrl){try{var a=dataUrl.split(','),m=a[0].match(/:(.*?);/)[1],b=atob(a[1]),u=new Uint8Array(b.length);for(var i=0;i<b.length;i++)u[i]=b.charCodeAt(i);return new Blob([u],{type:m})}catch(e){return null}}
   function body(fields,files){var fd=new FormData();Object.keys(fields).forEach(function(k){if(fields[k]!==undefined&&fields[k]!==null)fd.append(k,fields[k])});(files||[]).forEach(function(f){var b=f.src&&blob(f.src);if(b)fd.append(f.field,b,f.name)});return fd}

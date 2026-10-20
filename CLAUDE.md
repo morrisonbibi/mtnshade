@@ -35,6 +35,15 @@ Steps: Hold → Logo → Packaging → Order.
 `/customize/?gym=Name&logo=<image url>&hold=<6-hex>&web=site.com&ig=handle&font=<key>&utm_source=…&utm_campaign=…`
 Logo is fetched (falls back to images.weserv.nl proxy for CORS), applied once, then design params are stripped from the URL (utm/gym/name/email kept for attribution).
 
+## Outreach prospects + private gym mockup pages
+- Every prospect gets **mtnshade.com/g/<slug>**: the studio behind a password screen (`GymGate.jsx`). Password = the gym's brand name, case-insensitive, spaces/punctuation ignored (or the prospect's `password`).
+- The password is checked server-side by `netlify/functions/gym.js`; the design (hold hex/name, logo as data URL, box name/web/IG/font, Morrison's note) only comes back after it matches. Research, email, notes etc. never leave the server (`publicView` in `netlify/lib/prospects.js`).
+- First unlock applies the gym's design and remembers it per browser (`mtnshade-gym-applied-<slug>`); later visits keep the gym's own tweaks. Gym pages save to their own localStorage key so they don't touch the main studio. Orders from a gym page are tagged `utm_campaign=gym-<slug>`.
+- Each unlock is logged as a page view (count, last opened, history entry at most every 30 min). Browsers that have signed into the CRM set `localStorage['mtnshade-owner']='1'` and are not counted.
+- Seed list: `netlify/lib/prospects-seed.js` (add new gyms here or with "+ Add prospect" in the CRM). CRM edits, views and history live in Blobs store `mug-prospects` (merged on top of the seed); logos in `mug-prospect-files` (`<slug>/logo-upload` wins over `<slug>/logo-fetched`, which is fetched from `logo_url` and cached).
+- CRM → **Prospects** tab (`CrmProspects.jsx`): pipeline stages Researching → Mockup ready → Emailed → Follow-up 1 sent → Follow-up 2 sent → Replied → Meeting → Sample ordered → Won / Not now. Setting Emailed sets emailed_at and a follow-up 5 days out; Follow-up 1 sent sets the next one 7 days later.
+- Outreach emails are drafted in Morrison's Gmail (morrisonbibi17@gmail.com) for him to send; sign-off "Morrison Bibi, Founder, MTNShade".
+
 ## Orders flow
 1. Customer submits → Formspree (`https://formspree.io/f/xqpedoyo`, email notification backup) **and** `POST api/order` + `api/order-file` (CRM).
 2. Checkout/sample → `api/checkout` creates a Stripe Checkout Session (client_reference_id = order id `MS-YYMMDD-XXXX`) → `api/payment` links session → Stripe redirect back with `?paid=…&session_id=…` → `api/payment` verifies with Stripe and stores ship-to/phone.
@@ -49,7 +58,7 @@ Password = env `CRM_PASSWORD` (sent as header `x-crm-key`). Files: `crm-data.js`
 ## Backend (`netlify/functions/`, CommonJS, Netlify Functions v1 + `@netlify/blobs`)
 - `checkout.js` → Stripe Checkout Session (prices recomputed server-side).
 - `order.js` (public, create-once), `order-file.js` (public, images within 3h of order), `payment.js` (public, Stripe-verified).
-- `crm.js` (private): ops `ping, list, file, update, customer, sync, upload, create`.
+- `crm.js` (private): ops `ping, list, file, update, customer, sync, upload, create, prospects, prospect, prospect_create, prospect_logo`.
 - `netlify/lib/crm.js` shared helpers. Routes are mapped in `netlify.toml` for both `/api/*` and `/customize/api/*`.
 
 ## Environment variables (Netlify → Site configuration → Environment variables)

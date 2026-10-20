@@ -47,6 +47,24 @@
   to = "/.netlify/functions/crm"
   status = 200
 
+# Private gym mockup pages: /g/<slug> (password checked by the gym function)
+[[redirects]]
+  from = "/api/gym"
+  to = "/.netlify/functions/gym"
+  status = 200
+[[redirects]]
+  from = "/g/api/*"
+  to = "/.netlify/functions/:splat"
+  status = 200
+[[redirects]]
+  from = "/g/assets/*"
+  to = "/assets/:splat"
+  status = 200
+[[redirects]]
+  from = "/g/*"
+  to = "/index.html"
+  status = 200
+
 # Studio also reachable at /customize/ (same files)
 [[redirects]]
   from = "/customize"
@@ -72,5 +90,11 @@
 # Keep the CRM out of search engines
 [[headers]]
   for = "/crm.html"
+  [headers.values]
+    X-Robots-Tag = "noindex, nofollow"
+
+# Keep private gym mockup pages out of search engines
+[[headers]]
+  for = "/g/*"
   [headers.values]
     X-Robots-Tag = "noindex, nofollow"

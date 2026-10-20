@@ -1,5 +1,5 @@
 const {TabBar:ATabs,Button:AButton,Dialog:ADialog,Toast:AToast,Logo:ALogo}=window.MTNShadeDesignSystem_e114fa||{};
-const MC_KEY='mtnshade-customizer-v1';
+const MC_KEY=window.MC_GYM_SLUG?'mtnshade-customizer-g-'+window.MC_GYM_SLUG:'mtnshade-customizer-v1'; // gym mockup pages keep their own saved design
 const MC_DEFAULT={hold:'#2141A8',holdName:'Summit Blue',logoScale:.5,text:'',textFont:'condensed',textCaps:true,ink:'auto',logoHelp:false};
 const STEPS=[{id:'hold',label:'Hold'},{id:'logo',label:'Logo'},{id:'packaging',label:'Packaging'},{id:'order',label:'Order'}];
 function load(){try{return JSON.parse(localStorage.getItem(MC_KEY))||{}}catch(e){return {}}}
@@ -14,7 +14,7 @@ function MugStudioApp(){
   const [dlg,setDlg]=React.useState(null);const [toast,setToast]=React.useState(null);const api=React.useRef();
   const set=p=>setCfg(c=>({...c,...p}));
   const [myLogo,setMyLogo]=React.useState(()=>{try{const v=JSON.parse(localStorage.getItem('mtnshade-mylogo-v2'));return v&&v.mine?v:null}catch(e){return null}});
-  React.useEffect(()=>{if(logo&&logo.mine&&(!myLogo||myLogo.src!==logo.src)){setMyLogo(logo);try{localStorage.setItem('mtnshade-mylogo-v2',JSON.stringify(logo))}catch(e){}}},[logo&&logo.src]);
+  React.useEffect(()=>{if(!window.MC_GYM_SLUG&&logo&&logo.mine&&(!myLogo||myLogo.src!==logo.src)){setMyLogo(logo);try{localStorage.setItem('mtnshade-mylogo-v2',JSON.stringify(logo))}catch(e){}}},[logo&&logo.src]);
   React.useEffect(()=>{if(!logo||!logo.src){setLogoImg(null);return}const i=new Image();i.onload=()=>setLogoImg(i);i.src=logo.src},[logo&&logo.src]);
   React.useEffect(()=>{if(!pkg.lidLogo){setLidImg(null);return}const i=new Image();i.onload=()=>setLidImg(i);i.src=pkg.lidLogo.src},[pkg.lidLogo&&pkg.lidLogo.src]);
   React.useEffect(()=>{setLines(ls=>{const rest=ls.slice(1).filter(l=>l.hold.toLowerCase()!==cfg.hold.toLowerCase()).map(l=>({...l,units:mcSnap(l.hold,mcUnits(l))}));const f=ls[0]||{units:0};return [{hold:cfg.hold,name:cfg.holdName,units:mcSnap(cfg.hold,mcUnits(f))},...rest]})},[cfg.hold,cfg.holdName]);
@@ -22,7 +22,7 @@ function MugStudioApp(){
   const autoLabel=((pkg.brandText||'MTNShade').trim().replace(/\b\w/g,m=>m.toUpperCase()))+' '+(cfg.holdName||'').split(' ')[0];
   const boxOpts=React.useMemo(()=>({logoImg,ink:cfg.ink,hold:cfg.hold,brandMode:pkg.brandMode,brandText:pkg.brandText,brandFont:pkg.brandFont,caption:pkg.caption,lidLogoImg:lidImg,lidInk:pkg.lidInk,website:pkg.website,instagram:pkg.instagram,labelName:pkg.labelName||autoLabel}),[logoImg,cfg.ink,cfg.hold,pkg,lidImg,autoLabel]);
   const isBox=step==='packaging';
-  const applyPreset=p=>{setCfg(c=>({...c,...p.cfg}));if(p.logo==='default')setLogo({src:MC_DEFAULT_LOGO,name:'MTNShade mark'});if(p.logo==='none')setLogo(null);if(p.logo==='mine')setLogo(myLogo||null);if(p.logo&&typeof p.logo==='object')setLogo(p.logo);setPkg(x=>{const v={...x};Object.keys(PK_ROCAS).forEach(k=>{if(p.id==='rocas')v[k]=PK_ROCAS[k];else if(v[k]===PK_ROCAS[k])v[k]=''});return v})};
+  const applyPreset=p=>{setCfg(c=>({...c,...p.cfg}));if(p.logo==='default')setLogo({src:MC_DEFAULT_LOGO,name:'MTNShade mark'});if(p.logo==='none')setLogo(null);if(p.logo==='mine')setLogo(myLogo||null);if(p.logo&&typeof p.logo==='object')setLogo(p.logo);setPkg(x=>{const v={...x};Object.keys(PK_ROCAS).forEach(k=>{if(p.id==='rocas')v[k]=PK_ROCAS[k];else if(v[k]===PK_ROCAS[k])v[k]=''});return p.pkg?{...v,...p.pkg}:v})};
   const summary=cfg.holdName+' hold · '+(logo?logo.name:'No logo yet')+(cfg.logoHelp?' (logo clean-up requested)':'')+' · '+(pkg.mode==='custom'?'Custom box (we\'ll reach out)':'Co-brand box'+(pkg.tweaks&&pkg.tweaks.trim()?' — box notes: "'+pkg.tweaks.trim()+'"':''));
   const flash=t=>{setToast(t);clearTimeout(window.__mcT);window.__mcT=setTimeout(()=>setToast(null),4000)};
   const idx=STEPS.findIndex(s=>s.id===step);
@@ -43,6 +43,23 @@ function MugStudioApp(){
       const get=u=>fetch(u).then(r=>{if(!r.ok)throw 0;return r.blob()}).then(toData);
       get(url).catch(()=>get('https://images.weserv.nl/?output=png&url='+encodeURIComponent(url.replace(/^https?:\/\//,'')))).then(src=>setLogo({src,name:(brand||'Gym')+' logo',mine:true}),()=>flash({tone:'danger',title:'Couldn\'t load logo',body:'Upload it in the Logo step.'}))}
     setStep('hold');const keep=new URLSearchParams();q.forEach((v,k)=>{if(/^utm_|^(name|email|gym)$/.test(k))keep.set(k,v)});history.replaceState(null,'',location.pathname+(keep.toString()?'?'+keep:''))},[]);
+  // Private gym mockup page (/g/<slug>): after the password, load that gym's design once (later visits keep their own tweaks).
+  const [gym,setGym]=React.useState(null);const [noteOpen,setNoteOpen]=React.useState(true);
+  const unlockGym=g=>{
+    const hold=/^#[0-9a-f]{6}$/i.test(g.hold||'')?g.hold:MC_DEFAULT.hold,holdName=g.holdName||('Custom '+hold.toUpperCase());
+    const gcfg={hold,holdName,logoScale:g.logo_scale||.5,ink:'auto'};
+    const gpkg={mode:'cobrand',brandMode:'text',brandText:(g.brand_text||g.gym||'').toLowerCase(),website:g.website||'',instagram:g.instagram||'',brandFont:g.font||PK_DEFAULT.brandFont,labelName:''};
+    const glogo=g.logo?{src:g.logo,name:g.gym+' logo',mine:true}:null;
+    window.MC_GYM_PRESET={id:'gym',label:g.gym+' design',cfg:gcfg,logo:glogo||undefined,pkg:gpkg};
+    mcSetAttribution({utm_source:'outreach',utm_medium:'email',utm_campaign:'gym-'+g.slug,gym:g.gym});
+    document.title=g.gym+' × MTNShade';setGym(g);
+    const AP='mtnshade-gym-applied-'+g.slug;let fresh=true;try{fresh=localStorage.getItem(AP)!=='1';localStorage.setItem(AP,'1')}catch(e){}
+    if(fresh){set(gcfg);setPkg(x=>({...x,...gpkg}));setStep('hold');setView('3/4')}
+    if(fresh||!saved.logo){
+      if(glogo)setLogo(glogo);
+      else if(g.logo_url){const toData=b=>new Promise((ok,no)=>{if(!b.type.startsWith('image/'))return no();const r=new FileReader();r.onload=()=>ok(r.result);r.onerror=no;r.readAsDataURL(b)});
+        fetch('https://images.weserv.nl/?output=png&url='+encodeURIComponent(g.logo_url.replace(/^https?:\/\//,''))).then(r=>{if(!r.ok)throw 0;return r.blob()}).then(toData).then(src=>{window.MC_GYM_PRESET.logo={src,name:g.gym+' logo',mine:true};setLogo(window.MC_GYM_PRESET.logo)},()=>{})}}
+  };
   const submitOrder=(mode,f)=>{shoot();const C=MC_CONFIG,id=mcOrderId(),sample=mode==='sample';
     const colors=sample?cfg.holdName+(mcIsCustom(cfg.hold)?' (custom '+cfg.hold+')':''):lines.map(l=>l.name+(mcIsCustom(l.hold)?' (custom '+l.hold+')':'')+' × '+mcUnits(l)+' mugs ('+mcCartons(mcUnits(l))+' ctn)').join('; ');
     const total=sample?f.sq*f.sPrice:f.total;
@@ -78,6 +95,7 @@ function MugStudioApp(){
             {(isBox?[...Object.keys(PK_VIEWS),...(pkg.mode==='cobrand'?['Flat']:[])]:Object.keys(MC_VIEWS)).map(v=>{const on=isBox?(v==='Flat'?flat:!flat&&boxView===v):view===v;return <button key={v} onClick={()=>{if(!isBox)return setView(v);if(v==='Flat')return setFlat(true);setFlat(false);setBoxView(v)}} style={{border:'none',cursor:'pointer',padding:'8px 14px',borderRadius:'var(--radius-pill)',font:'700 14px/1 var(--font-display)',textTransform:'uppercase',letterSpacing:'.06em',whiteSpace:'nowrap',background:on?'var(--steel-900)':'transparent',color:on?'#fff':'var(--steel-700)'}}>{v==='Flat'?'Flat dieline':v}</button>})}</div>
           <div style={{font:'400 13px/1 var(--font-body)',color:'var(--steel-500)'}}>{isBox?(flat?'Print layout · cut lines in red':'Drag to rotate · drag up/down to tilt'):'Drag the mug to rotate'}</div></div></section>
       <aside className="mc-panel" style={{background:'#fff',borderLeft:'1px solid var(--border-subtle)',display:'flex',flexDirection:'column'}}>
+        {gym&&noteOpen&&<GymNote gym={gym} onClose={()=>setNoteOpen(false)}/>}
         <ATabs tone="light" items={STEPS} value={step} onChange={go} style={{gap:28,position:'sticky',top:0,background:'#fff',zIndex:2}}/>
         <div style={{padding:'24px 28px',flex:1}}>
           {step==='hold'&&<StepHold cfg={cfg} set={set} applyPreset={applyPreset}/>}
@@ -88,6 +106,7 @@ function MugStudioApp(){
           <div style={{minWidth:0}}><div style={{font:'400 12px/1 var(--font-body)',textTransform:'uppercase',letterSpacing:'.05em',color:'var(--text-muted)'}}>Bulk · cartons of {MC_CONFIG.carton}</div><div style={{font:'700 24px/1.1 var(--font-display)',color:'var(--text-strong)'}}>From ${minPrice} / mug</div></div>
           <AButton size="lg" onClick={()=>go(STEPS[idx+1].id)}>Next: {STEPS[idx+1].label}</AButton></div>}
       </aside></div>
+    {window.MC_GYM_SLUG&&!gym&&<GymGate slug={window.MC_GYM_SLUG} onUnlock={unlockGym}/>}
     {toast&&<div style={{position:'fixed',right:24,bottom:24,zIndex:200}}><AToast tone={toast.tone} title={toast.title} onClose={()=>setToast(null)}>{toast.body}</AToast></div>}
   </div>;
 }
