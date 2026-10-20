@@ -68,7 +68,7 @@ function mcDrawDecal(canvas,o){
     x.fillStyle='rgb('+o.etchRGB.join(',')+')';let t=o.caps?o.text.toUpperCase():o.text;let f2=fs;const setF=()=>{x.font=F.weight+' '+f2+'px '+F.family+', sans-serif';try{x.letterSpacing=(f2*F.track)+'px'}catch(e){}};while(x.measureText(t).width>W*.7&&f2>H*.036){f2*=.94;setF()}while(x.measureText(t).width>W*.7&&t.length>1)t=t.slice(0,-1);x.fillText(t,W/2,Math.min(ty,H*.92))}}
 const MC_STEEL={color:'#d3d7dc',metal:1,rough:.55,etch:[218,214,202],etchMetal:.35,etchRough:.7};
 const MC_VIEWS={'3/4':-.5,'Front':0,'Handle':-Math.PI/2,'Back':Math.PI};
-function MugStage({config,logoImg,view,onDrag,apiRef}){
+function MugStage({config,logoImg,view,onDrag,apiRef,glare=true}){
   const host=React.useRef();const S=React.useRef({});
   React.useEffect(()=>{const el=host.current;const st=S.current;
     const r=new THREE.WebGLRenderer({antialias:true,alpha:true,preserveDrawingBuffer:true});r.setPixelRatio(Math.min(2,window.devicePixelRatio));r.outputEncoding=THREE.sRGBEncoding;r.toneMapping=THREE.ACESFilmicToneMapping;r.toneMappingExposure=1.05;
@@ -104,6 +104,8 @@ function MugStage({config,logoImg,view,onDrag,apiRef}){
     if(apiRef)apiRef.current={snapshot:()=>r.domElement.toDataURL('image/png')};
     return()=>{cancelAnimationFrame(raf);ro.disconnect();r.dispose();el.removeChild(cv)}},[]);
   React.useEffect(()=>{const st=S.current;if(!st.outerMat)return;const b=MC_STEEL;st.outerMat.color.set(b.color);st.outerMat.metalness=b.metal;st.outerMat.roughness=b.rough;st.decalMat.metalness=b.etchMetal;st.decalMat.roughness=b.etchRough;st.holdMat.color.set(config.hold)},[config.hold]);
+  // Preview-only lighting: 'glare' on shows how reflective the brushed steel is; off tones reflections down so the etched logo is easier to judge. Never part of the order.
+  React.useEffect(()=>{const st=S.current;if(!st.outerMat)return;st.outerMat.envMapIntensity=glare?1.1:.28;st.outerMat.roughness=glare?MC_STEEL.rough:.82;st.outerMat.needsUpdate=true;if(st.decalMat){st.decalMat.envMapIntensity=glare?1:.3;st.decalMat.needsUpdate=true}},[glare,config.hold]);
   React.useEffect(()=>{const st=S.current;if(!st.dc)return;const b=MC_STEEL;
     const draw=()=>{mcDrawDecal(st.dc,{logoImg,logoScale:config.logoScale,text:config.text,ink:config.ink,font:config.textFont,caps:config.textCaps,etchRGB:b.etch});st.dtex.needsUpdate=true};
     const F=MC_FONTS[config.textFont]||MC_FONTS.condensed;draw();document.fonts&&document.fonts.load(F.weight+' 60px '+F.family).then(draw)},[logoImg,config.logoScale,config.text,config.ink,config.textFont,config.textCaps]);
