@@ -20,9 +20,9 @@ function CrmLogin({onKey,err,busy}){const [k,setK]=React.useState('');
       <h1 style={crmH}>Mug CRM</h1>
       <CInput label="CRM password" type="password" value={k} onChange={e=>setK(e.target.value)} error={err} autoFocus/>
       <CButton variant="ink" size="lg" fullWidth disabled={busy||!k}>{busy?'Checking…':'Open CRM'}</CButton>
-      <div style={{...crmMuted,fontSize:13}}>The password is the CRM_PASSWORD value in your Netlify environment variables.</div></form></div>}
+      <div style={{...crmMuted,fontSize:13}}>Signed out? Open your MTNShade sign-in link again, or ask Claude to send you a new one.</div></form></div>}
 function CrmApp(){
-  const [mode,setMode]=React.useState(null);const [key,setKey]=React.useState(()=>sessionStorage.getItem('mtnshade-crm-key')||'');
+  const [mode,setMode]=React.useState(null);const [key,setKey]=React.useState(()=>localStorage.getItem('mtnshade-crm-key')||'');
   const [api,setApi]=React.useState(null);const [data,setData]=React.useState(null);const [err,setErr]=React.useState('');const [busy,setBusy]=React.useState(false);
   const [view,setView]=React.useState(()=>((location.hash.match(/^#(dashboard|orders|customers|prospects?)\b/)||[])[1]||'dashboard').replace(/^prospect$/,'prospects'));
   const [sel,setSel]=React.useState(()=>{const m=location.hash.match(/^#(order|customer)\/(.+)$/);return m?{kind:m[1],id:decodeURIComponent(m[2])}:null});
@@ -31,7 +31,7 @@ function CrmApp(){
   React.useEffect(()=>{if(mode==='live'&&key&&!api)login(key)},[mode]);
   React.useEffect(()=>{if(api)load()},[api]);
   React.useEffect(()=>{if(view==='prospects'&&!sel)return;const h=sel?'#'+sel.kind+'/'+encodeURIComponent(sel.id):'#'+view;if(location.hash!==h)history.replaceState(null,'',h)},[view,sel]);
-  function login(k){setBusy(true);setErr('');const c=crmLive(k);c.list().then(d=>{sessionStorage.setItem('mtnshade-crm-key',k);try{localStorage.setItem('mtnshade-owner','1')}catch(_){}setKey(k);setApi(c);setData(d)},e=>{setErr(e.status===401?'Wrong password':e.message);sessionStorage.removeItem('mtnshade-crm-key')}).finally(()=>setBusy(false))}
+  function login(k){setBusy(true);setErr('');const c=crmLive(k);c.list().then(d=>{localStorage.setItem('mtnshade-crm-key',k);try{localStorage.setItem('mtnshade-owner','1')}catch(_){}setKey(k);setApi(c);setData(d)},e=>{setErr(e.status===401?'Wrong password':e.message);localStorage.removeItem('mtnshade-crm-key')}).finally(()=>setBusy(false))}
   function load(){return api.list().then(setData,e=>setToast('Could not load: '+e.message))}
   const flash=t=>{setToast(t);clearTimeout(window.__crmT);window.__crmT=setTimeout(()=>setToast(''),3500)};
   const derived=React.useMemo(()=>data?crmDerive(data.orders,data.customers):null,[data]);
@@ -48,7 +48,7 @@ function CrmApp(){
     <header style={{display:'flex',alignItems:'center',justifyContent:'space-between',gap:16,padding:'0 24px',minHeight:60,background:'var(--steel-900)',color:'#fff',flexWrap:'wrap'}}>
       <div style={{display:'flex',alignItems:'center',gap:14}}><CLogo variant="horizontal" height={26} assetBase="../../assets/logo/"/><span style={{font:'600 15px/1 var(--font-display)',textTransform:'uppercase',letterSpacing:'.12em',opacity:.8}}>Mug CRM</span></div>
       <div style={{display:'flex',alignItems:'center',gap:4}}>{tabs.map(t=><button key={t.id} onClick={()=>{setView(t.id);setSel(null)}} style={{border:'none',background:'none',cursor:'pointer',padding:'20px 12px',font:'700 14px/1 var(--font-display)',textTransform:'uppercase',letterSpacing:'.08em',color:'#fff',opacity:view===t.id&&!sel?1:.6,boxShadow:view===t.id&&!sel?'inset 0 -3px 0 var(--brand-primary)':'none'}}>{t.label}</button>)}</div>
-      <div style={{display:'flex',gap:8}}><CButton size="sm" variant="inverse" onClick={()=>load().then(()=>flash('Refreshed'))}>Refresh</CButton>{api&&api.live&&<CButton size="sm" variant="ghost" style={{color:'#fff'}} onClick={()=>{sessionStorage.removeItem('mtnshade-crm-key');location.reload()}}>Sign out</CButton>}</div></header>
+      <div style={{display:'flex',gap:8}}><CButton size="sm" variant="inverse" onClick={()=>load().then(()=>flash('Refreshed'))}>Refresh</CButton>{api&&api.live&&<CButton size="sm" variant="ghost" style={{color:'#fff'}} onClick={()=>{localStorage.removeItem('mtnshade-crm-key');location.reload()}}>Sign out</CButton>}</div></header>
     {!api||!api.live?<div style={{background:'var(--warning)',color:'var(--steel-900)',font:'600 13px/1.4 var(--font-body)',padding:'8px 24px'}}>Demo data — the live backend isn't reachable from this preview. On your Netlify site this page shows real orders.</div>:null}
     <main style={{padding:24,maxWidth:1320,margin:'0 auto'}}>
       {!derived?<div style={crmMuted}>Loading orders…</div>:

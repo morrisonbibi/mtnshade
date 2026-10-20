@@ -50,7 +50,7 @@ Logo is fetched (falls back to images.weserv.nl proxy for CORS), applied once, t
 3. Quotes don't pay; they appear in the CRM as stage "Quote".
 
 ## CRM (`src/ui_kits/mug-customizer/crm.html`)
-Password = env `CRM_PASSWORD` (sent as header `x-crm-key`). Files: `crm-data.js` (API client, demo data, customer roll-up), `CrmShell.jsx` (login, header, dashboard), `CrmOrders.jsx` (orders list, order detail, manufacturer packet, zip download, manual order), `CrmCustomers.jsx`.
+Password = env `CRM_PASSWORD` (a random key, sent as header `x-crm-key`). Morrison signs in with a one-click link `mtnshade.com/crm.html#key=<CRM_PASSWORD>`, which saves the key in localStorage on that device (stays signed in) and sets the owner flag. To rotate: set a new CRM_PASSWORD via Netlify, redeploy, send him a new link. Files: `crm-data.js` (API client, demo data, customer roll-up), `CrmShell.jsx` (login, header, dashboard), `CrmOrders.jsx` (orders list, order detail, manufacturer packet, zip download, manual order), `CrmCustomers.jsx`.
 - Order stages: Quote, Received, Proof sent, Proof approved, Sent to manufacturer, In production, Shipped, Delivered, Canceled.
 - Customers are grouped per gym (`customer_key` = `gym-<slug>`, fallback email). Status auto: Lead → Sampled → Customer → Repeat (overridable). Location = Stripe ship-to, else Netlify IP geo (approx).
 - Data: Netlify Blobs stores `mug-orders` (JSON per order), `mug-order-files` (`<id>/<field>` images: logo, lid_logo, mug, box, dieline + any CRM uploads), `mug-customers` (CRM notes/overrides).

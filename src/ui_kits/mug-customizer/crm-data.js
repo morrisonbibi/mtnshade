@@ -1,4 +1,6 @@
 // Mug CRM — data layer: API client (live), demo client (preview without backend), and customer roll-ups.
+// One-click sign-in link: mtnshade.com/crm.html#key=<CRM_PASSWORD>. Saves the key on this device (stays signed in), marks the device as the owner's, then hides the key from the address bar.
+(function(){const m=location.hash.match(/^#key=([^&]+)/);if(!m)return;try{localStorage.setItem('mtnshade-crm-key',decodeURIComponent(m[1]));localStorage.setItem('mtnshade-owner','1')}catch(e){}history.replaceState(null,'',location.pathname+'#prospects')})();
 window.CRM_STAGES=['Quote','Received','Proof sent','Proof approved','Sent to manufacturer','In production','Shipped','Delivered','Canceled'];
 window.CRM_STAGE_COLOR={'Quote':'var(--steel-400)','Received':'var(--warning)','Proof sent':'var(--ice)','Proof approved':'var(--brand-primary)','Sent to manufacturer':'#6A3FA0','In production':'#6A3FA0','Shipped':'var(--steel-900)','Delivered':'#1F7A35','Canceled':'var(--danger)'};
 window.CRM_PAY=['Quote','Awaiting payment','Invoiced','Paid','Refunded'];
