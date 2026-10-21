@@ -125,5 +125,35 @@ module.exports=[
     note:"Hi Big Chris, I saw your hoodies and tees, so a BC's mug felt like the next drop. This is your logo etched on our Crimp Mug with the hold in your teal. Spin it around and check out the box too.",
     stage:'Mockup ready',
     research:'Single location. Formerly The Inner Wall (1994); bought and renamed by Christopher "Big Chris" Scott, est. Jan 8, 2018. Adult-focused bouldering (13+), sells its own hoodies and tees. White circle logo with handprint; teal #36B3A8. Instagram is their main channel.'
+  },
+  {
+    slug:'mustangs',gym:'Mustangs Bouldering',password:'mustangs',town:'Kingston, NY',
+    address:'316 Plaza Rd, Kingston, NY 12401',email:'info@mustangsbouldering.com',phone:'845-481-4047',
+    website:'mustangsbouldering.com',instagram:'@mustangsbouldering',hold:'#DA5B37',holdName:'Mustangs Orange',
+    logo_url:'https://images.squarespace-cdn.com/content/v1/666aff49f6540c6677f9cae0/ddf36a9c-2311-4695-a2ef-f7e5999fb7a2/NEW+Mustangs+Kingston+Logo.png?format=1500w',logo_scale:.6,ink:'shape',
+    brand_text:'mustangs',font:'heavy',
+    note:'Hi Mustangs, a bouldering gym with its own café should have its own mug behind the counter. This is your logo etched on our Crimp Mug with the hold in your orange. Spin it around and check out the box too.',
+    stage:'Mockup ready',
+    research:'Single location. Independent, founded by Stephen Bittner, Ivan J. Vargas and Dale Storti. 9,000 sq ft bouldering, Tension Board 2, café. Hosted a USAC youth qualifier Oct 17, 2026. Black wordmark; orange #DA5B37.'
+  },
+  {
+    slug:'reach',gym:'Reach Climbing & Fitness',password:'reach',town:'Bridgeport, PA',
+    address:'401 E 4th St, Bridgeport, PA 19405',email:'info@reachclimbing.com',phone:'484-704-7612',
+    website:'reachclimbing.com',instagram:'@reachclimbingphilly',hold:'#3A85BE',holdName:'Reach Blue',
+    logo_url:'https://reachclimbing.com/wp-content/uploads/2019/02/reach-logo.png.webp',logo_scale:.6,ink:'shape',
+    brand_text:'reach',font:'heavy',
+    note:'Hi Reach, two-time Best of Philly deserves its own mug. This is your logo etched on our Crimp Mug with the hold in your blue. Spin it around and check out the box too.',
+    stage:'Mockup ready',
+    research:'Single location (The Factory kids/ninja room is in the same building). 22,000 sq ft, 55+ ft walls. Best of Philly 2019 and 2021. Email from Macaroni Kid directory (site has only a contact form). White wordmark; blue #3A85BE, navy #143556.'
+  },
+  {
+    slug:'rockclimbfairfield',gym:'Rock Climb Fairfield',password:'rock climb fairfield',town:'Fairfield, CT',
+    address:'85 Mill Plain Rd, Fairfield, CT 06824',email:'info@rockclimbfairfield.com',phone:'203-416-5500',
+    website:'rockclimbfairfield.com',instagram:'@rockclimbfairfield',hold:'#E25822',holdName:'RCF Orange',
+    logo_url:'https://images.squarespace-cdn.com/content/v1/63b2441f4f239c3c9daa6fc9/793f3173-50ac-4c09-874a-ff252b337e64/RCF-logo-lrg.png?format=1500w',logo_scale:.5,ink:'dark',
+    brand_text:'rock climb fairfield',font:'heavy',
+    note:'Hi Rock Climb Fairfield, a 4-story lead wall right off I-95 deserves a mug at the front desk. This is your logo etched on our Crimp Mug with the hold in your orange. Spin it around and check out the box too.',
+    stage:'Mockup ready',
+    research:'Single location, one of CT\'s largest gyms: 4-story lead wall, 100+ top ropes, bouldering, fitness center. Youth team, camps, parties. Orange sun logo with black cliff and climber; orange #E25822.'
   }
 ];
