@@ -185,5 +185,35 @@ module.exports=[
     note:'Hi North Summit, the climbing hub of the Lehigh Valley and Poconos should have its own mug. This is your logo etched on our Crimp Mug with the hold in your orange. Spin it around and check out the box too.',
     stage:'Mockup ready',
     research:'Single location. "Climbing hub of the Lehigh Valley and Poconos". 6,500 sq ft, 35 ft walls, bouldering cave, weekly resets, Friday night and high school specials. Orange wordmark with climber; orange #EE8A2B.'
+  },
+  {
+    slug:'tufas',gym:'Tufas Boulder Lounge',password:'tufas',town:'Philadelphia, PA',
+    address:'South Kensington, Philadelphia, PA',email:'tufas@tufasboulderlounge.com',
+    website:'tufasboulderlounge.com',instagram:'@tufasboulderlounge',hold:'#037C64',holdName:'Tufas Green',
+    logo_url:'https://images.squarespace-cdn.com/content/v1/6a692feb69174652751d5c7c/fb4479d4-7dae-4461-a65f-73bb22399326/1.15+original+ink+box+fill+green.PNG?format=1500w',logo_scale:.6,ink:'dark',
+    brand_text:'tufas',font:'heavy',
+    note:'Hi Tufas, a bouldering gym built by Philly climbers for Philly climbers should have its own mug next to the snacks. This is your logo etched on our Crimp Mug with the hold in your green. Spin it around and check out the box too.',
+    stage:'Mockup ready',
+    research:'Single location. 12,700 sq ft community-first bouldering gym built by Philly climbers; Kilter, Moon, spray wall, Tension 2, lounge, retail and food on site. Movement opened a big Fishtown gym nearby (Nov 2025). Hand-drawn TUFAS!! logo in a green box; green #037C64.'
+  },
+  {
+    slug:'rocksport',gym:'Rocksport',password:'rocksport',town:'Queensbury, NY',
+    address:'54 Carey Rd, Queensbury, NY 12804',email:'rocksportny@gmail.com',phone:'518-793-4626',
+    website:'rocksportny.com',instagram:'@rocksportny',hold:'#F28C28',holdName:'Rocksport Orange',
+    logo_url:'https://static.wixstatic.com/media/65a881_9dd4de090ef142588221eceb432f1ece~mv2.png',logo_scale:.65,ink:'light',
+    brand_text:'rocksport',font:'heavy',
+    note:'Hi Rocksport, the climbing gym of the Adirondacks should have a mug for the drive home from the crag. This is your logo etched on our Crimp Mug with an orange hold to match your walls. Spin it around and check out the box too.',
+    stage:'Mockup ready',
+    research:'Single location, "The Climbing Gym of the Adirondacks", plus outdoor guiding. Black and white branding with no accent color; hold uses the orange from their wall panels. Email is the Gmail listed on their site.'
+  },
+  {
+    slug:'edge',gym:'The Edge Halfmoon',password:'edge',town:'Clifton Park, NY',
+    address:'Halfmoon / Clifton Park, NY',email:'Edge@TheEdgeHalfmoon.com',phone:'518-982-5545',
+    website:'theedgehalfmoon.com',instagram:'@theedgehalfmoon',hold:'#00A9E9',holdName:'Edge Blue',
+    logo_url:'https://theedgehalfmoon.com/wp-content/uploads/2018/02/Edge_Logo_4c.png',logo_scale:.6,ink:'shape',
+    brand_text:'the edge',font:'heavy',
+    note:'Hi Edge, a gym with its own store and a comp scene should have its own mug on the shelf. This is your logo etched on our Crimp Mug with the hold in your blue. Spin it around and check out the box too.',
+    stage:'Mockup ready',
+    research:'Single location north of Albany. Find your climb, find your people. Bouldering and ropes, comps, clinics, pickleball, in-house store. White logo; blue #00A9E9.'
   }
 ];
