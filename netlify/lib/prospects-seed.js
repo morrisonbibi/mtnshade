@@ -155,5 +155,35 @@ module.exports=[
     note:'Hi Rock Climb Fairfield, a 4-story lead wall right off I-95 deserves a mug at the front desk. This is your logo etched on our Crimp Mug with the hold in your orange. Spin it around and check out the box too.',
     stage:'Mockup ready',
     research:'Single location, one of CT\'s largest gyms: 4-story lead wall, 100+ top ropes, bouldering, fitness center. Youth team, camps, parties. Orange sun logo with black cliff and climber; orange #E25822.'
+  },
+  {
+    slug:'wbcg',gym:'Wilkes-Barre Climbing Gym',password:'wbcg',town:'Wilkes-Barre, PA',
+    address:'102 S Main St, Wilkes-Barre, PA 18701',email:'climb@wilkesbarreclimbinggym.com',phone:'570-824-7633',
+    website:'wilkesbarreclimbinggym.com',instagram:'@wbclimbinggym',hold:'#49BFAB',holdName:'WBCG Teal',
+    logo_url:'https://wilkesbarreclimbinggym.com/wp-content/uploads/2024/10/wbcg-logo-exports-05.svg',logo_scale:.6,ink:'shape',
+    brand_text:'wilkes-barre climbing gym',font:'heavy',
+    note:"Hi WBCG, NEPA's first climbing gym deserves its own mug. This is your logo etched on our Crimp Mug with the hold in your teal. Spin it around and check out the box too.",
+    stage:'Mockup ready',
+    research:"Single location. NEPA's first indoor climbing gym (1999), revived by Kelsey Van Horn and Chuck Pahler. 6,000+ sq ft, bouldering, top rope, lead, auto belays. White WBCG logo; teal #49BFAB, deep green #0B261B."
+  },
+  {
+    slug:'air',gym:"Albany's Indoor Rockgym",password:'air',town:'Albany, NY',
+    address:'4C Vatrano Rd, Albany, NY',email:'airrockgym@gmail.com',phone:'518-459-7625',
+    website:'airrockgym.com',instagram:'@albanysindoorrockgym',hold:'#17A2B8',holdName:'A.I.R. Teal',
+    logo_url:'https://airrockgym.com/wp-content/uploads/2023/06/AIR-Logo-white-768x379.png',logo_scale:.6,ink:'shape',
+    brand_text:'a.i.r. rockgym',font:'heavy',
+    note:"Hi A.I.R., building climbers since 1994 and all new walls this fall. Here's your logo etched on our Crimp Mug with the hold in your teal. Spin it around and check out the box too.",
+    stage:'Mockup ready',
+    research:'Single location. Since 1994; just finished a wall rebuild. Cave system with 60 ft zip line, youth climbing club, outdoor excursions, parties. White AIR mountain logo; teal #17A2B8. Email is a Gmail listed on their own site.'
+  },
+  {
+    slug:'northsummit',gym:'North Summit Climbing Gym',password:'north summit',town:'Wind Gap, PA',
+    address:'Wind Gap, PA',email:'info@northsummitclimbing.com',
+    website:'northsummitclimbing.com',instagram:'@northsummitclimbinggym',hold:'#EE8A2B',holdName:'North Summit Orange',
+    logo_url:'https://static.wixstatic.com/media/f412e6_a6407bedacda45f0a557f324e4496bc2~mv2.png',logo_scale:.55,ink:'dark',
+    brand_text:'north summit',font:'heavy',
+    note:'Hi North Summit, the climbing hub of the Lehigh Valley and Poconos should have its own mug. This is your logo etched on our Crimp Mug with the hold in your orange. Spin it around and check out the box too.',
+    stage:'Mockup ready',
+    research:'Single location. "Climbing hub of the Lehigh Valley and Poconos". 6,500 sq ft, 35 ft walls, bouldering cave, weekly resets, Friday night and high school specials. Orange wordmark with climber; orange #EE8A2B.'
   }
 ];
