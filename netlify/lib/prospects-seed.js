@@ -199,12 +199,12 @@ module.exports=[
   {
     slug:'rocksport',gym:'Rocksport',password:'rocksport',town:'Queensbury, NY',
     address:'54 Carey Rd, Queensbury, NY 12804',email:'rocksportny@gmail.com',phone:'518-793-4626',
-    website:'rocksportny.com',instagram:'@rocksportny',hold:'#F28C28',holdName:'Rocksport Orange',
+    website:'rocksportny.com',instagram:'@rocksportny',hold:'#1E1F22',holdName:'Jet Black',
     logo_url:'https://static.wixstatic.com/media/65a881_9dd4de090ef142588221eceb432f1ece~mv2.png',logo_scale:.65,ink:'light',
     brand_text:'rocksport',font:'heavy',
-    note:'Hi Rocksport, the climbing gym of the Adirondacks should have a mug for the drive home from the crag. This is your logo etched on our Crimp Mug with an orange hold to match your walls. Spin it around and check out the box too.',
+    note:'Hi Rocksport, the climbing gym of the Adirondacks should have a mug for the drive home from the crag. This is your logo etched on our Crimp Mug with a black hold to match your black and white brand. Spin it around and check out the box too.',
     stage:'Mockup ready',
-    research:'Single location, "The Climbing Gym of the Adirondacks", plus outdoor guiding. Black and white branding with no accent color; hold uses the orange from their wall panels. Email is the Gmail listed on their site.'
+    research:'Single location, "The Climbing Gym of the Adirondacks", plus outdoor guiding. Black and white branding with no accent color, so the hold is Jet Black to match. Email is the Gmail listed on their site.'
   },
   {
     slug:'edge',gym:'The Edge Halfmoon',password:'edge',town:'Clifton Park, NY',
