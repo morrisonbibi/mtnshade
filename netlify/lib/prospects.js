@@ -21,7 +21,8 @@ async function listProspects(){
   const {blobs}=await pStore().list();const slugs=[...new Set([...SEED.map(p=>p.slug),...blobs.map(b=>b.key)])];
   return (await Promise.all(slugs.map(getProspect))).filter(Boolean);
 }
-const pwOk=(p,pw)=>!!norm(pw)&&norm(pw)===norm(p.password||p.brand_text||p.gym);
+// Accepts the set password, and also the gym's full name or box brand text (people often type "The Boulder Yard" or "Blockhouse Bouldering").
+const pwOk=(p,pw)=>!!norm(pw)&&[p.password,p.brand_text,p.gym].filter(Boolean).map(norm).includes(norm(pw));
 // Saves CRM fields for a prospect (only what changed vs. the seed lives in Blobs, plus history/views).
 async function saveProspect(slug,patch,note){
   const st=pStore();const cur=(await st.get(slug,{type:'json'}))||{};const base=Object.assign({},seedOf(slug)||{},cur);
