@@ -245,5 +245,35 @@ module.exports=[
     note:'Hi NCC, going back to the Lumber City days you have been the place to climb around Buffalo since 1998, and that deserves its own mug. This is your 1998 badge etched on our Crimp Mug with the hold in your gold. Spin it around and check out the box too.',
     stage:'Mockup ready',
     research:'Single bouldering gym in North Tonawanda NY (Buffalo/Niagara) since 1998, originally Lumber City Rock Gym. New Walltopia walls. Yoga, coaching, youth programs. Olive #494D00 badge logo, gold #FFB400 accent.'
+    },
+  {
+    slug:'offgrid',gym:'Off Grid Climbing & Fitness',password:'off grid',town:'York, PA',
+    address:'York, PA',email:'info@offgridclimbing.com',phone:'',
+    website:'offgridclimbing.com',instagram:'@offgridclimbing',hold:'#8AD200',holdName:'Off Grid Green',
+    logo_url:'https://static.wixstatic.com/media/7b989f_24dc64ac5fa241d4a3c686cd11d42d00~mv2.png',logo_scale:.55,ink:'shape',
+    brand_text:'off grid',font:'heavy',
+    note:'Hi Hale and Kate, a new gym with a cafe should have its own mugs on the counter from day one. This is your logo etched on our Crimp Mug with the hold in your green. They could also make a nice gift for your founding members. Spin it around and check out the box too.',
+    stage:'Mockup ready',
+    research:'Opening soon in York PA (founding memberships on sale). Founders Hale (Army vet) and his wife Kate. Climbing, fitness, recovery suite and a cafe. Lime green #8AD200 triangle logo (uploaded in CRM as green-only etch). Single location.'
+  },
+  {
+    slug:'boulderunion',gym:'Boulder Union',password:'boulder union',town:'New Bedford, MA',
+    address:'174 Union St, New Bedford, MA 02740',email:'info@boulderunion.com',phone:'508-972-1717',
+    website:'boulderunion.com',instagram:'@boulder_union',hold:'#461F70',holdName:'Union Purple',
+    logo_url:'https://images.squarespace-cdn.com/content/v1/65242332956ad578216f9bd5/890f39ee-2361-4c65-a859-2be52f4fc490/TextLogo.png',logo_scale:.6,ink:'shape',
+    brand_text:'boulder union',font:'heavy',
+    note:'Hi Boulder Union, a gym bringing new energy to gritty New England climbing should have a mug to match. This is your logo etched on our Crimp Mug with the hold in your purple. Spin it around and check out the box too.',
+    stage:'Mockup ready',
+    research:'Single bouldering + fitness gym in downtown New Bedford MA. Founder Kaylee Grodzki (grew up in CT). 3,500 sq ft bouldering, Kilter board. Purple #461F70 accent, tan text logo.'
+  },
+  {
+    slug:'boulderyard',gym:'The Boulder Yard',password:'the boulder yard',town:'Frederick, MD',
+    address:'7315A Grove Rd, Frederick, MD 21704',email:'theboulderyardmd@gmail.com',phone:'301-228-9368',
+    website:'theboulderyardmd.com',instagram:'@theboulderyard',hold:'#1E1F22',holdName:'Jet Black',
+    logo_url:'https://www.theboulderyardmd.com/uploads/1/2/1/8/121852216/logo-black-white_orig.png',logo_scale:.6,ink:'dark',
+    brand_text:'the boulder yard',font:'heavy',
+    note:'Hi Steve, a gym that started as a garage dream and was built by hand deserves its own mug, and the move to Grove Road seems like the right time for one. This is your logo etched on our Crimp Mug with a black hold to match your black and white brand. Spin it around and check out the box too.',
+    stage:'Mockup ready',
+    research:'Frederick MD, the only climbing gym in Frederick. Owner Steve Baranski built the walls by hand (started 2018). Just moved to a bigger space at 7315A Grove Rd. Sells gear, gift cards and merch. Also martial arts, yoga, group fitness. Black and white logo.'
   }
 ];
