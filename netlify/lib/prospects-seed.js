@@ -215,5 +215,35 @@ module.exports=[
     note:'Hi Edge, a gym with its own store and a comp scene should have its own mug on the shelf. This is your logo etched on our Crimp Mug with the hold in your blue. Spin it around and check out the box too.',
     stage:'Mockup ready',
     research:'Single location north of Albany. Find your climb, find your people. Bouldering and ropes, comps, clinics, pickleball, in-house store. White logo; blue #00A9E9.'
+    },
+  {
+    slug:'climbnasium',gym:'Climbnasium',password:'climbnasium',town:'Mechanicsburg, PA',
+    address:'339A N Locust Point Rd, Mechanicsburg, PA 17050',email:'travisatclimbnasium@gmail.com',phone:'717-795-9580',
+    website:'climbnasium.net',instagram:'@climbnasium',hold:'#E8191F',holdName:'Climbnasium Red',
+    logo_url:'https://static.wixstatic.com/media/e03e88_1b369daa9a87465491e7cf02d2c90112~mv2.png',logo_scale:.55,ink:'dark',
+    brand_text:'climbnasium',font:'heavy',
+    note:'Hi Climbnasium, I made this one with your front desk in mind. Your logo is etched on our Crimp Mug and the hold is in your red. Our stock Crimp Red is a close match too, which has no minimum order. Spin it around and check out the box.',
+    stage:'Mockup ready',
+    research:'Single location in Mechanicsburg PA (Harrisburg area). Bouldering + top rope, youth team, Frostbite comp, yoga, College Night. Contact email on site is travisatclimbnasium@gmail.com (Travis). Logo red #E8191F with black; Crimp Red is a close standard alternative.'
+  },
+  {
+    slug:'petracliffs',gym:'Petra Cliffs',password:'petra cliffs',town:'Burlington, VT',
+    address:'105 Briggs St, Burlington, VT 05401',email:'info@petracliffs.com',phone:'802-657-3872',
+    website:'petracliffs.com',instagram:'@petracliffs',hold:'#F0802A',holdName:'Petra Orange',
+    logo_url:'https://images.squarespace-cdn.com/content/v1/65411bcf99ff3b17116601c0/b7dd96fc-971f-470e-a75c-f864abe10ab4/site_logo+%283%29.jpg?format=1500w',logo_scale:.5,ink:'shape',
+    brand_text:'petra cliffs',font:'heavy',
+    note:'Hi Petra Cliffs, climbing in Burlington since 2000 deserves its own mug. This is your handprint logo etched on our Crimp Mug with the hold in your orange. Spin it around and check out the box too.',
+    stage:'Mockup ready',
+    research:'Single climbing center in Burlington VT since 2000, plus a mountaineering school and the Bolton Adventure Center challenge course. Co-owner Andrea Charest. Orange handprint logo #F0802A with black text (logo uploaded in CRM as a two-part white etch).'
+  },
+  {
+    slug:'niagara',gym:'Niagara Climbing Center',password:'niagara',town:'North Tonawanda, NY',
+    address:'1333 Strad Ave, North Tonawanda, NY 14120',email:'climb@niagaraclimbingcenter.com',phone:'716-695-1248',
+    website:'niagaraclimbingcenter.com',instagram:'@niagaraclimbingcenter',hold:'#FFB400',holdName:'Niagara Gold',
+    logo_url:'https://static.wixstatic.com/media/d7db29_4aca77323d1545ee9db4c89cd14ac2f8~mv2.png',logo_scale:.6,ink:'dark',
+    brand_text:'niagara climbing center',font:'heavy',
+    note:'Hi NCC, going back to the Lumber City days you have been the place to climb around Buffalo since 1998, and that deserves its own mug. This is your 1998 badge etched on our Crimp Mug with the hold in your gold. Spin it around and check out the box too.',
+    stage:'Mockup ready',
+    research:'Single bouldering gym in North Tonawanda NY (Buffalo/Niagara) since 1998, originally Lumber City Rock Gym. New Walltopia walls. Yoga, coaching, youth programs. Olive #494D00 badge logo, gold #FFB400 accent.'
   }
 ];
