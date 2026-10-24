@@ -323,5 +323,35 @@ module.exports=[
   },
   {
     slug:'terrafirma',gym:'Terra Firma Bouldering Co.',password:'terra firma',town:'Grand Rapids, MI',address:'1555 Marshall Ave SE, Grand Rapids, MI 49507 (also East Lansing, MI)',email:'kim@climbterrafirma.com',phone:'616-279-3169',website:'climbterrafirma.com',instagram:'',hold:'#68D8C8',holdName:'Terra Firma Teal',logo_url:'https://images.squarespace-cdn.com/content/v1/625701dd91333f75e508688f/799d1b37-e0ab-40e3-9f2e-92878d74abaa/terrafirma_logos_2022.png?format=1500w',logo_scale:0.45,ink:'dark',brand_text:'terra firma',font:'heavy',note:'Hi Terra Firma, two bouldering gyms and a comp scene as big as Creep Comp make a good case for your own mug. This is your logo etched on our Crimp Mug with the hold in your teal. Spin it around and check out the box too.',stage:'Mockup ready',research:'Independent, 2 gyms: Grand Rapids and East Lansing MI. Creep Comp Oct 2026. Kim (Programs Manager) kim@ is the only email found; JJ is GM. Teal #68D8C8.'
+  },
+  {
+    slug:'coastal',gym:'Coastal Climbing',password:'coastal',town:'Charleston, SC',email:'info@coastalclimbing.com',website:'coastalclimbing.com',hold:'#1E1F22',holdName:'Jet Black',logo_url:'https://static.wixstatic.com/media/ad3927_cd302794710c4ce09ce7374f8c928e1f~mv2.png',logo_scale:0.42,ink:'dark',brand_text:'coastal climbing',font:'heavy',stage:'Emailed',research:'Charleston SC, est. 2011 by Kensie and Jeanna Whitfield.'
+  },
+  {
+    slug:'sequence',gym:'Sequence Climb',password:'sequence',town:'Kansas City, MO',email:'info@sequenceclimb.com',website:'sequenceclimb.com',hold:'#1E2B5E',holdName:'Sequence Navy',logo_url:'https://www.sequenceclimb.com/wp-content/uploads/2020/02/logo-horizontal-1.png',logo_scale:0.75,ink:'dark',brand_text:'sequence',font:'heavy',stage:'Emailed',research:'Bouldering, yoga, fitness in Kansas City.'
+  },
+  {
+    slug:'rokc',gym:'RoKC',password:'rokc',town:'Kansas City, MO',email:'info@climbkc.com',website:'climbkc.com',hold:'#CDDB39',holdName:'RoKC Lime',logo_url:'https://cdn.prod.website-files.com/5cdc282bd7274d8976c609dd/5ce57a08694b6a522ca9725b_rokc-logo-web.svg',logo_scale:0.6,ink:'shape',brand_text:'rokc',font:'heavy',stage:'Emailed',research:'3 gyms (KC, NKC, Olathe); founded by Andrew and Frank Potter.'
+  },
+  {
+    slug:'climbsoill',gym:'Climb So iLL',password:'climb so ill',town:'St. Louis, MO',email:'info@climbsoill.com',website:'climbsoill.com',hold:'#76C14D',holdName:'So iLL Green',logo_url:'https://climbsoill.com/wp-content/uploads/2024/07/climb-so-ill-logo.webp',logo_scale:0.75,ink:'light',brand_text:'climb so ill',font:'heavy',stage:'Emailed',research:'3 gyms around St. Louis since 2012.'
+  },
+  {
+    slug:'blochaven',gym:'BlocHaven',password:'blochaven',town:'Greenville, SC',email:'team@blochaven.com',website:'blochaven.com',hold:'#A5B097',holdName:'BlocHaven Sage',logo_url:'https://www.blochaven.com/wp-content/uploads/2024/07/New-Website-Graphics-1.png',logo_scale:0.8,ink:'light',brand_text:'blochaven',font:'heavy',stage:'Emailed',research:'Bouldering gym with a cafe in Greenville SC.'
+  },
+  {
+    slug:'nobl',gym:'New Orleans Boulder Lounge',password:'nobl',town:'New Orleans, LA',email:'info@climbnobl.com',website:'climbnobl.com',hold:'#FFA333',holdName:'NOBL Orange',logo_url:'https://images.squarespace-cdn.com/content/v1/5fd272c74ca3807854977ddb/1607693452289-WRJ1Q31PEAR6LQ1G8P9O/NOBL_STACKED_WHITE.png',logo_scale:0.7,ink:'shape',brand_text:'new orleans boulder lounge',font:'heavy',stage:'Emailed',research:'Opened 2015, first New Orleans gym in 10+ years.'
+  },
+  {
+    slug:'boulders',gym:'Boulders Climbing Gym',password:'boulders',town:'Madison, WI',email:'info@bouldersgym.com',website:'bouldersgym.com',hold:'#0A1028',holdName:'Boulders Navy',logo_url:'https://images.squarespace-cdn.com/content/v1/625609df67c77951287ff0c4/bb86e7a8-b14a-4a09-9059-e756fe47717c/BOULDERS+STACKED+PRIMARY.png',logo_scale:0.6,ink:'shape',brand_text:'boulders climbing gym',font:'heavy',stage:'Emailed',research:'Madison WI, shop, team, Roctober league.'
+  },
+  {
+    slug:'climbiowa',gym:'Climb Iowa',password:'climb iowa',town:'Des Moines, IA',email:'info@climbiowa.com',website:'climbiowa.com',hold:'#B01018',holdName:'Climb Iowa Red',logo_url:'https://climbiowa.com/app/themes/climb-iowa/img/climbiowa_logo_white.svg',logo_scale:0.7,ink:'light',brand_text:'climb iowa',font:'heavy',stage:'Emailed',research:'2 gyms (Grimes, East Village); founded by Diane Bridgewater.'
+  },
+  {
+    slug:'uptown',gym:'UpTown Climbing',password:'uptown',town:'Baton Rouge, LA',email:'info@uptownclimbing.com',website:'uptownclimbing.com',hold:'#FAB11E',holdName:'UpTown Gold',logo_url:'https://images.squarespace-cdn.com/content/v1/57cef8b4b3db2b3b65f5e5f9/1550530455277-1QJ3VKURECZU5FI9L5T7/Website+header+white.png',logo_scale:0.6,ink:'shape',brand_text:'uptown climbing',font:'heavy',stage:'Emailed',research:"Baton Rouge's first climbing gym."
+  },
+  {
+    slug:'adventurerock',gym:'Adventure Rock',password:'adventure rock',town:'Milwaukee, WI',email:'climb@adventurerock.com',website:'adventurerock.com',hold:'#B2292E',holdName:'Adventure Rock Red',logo_url:'https://adventurerock.com/wp-content/uploads/2024/11/logocaramelwhite.svg',logo_scale:0.85,ink:'shape',brand_text:'adventure rock',font:'heavy',stage:'Emailed',research:'3 gyms around Milwaukee.'
   }
 ];
