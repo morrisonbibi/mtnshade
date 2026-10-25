@@ -353,5 +353,11 @@ module.exports=[
   },
   {
     slug:'adventurerock',gym:'Adventure Rock',password:'adventure rock',town:'Milwaukee, WI',email:'climb@adventurerock.com',website:'adventurerock.com',hold:'#B2292E',holdName:'Adventure Rock Red',logo_url:'https://adventurerock.com/wp-content/uploads/2024/11/logocaramelwhite.svg',logo_scale:0.85,ink:'shape',brand_text:'adventure rock',font:'heavy',stage:'Emailed',research:'3 gyms around Milwaukee.'
+  },
+  {
+    slug:'riverrock',gym:'River Rock Climbing',password:'river rock',town:'Roanoke, VA',email:'info@riverrockclimbing.com',website:'riverrockclimbing.com',hold:'#314154',holdName:'River Rock Navy',logo_scale:0.45,ink:'dark',brand_text:'river rock',font:'heavy',stage:'Emailed',research:'Downtown Roanoke gym. Logo uploaded via CRM.'
+  },
+  {
+    slug:'rockrevolution',gym:'Rock Revolution Climbing',password:'rock revolution',town:'Charlottesville, VA',email:'info@climbrockrev.com',website:'climbrockrev.com',hold:'#B9685D',holdName:'Revolution Clay',logo_scale:0.6,ink:'shape',brand_text:'rock revolution',font:'heavy',stage:'Emailed',research:'Values: include, improve, inspire. Logo uploaded via CRM.'
   }
 ];
