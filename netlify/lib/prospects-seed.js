@@ -389,5 +389,14 @@ module.exports=[
   },
   {
     slug:'eagle',gym:'Eagle Climbing + Fitness',password:'eagle',town:'Eagle, CO',email:'info@eagleclimbing.com',website:'eagleclimbing.com',hold:'#0B6DB7',holdName:'Eagle Blue',logo_scale:0.65,ink:'dark',brand_text:'eagle climbing',font:'heavy',stage:'Emailed',research:'Vail Valley. Logo uploaded via CRM.'
+  },
+  {
+    slug:'theknot',gym:'The Knot Climbing Gym',password:'the knot',town:'Gainesville, FL',email:'info@climbtheknot.com',website:'climbtheknot.com',hold:'#84BABF',holdName:'Knot Teal',logo_url:'https://climbtheknot.com/images/logos/Logo%20Horizontal%20White.png',logo_scale:0.75,ink:'shape',brand_text:'the knot',font:'heavy',stage:'Emailed',research:'Gainesville, built by climbers. Logo fetched from logo_url.'
+  },
+  {
+    slug:'beaches',gym:'Beaches Rock Gym',password:'beaches',town:'Atlantic Beach, FL',email:'beachesrockgym@gmail.com',website:'beachesrockgym.com',hold:'#4A90E2',holdName:'Beaches Blue',logo_scale:0.75,ink:'shape',brand_text:'beaches rock gym',font:'heavy',stage:'Emailed',research:'Bouldering gym. Gmail is the address on their site. Logo uploaded via CRM.'
+  },
+  {
+    slug:'dynoclimb',gym:'DynoClimb',password:'dynoclimb',town:'DeLand, FL',email:'info@dynoclimb.com',website:'dynoclimb.com',hold:'#C0E244',holdName:'DynoClimb Lime',logo_scale:0.6,ink:'shape',brand_text:'dynoclimb',font:'heavy',stage:'Emailed',research:'DeLand FL. Logo uploaded via CRM.'
   }
 ];
