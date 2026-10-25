@@ -359,5 +359,35 @@ module.exports=[
   },
   {
     slug:'rockrevolution',gym:'Rock Revolution Climbing',password:'rock revolution',town:'Charlottesville, VA',email:'info@climbrockrev.com',website:'climbrockrev.com',hold:'#B9685D',holdName:'Revolution Clay',logo_scale:0.6,ink:'shape',brand_text:'rock revolution',font:'heavy',stage:'Emailed',research:'Values: include, improve, inspire. Logo uploaded via CRM.'
+  },
+  {
+    slug:'rockmill',gym:'Rock Mill Climbing',password:'rock mill',town:'Akron, OH',email:'info@rockmillclimbing.com',website:'rockmillclimbing.com',hold:'#DE2828',holdName:'Rock Mill Red',logo_scale:0.6,ink:'dark',brand_text:'rock mill',font:'heavy',stage:'Emailed',research:'Akron gym with Basecamp Coffee Bar. Logo uploaded via CRM.'
+  },
+  {
+    slug:'climbkalamazoo',gym:'Climb Kalamazoo',password:'climb kalamazoo',town:'Kalamazoo, MI',email:'owner@climbkalamazoo.com',website:'climbkalamazoo.com',hold:'#C2FF00',holdName:'Kalamazoo Lime',logo_scale:0.6,ink:'shape',brand_text:'climb kalamazoo',font:'heavy',stage:'Emailed',research:'Since 1997. Logo uploaded via CRM.'
+  },
+  {
+    slug:'rocknasium',gym:'Rocknasium',password:'rocknasium',town:'Davis, CA',email:'retail@rocknasium.com',website:'rocknasium.com',hold:'#72B400',holdName:'Rocknasium Green',logo_scale:0.75,ink:'shape',brand_text:'rocknasium',font:'heavy',stage:'Emailed',research:'Has a retail@ address. Logo uploaded via CRM.'
+  },
+  {
+    slug:'climbtulsa',gym:'Climb Tulsa',password:'climb tulsa',town:'Tulsa, OK',email:'info@climbtulsa.com',website:'climbtulsa.com',hold:'#EEE136',holdName:'Climb Tulsa Yellow',logo_scale:0.7,ink:'shape',brand_text:'climb tulsa',font:'heavy',stage:'Emailed',research:'~20,000 sq ft. Logo uploaded via CRM.'
+  },
+  {
+    slug:'verticalhold',gym:'Vertical Hold',password:'vertical hold',town:'San Diego, CA',email:'info@verticalhold.com',website:'verticalhold.com',hold:'#51A3CD',holdName:'Vertical Hold Blue',logo_scale:0.6,ink:'dark',brand_text:'vertical hold',font:'heavy',stage:'Emailed',research:'3 gyms: San Diego, Poway, San Marcos. Logo uploaded via CRM.'
+  },
+  {
+    slug:'insidemoves',gym:'Inside Moves',password:'inside moves',town:'Byron Center, MI',email:'insidemovesgym@gmail.com',website:'insidemoves.com',hold:'#E8202F',holdName:'Inside Moves Red',logo_scale:0.6,ink:'shape',brand_text:'inside moves',font:'heavy',stage:'Emailed',research:'Has ice climbing walls. Gmail address is the one on their site. Logo uploaded via CRM.'
+  },
+  {
+    slug:'spire',gym:'Spire Climbing + Fitness',password:'spire',town:'Bozeman, MT',email:'info@spireclimbingcenter.com',website:'spireclimbing.com',hold:'#F7941E',holdName:'Spire Orange',logo_scale:0.65,ink:'light',brand_text:'spire',font:'heavy',stage:'Emailed',research:'Gallatin Valley. Logo uploaded via CRM.'
+  },
+  {
+    slug:'stoneco',gym:'Stone Co. Climbing',password:'stone co',town:'College Station, TX',email:'info@stonecoclimbing.com',website:'stonecoclimbing.com',hold:'#DEAE26',holdName:'Stone Co. Gold',logo_scale:0.65,ink:'shape',brand_text:'stone co.',font:'heavy',stage:'Emailed',research:'Aggie owned, retail shop. Logo uploaded via CRM.'
+  },
+  {
+    slug:'basin',gym:'Basin Climbing and Fitness',password:'basin',town:'Waco, TX',email:'info@basinclimbing.com',website:'basinclimbing.com',hold:'#AF5436',holdName:'Basin Rust',logo_scale:0.6,ink:'shape',brand_text:'basin',font:'heavy',stage:'Emailed',research:'Waco. Logo uploaded via CRM.'
+  },
+  {
+    slug:'eagle',gym:'Eagle Climbing + Fitness',password:'eagle',town:'Eagle, CO',email:'info@eagleclimbing.com',website:'eagleclimbing.com',hold:'#0B6DB7',holdName:'Eagle Blue',logo_scale:0.65,ink:'dark',brand_text:'eagle climbing',font:'heavy',stage:'Emailed',research:'Vail Valley. Logo uploaded via CRM.'
   }
 ];
