@@ -398,5 +398,26 @@ module.exports=[
   },
   {
     slug:'dynoclimb',gym:'DynoClimb',password:'dynoclimb',town:'DeLand, FL',email:'info@dynoclimb.com',website:'dynoclimb.com',hold:'#C0E244',holdName:'DynoClimb Lime',logo_scale:0.6,ink:'shape',brand_text:'dynoclimb',font:'heavy',stage:'Emailed',research:'DeLand FL. Logo uploaded via CRM.'
+  },
+  {
+    slug:'wildwalls',gym:'Wild Walls Climbing Gym',password:'wild walls',town:'Spokane, WA',email:'info@wildwalls.com',website:'wildwalls.com',hold:'#BF6212',holdName:'Wild Walls Orange',logo_scale:0.65,ink:'dark',brand_text:'wild walls',font:'heavy',stage:'Emailed',research:'Spokane. Logo uploaded via CRM.'
+  },
+  {
+    slug:'elevation',gym:'Elevation Rock Gym',password:'elevation',town:'North Logan, UT',email:'info@elevationrockgym.com',website:'elevationrockgym.com',hold:'#4CA146',holdName:'Elevation Green',logo_scale:0.65,ink:'light',brand_text:'elevation rock gym',font:'heavy',stage:'Emailed',research:'Cache Valley. Logo uploaded via CRM.'
+  },
+  {
+    slug:'escalade',gym:'Escalade Rock Climbing',password:'escalade',town:'Kennesaw, GA',email:'kennesaw@escaladegym.com',website:'escaladegym.com',hold:'#3B4FA5',holdName:'Escalade Blue',logo_scale:0.55,ink:'shape',brand_text:'escalade',font:'heavy',stage:'Emailed',research:'2 gyms: Kennesaw, Peachtree City. Logo uploaded via CRM.'
+  },
+  {
+    slug:'climblafayette',gym:'Climb Lafayette',password:'climb lafayette',town:'Lafayette, IN',email:'admin@climblafayette.com',website:'climblafayette.com',hold:'#6C1D9A',holdName:'Lafayette Purple',logo_scale:0.45,ink:'dark',brand_text:'climb lafayette',font:'heavy',stage:'Emailed',research:'Near Purdue. Logo uploaded via CRM.'
+  },
+  {
+    slug:'source',gym:'The Source Climbing Center',password:'the source',town:'Vancouver, WA',email:'info@sourceclimbing.com',website:'sourceclimbing.com',hold:'#C2FF00',holdName:'Source Lime',logo_scale:0.75,ink:'shape',brand_text:'the source',font:'heavy',stage:'Emailed',research:'Downtown Vancouver WA. Logo uploaded via CRM.'
+  },
+  {
+    slug:'coeur',gym:'Coeur Climbing Company',password:'coeur',town:'Post Falls, ID',email:'info@coeurclimbing.com',website:'coeurclimbing.com',hold:'#C47529',holdName:'Coeur Copper',logo_scale:0.7,ink:'shape',brand_text:'coeur',font:'heavy',stage:'Emailed',research:'Coeur d Alene area. Logo uploaded via CRM.'
+  },
+  {
+    slug:'commons',gym:'The Commons Climbing Gym',password:'the commons',town:'Boise, ID',email:'staff@commonsclimbing.com',website:'commonsclimbing.com',hold:'#F07924',holdName:'Commons Orange',logo_scale:0.55,ink:'shape',brand_text:'the commons',font:'heavy',stage:'Emailed',research:'Boise Boulder Battle. Logo uploaded via CRM.'
   }
 ];
