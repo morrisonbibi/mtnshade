@@ -1,6 +1,6 @@
 // Creates a Stripe Checkout Session with exact totals. Needs env var STRIPE_SECRET_KEY (Netlify → Site settings → Environment variables).
 // ⚠ Keep these numbers in sync with ui_kits/mug-customizer/mc-config.js — the server is the source of truth for what gets charged.
-const C={carton:36,standard:12,custom:13.5,moq:300,standardColors:['#2141a8','#c8102e'],sample:{standard:100,custom:100},pack:{perUnit:1,cap:250},countries:['US','CA']};
+const C={carton:36,standard:12,custom:13.5,moq:200,standardColors:['#2141a8','#c8102e'],sample:{standard:100,custom:100},pack:{perUnit:1,cap:250},countries:['US','CA']};
 const isCustom=h=>!C.standardColors.includes(String(h||'').toLowerCase());
 const clamp=(n,a,b)=>Math.max(a,Math.min(b,Math.floor(+n||0)));
 const clean=s=>String(s||'').replace(/[^\w\s#·×.,'&()-]/g,'').slice(0,120);

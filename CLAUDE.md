@@ -15,7 +15,7 @@ Live at **mtnshade.com/customize/** (studio) and **/crm.html** (CRM). Hosted on 
 ## Business rules (source of truth: `src/ui_kits/mug-customizer/mc-config.js`)
 - Mug body: brushed 18/8 stainless, fixed. Only the climbing-hold handle color changes.
 - Standard colors MTNShade Blue `#2141A8` / Crimp Red `#C8102E`: **$12/mug**, no minimum, quantities in cartons of 36.
-- Any other color = custom: **$13.50/mug**, quantities **300 → 324 → then +36** (360, 396…). Custom colors add +2 weeks.
+- Any other color = custom: **$13.50/mug**, quantities **200 → 216 → then +36** (252, 288…; lowered from 300 on Oct 27, 2026). Custom colors add +2 weeks.
 - Samples: **$100** each (all colors), max 5. Production: 10–12 weeks after proof approval.
 - Custom packaging: one-time $1/mug capped at $250.
 - Recommended resale $25 (margin calculator).
