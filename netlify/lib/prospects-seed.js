@@ -419,5 +419,29 @@ module.exports=[
   },
   {
     slug:'commons',gym:'The Commons Climbing Gym',password:'the commons',town:'Boise, ID',email:'staff@commonsclimbing.com',website:'commonsclimbing.com',hold:'#F07924',holdName:'Commons Orange',logo_scale:0.55,ink:'shape',brand_text:'the commons',font:'heavy',stage:'Emailed',research:'Boise Boulder Battle. Logo uploaded via CRM.'
+  },
+  {
+    slug:'scrapyard',gym:'Scrapyard Climbing Collective',password:'scrapyard',town:'Holland, MI',email:'info@scrapyardclimbing.com',website:'scrapyardclimbing.com',hold:'#FAB901',holdName:'Scrapyard Gold',logo_scale:0.75,ink:'shape',brand_text:'scrapyard',font:'heavy',stage:'Emailed',research:'Holland largest gym. Logo uploaded via CRM.'
+  },
+  {
+    slug:'shakerrocks',gym:'Shaker Rocks',password:'shaker rocks',town:'Shaker Heights, OH',email:'info@shakerrocksclimbing.com',website:'shakerrocksclimbing.com',hold:'#2141A8',holdName:'MTNShade Blue',logo_scale:0.5,ink:'shape',brand_text:'shaker rocks',font:'heavy',stage:'Emailed',research:'Standard blue (no MOQ). Logo uploaded via CRM.'
+  },
+  {
+    slug:'thecrag',gym:'The Crag',password:'the crag',town:'Nashville and Franklin, TN',email:'info@iloverockclimbing.com',website:'iloverockclimbing.com',hold:'#C8102E',holdName:'Crimp Red',logo_scale:0.45,ink:'dark',brand_text:'the crag',font:'heavy',stage:'Emailed',research:'2 gyms, est 2008. Standard red. Logo uploaded via CRM.'
+  },
+  {
+    slug:'risingup',gym:'Rising Up Rock Gym',password:'rising up',town:'Medina, OH',email:'climbing@risinguprockgym.com',website:'risinguprockgym.com',hold:'#293D60',holdName:'Rising Up Navy',logo_scale:0.45,ink:'dark',brand_text:'rising up',font:'heavy',stage:'Emailed',research:'Inside The Common Ground. Logo uploaded via CRM.'
+  },
+  {
+    slug:'ontherocks',gym:'On The Rocks Climbing Gym',password:'on the rocks',town:'Amherst, OH',email:'support@climbontherocks.com',website:'climbontherocks.com',hold:'#F0952B',holdName:'On The Rocks Orange',logo_scale:0.6,ink:'shape',brand_text:'on the rocks',font:'heavy',stage:'Emailed',research:'Amherst OH. Logo uploaded via CRM.'
+  },
+  {
+    slug:'kendallcliffs',gym:'Kendall Cliffs',password:'kendall cliffs',town:'Akron area, OH',email:'cs@kendallcliffs.com',website:'kendallcliffs.com',hold:'#0A8A19',holdName:'Kendall Green',logo_scale:0.6,ink:'light',brand_text:'kendall cliffs',font:'heavy',stage:'Emailed',research:'Ohio first built rock gym. Logo uploaded via CRM.'
+  },
+  {
+    slug:'elev8',gym:'ELEV8 Climbing Gym',password:'elev8',town:'Traverse City, MI',email:'info@elev8climbing.com',website:'elev8climbing.com',hold:'#EFFB76',holdName:'ELEV8 Yellow',logo_scale:0.7,ink:'shape',brand_text:'elev8',font:'heavy',stage:'Emailed',research:'Traverse City. Logo uploaded via CRM.'
+  },
+  {
+    slug:'dynodetroit',gym:'DYNO Detroit',password:'dyno detroit',town:'Detroit, MI',email:'info@dynodetroit.com',website:'dynodetroit.com',hold:'#5D489D',holdName:'DYNO Purple',logo_scale:0.65,ink:'shape',brand_text:'dyno',font:'heavy',stage:'Emailed',research:'First climbing gym in Detroit. Logo uploaded via CRM.'
   }
 ];
