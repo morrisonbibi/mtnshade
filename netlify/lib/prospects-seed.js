@@ -443,5 +443,32 @@ module.exports=[
   },
   {
     slug:'dynodetroit',gym:'DYNO Detroit',password:'dyno detroit',town:'Detroit, MI',email:'info@dynodetroit.com',website:'dynodetroit.com',hold:'#5D489D',holdName:'DYNO Purple',logo_scale:0.65,ink:'shape',brand_text:'dyno',font:'heavy',stage:'Emailed',research:'First climbing gym in Detroit. Logo uploaded via CRM.'
+  },
+  {
+    slug:'freestone',gym:'Freestone Climbing Center',password:'freestone',town:'Missoula, MT',email:'info@freestoneclimbing.com',website:'freestoneclimbing.com',hold:'#2141A8',holdName:'MTNShade Blue',logo_scale:0.55,ink:'shape',brand_text:'freestone climbing',font:'heavy',stage:'Emailed',research:'Missoula since 2010. Logo uploaded via CRM.'
+  },
+  {
+    slug:'flagstaff',gym:'Flagstaff Climbing',password:'flagstaff climbing',town:'Flagstaff, AZ',email:'info@flagstaffclimbing.com',website:'flagstaffclimbing.com',hold:'#F29A1F',holdName:'Flagstaff Orange',logo_scale:0.65,ink:'shape',brand_text:'flagstaff climbing',font:'heavy',stage:'Emailed',research:'2 locations, locally owned 30 years. Logo uploaded via CRM.'
+  },
+  {
+    slug:'santafe',gym:'Santa Fe Climbing Center',password:'santa fe',town:'Santa Fe, NM',email:'info@climbsantafe.com',website:'climbsantafe.com',hold:'#C8102E',holdName:'Crimp Red',logo_scale:0.45,ink:'shape',brand_text:'santa fe climbing center',font:'heavy',stage:'Emailed',research:'Only indoor gym in northern NM. Logo uploaded via CRM.'
+  },
+  {
+    slug:'steepworld',gym:'Steep World Climbing + Fitness',password:'steep world',town:'Billings, MT',email:'info@steepworld.com',website:'steepworld.com',hold:'#7EBEC5',holdName:'Steep World Teal',logo_scale:0.65,ink:'shape',brand_text:'steepworld',font:'heavy',stage:'Emailed',research:'Hosts Montana Bouldering Championships. Logo uploaded via CRM.'
+  },
+  {
+    slug:'alaskarock',gym:'Alaska Rock Gym',password:'alaska rock gym',town:'Anchorage, AK',email:'info@alaskarockgym.com',website:'alaskarockgym.com',hold:'#F76F42',holdName:'Alaska Orange',logo_scale:0.45,ink:'shape',brand_text:'alaska rock gym',font:'heavy',stage:'Emailed',research:'Anchorage. Logo uploaded via CRM.'
+  },
+  {
+    slug:'redrock',gym:'Red Rock Climbing Center',password:'red rock',town:'Las Vegas, NV',email:'sales@redrockclimbingcenter.com',website:'redrockclimbingcenter.com',hold:'#C8102E',holdName:'Crimp Red',logo_scale:0.65,ink:'shape',brand_text:'red rock climbing center',font:'heavy',stage:'Emailed',research:'R2C2 Las Vegas, also runs guides. Logo uploaded via CRM.'
+  },
+  {
+    slug:'springs',gym:'Springs Climbing Center',password:'springs',town:'Colorado Springs, CO',email:'info@springsclimbingcenter.com',website:'springsclimbingcenter.com',hold:'#2141A8',holdName:'MTNShade Blue',logo_scale:0.45,ink:'shape',brand_text:'springs climbing center',font:'heavy',stage:'Emailed',research:'Formerly Sport Climbing Center, 30+ years. Logo uploaded via CRM.'
+  },
+  {
+    slug:'alchemy',gym:'Alchemy Climbing',password:'alchemy',town:'Tallahassee, FL',email:'cs@alchemyclimbing.com',website:'alchemyclimbing.com',hold:'#3FD3E0',holdName:'Alchemy Cyan',logo_scale:0.45,ink:'shape',brand_text:'alchemy climbing',font:'heavy',stage:'Emailed',research:'Formerly Tallahassee Rock Gym, since 1995. Logo uploaded via CRM.'
+  },
+  {
+    slug:'armadillo',gym:'Armadillo Boulders',password:'armadillo',town:'San Antonio and San Marcos, TX',email:'korina@armadilloboulders.com',website:'armadilloboulders.com',hold:'#D86828',holdName:'Armadillo Orange',logo_scale:0.65,ink:'shape',brand_text:'armadillo boulders',font:'heavy',stage:'Emailed',research:'3 locations. Logo uploaded via CRM.'
   }
 ];
